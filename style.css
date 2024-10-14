@@ -1,0 +1,718 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Kanit', sans-serif;
+}
+
+.container {
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
+nav {
+    padding: 1rem;
+    background-color: #000;
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav-con {
+    display: flex;
+    justify-content: space-between;
+}
+
+.menu {
+    display: flex;
+    list-style: none;
+    align-items: center;
+}
+
+.menu li {
+    margin: 0 1rem;
+}
+
+.menu li a {
+    color: #fff;
+    text-decoration: none;
+
+}
+
+.hero {
+    background-color: #000;
+    position: relative;
+    height: 100vh;
+    /* ให้ความสูงเต็มหน้าจอ */
+    display: flex;
+    /* ใช้ Flexbox */
+    justify-content: flex-start;
+    /* จัดให้อยู่ตรงกลางแนวนอน */
+    align-items: center;
+    /* จัดให้อยู่ตรงกลางแนวตั้ง */
+    text-align: left;
+    /* จัดข้อความให้ชิดกลางในบรรทัด */
+    background-image: url('path-to-your-image.jpg');
+    /* ถ้าใช้รูปเป็นพื้นหลัง */
+    background-size: cover;
+    /* ทำให้รูปภาพครอบคลุมเต็มพื้นที่ */
+    background-position: center;
+    /* จัดตำแหน่งของพื้นหลังให้อยู่ตรงกลาง */
+    background-repeat: no-repeat;
+    /* ป้องกันการซ้ำของรูปภาพพื้นหลัง */
+}
+
+.hero-con {
+    display: flex;
+}
+
+.hero-info {
+    width: 100%;
+    padding: 2rem;
+    color: #fff;
+}
+
+.hero-info h1 {
+    font-family: 'Kanit', sans-serif;
+    font-size: 5rem !important;  /* ขนาดตัวอักษรใหญ่ขึ้น */
+    font-weight: 400 !important; /* ปรับน้ำหนักให้บาง */
+    color: #ffffff;
+}
+
+.hero-info h3 {
+    font-family: 'Kanit', sans-serif;
+    font-size: 3rem !important;  /* ขนาดตัวอักษรใหญ่ขึ้น */
+    font-weight: 500 !important; /* ปรับน้ำหนักให้บาง */
+    color: #ffffff;
+    line-height: 1; /* เพิ่มระยะห่างระหว่างบรรทัด */
+}
+
+.hero-info p {
+    font-family: 'Kanit', sans-serif;
+    font-size: 1rem !important;  /* ขนาดตัวอักษรใหญ่ขึ้น */
+    font-weight: 300 !important; /* ปรับน้ำหนักให้บาง */
+    color: #ffffff;
+}
+
+.hero-info .hero-btn {
+    display: inline-block;
+    background-color: #DF00B1;
+    color: #fff;
+    padding: 1rem;
+    border-radius: 18px;
+    text-decoration: none;
+}
+
+.hero-img {
+    position: relative;
+    width: 100%; /* ใช้พื้นที่เต็ม */
+    max-width: 600px; /* ขยายความกว้างสูงสุดของวิดีโอให้ใหญ่ขึ้น */
+    height: auto;
+    margin: 0 auto; /* จัดให้อยู่ตรงกลาง */
+  }
+  
+  .background-video {
+    width: 100%; /* วิดีโอเต็มความกว้างของคอนเทนเนอร์ */
+    height: 400px; /* ขยายความสูงของวิดีโอ */
+    object-fit: cover; /* ทำให้วิดีโอขยายตามสัดส่วนและครอบคลุมพื้นที่ */
+    border-radius: 10px; /* เพิ่มมุมโค้ง */
+  }
+
+
+
+/** หน้า 2 */
+
+.blog2 {
+    position: relative;
+    height: 100vh;
+    /* ให้ความสูงเต็มหน้าจอ */
+    background-image: url('518e07f4f68da43fed838995ae7ea0a7.jpg');
+    /* ใส่รูปภาพที่ต้องการ */
+    background-size: cover;
+    /* ทำให้รูปครอบคลุมเต็มพื้นที่ */
+    background-position: center;
+    /* จัดตำแหน่งรูปให้อยู่ตรงกลาง */
+    background-repeat: no-repeat;
+    /* ป้องกันการทำซ้ำรูป */
+    overflow: hidden;
+}
+
+.hero2-con {
+    display: flex;
+    justify-content: center;
+    /* จัดให้อยู่กึ่งกลางแนวนอน */
+    align-items: center;
+    /* จัดให้อยู่กึ่งกลางแนวตั้ง */
+    text-align: center;
+    /* จัดข้อความให้อยู่กึ่งกลางในบรรทัด */
+    height: 100vh;
+    /* ตั้งความสูงให้เต็มหน้าจอ */
+}
+
+.hero2-info {
+    max-width: 800px;
+    /* จำกัดความกว้างของเนื้อหา */
+    margin: 0 auto;
+    /* จัดให้อยู่ตรงกลางในคอนเทนเนอร์ */
+    padding: 2rem;
+    color: #fff;
+}
+
+.hero2-info h1 {
+    font-family: 'Kanit', sans-serif;
+    font-size: 4rem !important;  /* ขนาดตัวอักษรใหญ่ขึ้น */
+    font-weight: 400 !important; /* ปรับน้ำหนักให้บาง */
+    color: #ffffff;
+}
+
+.hero2-info h3 {
+    font-family: 'Kanit', sans-serif;
+    font-size: 2rem !important;  /* ขนาดตัวอักษรใหญ่ขึ้น */
+    font-weight: 500 !important; /* ปรับน้ำหนักให้บาง */
+    color: #ffffff;
+    line-height: 1; /* เพิ่มระยะห่างระหว่างบรรทัด */
+}
+
+
+.hero2-info p {
+    text-align: center;
+    /* จัดข้อความในบล็อกให้อยู่กึ่งกลาง */
+    margin: 1rem 0;
+}
+
+.hero2-info .hero2-btn {
+    display: inline-block;
+    background-color: #DF00B1;
+    color: #fff;
+    padding: 1rem 2rem; /* ขยายขนาดปุ่มด้วยการเพิ่ม padding */
+    border-radius: 18px;
+    text-decoration: none;
+}
+
+/** หน้า 3 */
+
+.blog3 {
+    position: relative;
+    height: 100vh;
+    /* ให้ความสูงเต็มหน้าจอ */
+    background-image: url('camera-set-with-camera-camera-set-up.jpg');
+    /* ใส่รูปภาพที่ต้องการ */
+    background-size: cover;
+    /* ทำให้รูปครอบคลุมเต็มพื้นที่ */
+    background-position: center;
+    /* จัดตำแหน่งรูปให้อยู่ตรงกลาง */
+    background-repeat: no-repeat;
+    /* ป้องกันการทำซ้ำรูป */
+    overflow: hidden;
+}
+
+.hero3-con {
+    display: flex;
+    justify-content: center;
+    /* จัดให้อยู่กึ่งกลางแนวนอน */
+    align-items: center;
+    /* จัดให้อยู่กึ่งกลางแนวตั้ง */
+    text-align: center;
+    /* จัดข้อความให้อยู่กึ่งกลางในบรรทัด */
+    height: 100vh;
+    /* ตั้งความสูงให้เต็มหน้าจอ */
+}
+
+.hero3-info {
+    max-width: 800px;
+    /* จำกัดความกว้างของเนื้อหา */
+    margin: 0 auto;
+    /* จัดให้อยู่ตรงกลางในคอนเทนเนอร์ */
+    padding: 2rem;
+    color: #fff;
+}
+
+.hero3-info h1 {
+    font-family: 'Kanit', sans-serif;
+    font-size: 4rem !important;  /* ขนาดตัวอักษรใหญ่ขึ้น */
+    font-weight: 400 !important; /* ปรับน้ำหนักให้บาง */
+    color: #ffffff;
+}
+
+.hero3-info h3 {
+    font-family: 'Kanit', sans-serif;
+    font-size: 2rem !important;  /* ขนาดตัวอักษรใหญ่ขึ้น */
+    font-weight: 500 !important; /* ปรับน้ำหนักให้บาง */
+    color: #ffffff;
+    line-height: 1; /* เพิ่มระยะห่างระหว่างบรรทัด */
+}
+
+.hero2-info p {
+    text-align: center;
+    /* จัดข้อความในบล็อกให้อยู่กึ่งกลาง */
+    margin: 1rem 0;
+}
+
+.hero3-info .hero2-btn {
+    display: inline-block;
+    background-color: #DF00B1;
+    color: #fff;
+    padding: 1rem 2rem; /* ขยายขนาดปุ่มด้วยการเพิ่ม padding */
+    border-radius: 18px;
+    text-decoration: none;
+}
+
+
+
+/** หน้า 4 */
+
+.blog4 {
+    position: relative;
+    height: 100vh;
+    /* ให้ความสูงเต็มหน้าจอ */
+    background-image: url('abstract-uv-ultraviolet-light-composition.jpg');
+    /* ใส่รูปภาพที่ต้องการ */
+    background-size: cover;
+    /* ทำให้รูปครอบคลุมเต็มพื้นที่ */
+    background-position: center;
+    /* จัดตำแหน่งรูปให้อยู่ตรงกลาง */
+    background-repeat: no-repeat;
+    /* ป้องกันการทำซ้ำรูป */
+    overflow: hidden;
+}
+
+.hero4-con {
+    display: flex;
+    justify-content: center;
+    /* จัดให้อยู่กึ่งกลางแนวนอน */
+    align-items: center;
+    /* จัดให้อยู่กึ่งกลางแนวตั้ง */
+    text-align: center;
+    /* จัดข้อความให้อยู่กึ่งกลางในบรรทัด */
+    height: 100vh;
+    /* ตั้งความสูงให้เต็มหน้าจอ */
+}
+
+.hero4-info {
+    max-width: 800px;
+    /* จำกัดความกว้างของเนื้อหา */
+    margin: 0 auto;
+    /* จัดให้อยู่ตรงกลางในคอนเทนเนอร์ */
+    padding: 2rem;
+    color: #fff;
+}
+
+.hero4-info h1 {
+    font-family: 'Kanit', sans-serif;
+    font-size: 4rem !important;  /* ขนาดตัวอักษรใหญ่ขึ้น */
+    font-weight: 400 !important; /* ปรับน้ำหนักให้บาง */
+    color: #DF00B1;
+    line-height: 1; /* เพิ่มระยะห่างระหว่างบรรทัด */
+}
+
+.hero4-info h3 {
+    font-family: 'Kanit', sans-serif;
+    font-size: 2rem !important;  /* ขนาดตัวอักษรใหญ่ขึ้น */
+    font-weight: 500 !important; /* ปรับน้ำหนักให้บาง */
+    color: #ffffff;
+    line-height: 1; /* เพิ่มระยะห่างระหว่างบรรทัด */
+}
+
+.hero4-info p {
+    text-align: center;
+    /* จัดข้อความในบล็อกให้อยู่กึ่งกลาง */
+    margin: 1rem 0;
+}
+
+.hero4-info .hero2-btn {
+    display: inline-block;
+    background-color: #DF00B1;
+    color: #fff;
+    padding: 1rem 2rem; /* ขยายขนาดปุ่มด้วยการเพิ่ม padding */
+    border-radius: 18px;
+    text-decoration: none;
+}
+
+
+
+/** หน้า 5 */
+
+.blog5 {
+    position: relative;
+    background-color: #000;
+}
+
+.blog5-text {
+    height: 100vh;
+    font-size: 50px;
+    color: #fff;
+    text-align: center;
+    background-color: #000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.img-container {
+    display: flex;
+    gap: 20px;
+    width: 100vw;
+    overflow: hidden;
+}
+
+.img-container img {
+    width: calc(100% / 5 - 20px);
+    height: 200px;
+    border-radius: 20px;
+    object-fit: cover;
+}
+
+
+
+/** หน้า 6 การ์ด */
+.container6 {
+    background-color: #000;
+    height: 100vh;
+    /* ให้ความสูงเต็มหน้าจอ */
+    padding-top: 50px;
+    /* เว้นระยะห่างจากขอบบน 50px */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    margin-bottom: 20px;
+}
+
+.article-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.view-all-btn {
+    font-size: 16px;
+    color: #e6007e;
+    text-decoration: none;
+}
+
+.hero6-con {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.card {
+    background-color: transparent;
+    /* เอาพื้นหลังของการ์ดออก */
+    border: 2px solid #fff;
+    /* เพิ่มขอบสีขาว */
+    color: #fff;
+    /* เปลี่ยนสีข้อความเป็นสีขาวเพื่อให้เห็นชัด */
+    flex: 0 0 342px;
+    margin: 0;
+    /* เอาระยะห่างของการ์ดออก */
+    padding: 0;
+    /* เอาระยะห่างภายในการ์ดออก */
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: none;
+    /* เอาเงาของการ์ดออก */
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+}
+
+.card-content {
+    padding: 20px;
+    text-align: left;
+}
+
+.card-content h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.card-content p {
+    font-size: 14px;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.card-btn {
+    display: block;
+    background-color: #e6007e;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+/* จัดสไลด์ */
+.carousel {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.carousel-items {
+    display: flex;
+    overflow: hidden;
+}
+
+/* ลูกศร */
+.carousel-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2rem;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 10;
+}
+
+.left-arrow {
+    left: 20px;
+}
+
+.right-arrow {
+    right: 20px;
+}
+
+/* ปุ่ม 3 ปุ่มข้างล่าง */
+.carousel-indicators {
+    position: absolute;
+    bottom: -50px; /* ปรับตำแหน่งให้อยู่นอกกรอบการ์ด */
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 5px;
+}
+
+.dot {
+    height: 10px;
+    width: 10px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.dot.active {
+    background-color: #717171;
+}
+
+.dot {
+    height: 15px;
+    width: 15px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.dot.active {
+    background-color: #717171;
+}
+
+
+
+
+
+/** หน้า 7 */
+
+.blog7 {
+    position: relative;
+    background-color: #000;
+    padding: 80px 20px;
+}
+
+.blog7-text {
+    font-size: 50px;
+    color: #fff;
+    text-align: center;
+    background-color: #000;
+}
+
+.logo-container {
+    display: flex;
+    justify-content: center; /* จัดรูปให้อยู่ตรงกลางแนวนอน */
+    align-items: center; /* จัดรูปให้อยู่ตรงกลางแนวตั้ง */
+    flex-wrap: wrap; /* ทำให้โลโก้ถูกจัดเรียงแบบหลายบรรทัดถ้าพื้นที่ไม่พอ */
+    gap: 20px; /* ระยะห่างระหว่างโลโก้ */
+    padding: 20px;
+    background-color: #000; /* พื้นหลังสีดำ */
+}
+
+
+
+
+
+
+
+/** footer */
+.footer {
+    background-color: #000; /* พื้นหลังสีดำ */
+    padding: 80px 20px;
+    color: #fff; /* สีตัวอักษรเป็นสีขาว */
+}
+
+.footer-container {
+    display: flex;
+    justify-content: flex-start; /* กระจายคอลัมน์ให้ห่างกัน */
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap; /* ทำให้ตอบสนองต่อหน้าจอขนาดเล็กได้ */
+}
+
+.footer-column {
+    flex: 1;
+    margin: 0 20px;
+    min-width: 200px; /* กำหนดขนาดขั้นต่ำของคอลัมน์ */
+}
+
+.footer-column3 {
+    flex: 1;
+    margin: 0 20px;
+    min-width: 200px; /* กำหนดขนาดขั้นต่ำของคอลัมน์ */
+    text-align: center;
+}
+
+.footer-column h3 {
+    margin-bottom: 20px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.footer-column p,
+.footer-column ul {
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+.footer-column a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-column a:hover {
+    text-decoration: underline;
+}
+
+.cta-btn {
+    background-color: #e6007e; /* สีปุ่มเป็นสีชมพู */
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.cta-btn:hover {
+    background-color: #d4006f; /* เปลี่ยนสีเมื่อ hover */
+}
+
+.social-icons a {
+    color: #fff;
+    margin-right: 10px;
+    font-size: 20px;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    font-size: 12px;
+    color: #fff;
+}
+
+@media (min-width: 1440px) and (max-width: 1920px) {
+    .container {
+      max-width: 1600px;
+      padding-left: 100px;
+    }
+  
+    .hero h1, .hero-info h3 {
+      font-size: 3rem;
+    }
+  
+    .hero-info p {
+      font-size: 1.5rem;
+    }
+  
+    .menu li {
+      margin: 0 2rem;
+    }
+  
+    .hero-img, .background-video {
+      max-width: 800px; /* ขยายความกว้างของวิดีโอหรือรูป */
+    }
+  }
+
+  @media (max-width: 768px) {
+    .container {
+      max-width: 100%; 
+      padding: 0 10px; 
+    }
+  
+    .hero h1, .hero-info h3 {
+      font-size: 1.8rem;
+    }
+  
+    .hero-info p {
+      font-size: 1rem;
+    }
+  
+    .menu li {
+      margin: 0 0.5rem;
+    }
+  
+    .hero-img, .background-video {
+      max-width: 100%;
+      height: auto;
+    }
+  
+    .cta-button {
+      font-size: 1rem;
+      padding: 0.8rem 1rem;
+    }
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
