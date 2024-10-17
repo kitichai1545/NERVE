@@ -96,13 +96,11 @@ nav {
 
 .hero-info h3 {
   font-size: 2rem;
-  font-family: 'Kanit', sans-serif;
 }
 
 
 .hero-info p {
   margin: 1rem 0;
-  font-family: 'Kanit', sans-serif;
 }
 
 .hero-info .hero-btn {
@@ -112,7 +110,6 @@ nav {
   padding: 1rem;
   border-radius: 5px;
   text-decoration: none;
-  font-family: 'Kanit', sans-serif;
 }
 
 .hero-img {
