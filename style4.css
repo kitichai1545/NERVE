@@ -482,6 +482,10 @@ button#closePopupBtn2 {
   animation: slideRight 35s linear infinite;
 }
 
+.img-container:hover {
+  animation-play-state: paused; /* หยุดแอนิเมชันเมื่อเมาส์อยู่เหนือ */
+}
+
 /* ปุ่ม 3 ปุ่มข้างล่าง */
 .carousel-indicators {
   display: flex;

@@ -608,6 +608,10 @@ button#closePopupBtn2 {
     animation: slideRight 35s linear infinite;
 }
 
+.img-container:hover {
+    animation-play-state: paused; /* หยุดแอนิเมชันเมื่อเมาส์อยู่เหนือ */
+}
+
 
 
 
