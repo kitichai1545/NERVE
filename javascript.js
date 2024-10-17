@@ -1,20 +1,9 @@
-const imgTop = document.querySelector('.img-top');
-const imgBottom = document.querySelector('.img-bottom');
+const container = document.querySelector('.img-container');
 
-/* หยุดแถวบนเมื่อวางเมาส์ */
-imgTop.addEventListener('mouseenter', () => {
-    imgTop.classList.add('paused');
+document.querySelector('.start').addEventListener('click', () => {
+    container.style.animationPlayState = 'running'; // เริ่มการเคลื่อนที่
 });
 
-imgTop.addEventListener('mouseleave', () => {
-    imgTop.classList.remove('paused');
-});
-
-/* หยุดแถวล่างเมื่อวางเมาส์ */
-imgBottom.addEventListener('mouseenter', () => {
-    imgBottom.classList.add('paused');
-});
-
-imgBottom.addEventListener('mouseleave', () => {
-    imgBottom.classList.remove('paused');
+document.querySelector('.stop').addEventListener('click', () => {
+    container.style.animationPlayState = 'paused'; // หยุดการเคลื่อนที่
 });

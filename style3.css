@@ -51,7 +51,7 @@ nav {
 }
 
 .menu li {
-  margin: 0 1rem;
+  margin: 0 1.5rem;
 }
 
 .menu li a {
@@ -60,26 +60,26 @@ nav {
 
 }
 .hero03 {
-    background-color: #ff007a;
-    position: relative;
-    height: 100vh;
-    /* ให้ความสูงเต็มหน้าจอ */
-    display: flex;
-    /* ใช้ Flexbox */
-    justify-content: flex-start;
-    /* จัดให้อยู่ตรงกลางแนวนอน */
-    align-items: center;
-    /* จัดให้อยู่ตรงกลางแนวตั้ง */
-    text-align: left;
-    /* จัดข้อความให้ชิดกลางในบรรทัด */
+  background-color: #ff007a;
+  position: relative;
+  height: 100vh;
+  /* ให้ความสูงเต็มหน้าจอ */
+  display: flex;
+  /* ใช้ Flexbox */
+  justify-content: flex-start;
+  /* จัดให้อยู่ตรงกลางแนวนอน */
+  align-items: center;
+  /* จัดให้อยู่ตรงกลางแนวตั้ง */
+  text-align: left;
+  /* จัดข้อความให้ชิดกลางในบรรทัด */
     background-image: url('movie-set-with-camera-video-camera-it.jpg');
     /* ถ้าใช้รูปเป็นพื้นหลัง */
-    background-size: cover;
-    /* ทำให้รูปภาพครอบคลุมเต็มพื้นที่ */
-    background-position: center;
-    /* จัดตำแหน่งของพื้นหลังให้อยู่ตรงกลาง */
-    background-repeat: no-repeat;
-    /* ป้องกันการซ้ำของรูปภาพพื้นหลัง */
+  background-size: cover;
+  /* ทำให้รูปภาพครอบคลุมเต็มพื้นที่ */
+  background-position: center;
+  /* จัดตำแหน่งของพื้นหลังให้อยู่ตรงกลาง */
+  background-repeat: no-repeat;
+  /* ป้องกันการซ้ำของรูปภาพพื้นหลัง */
 }
 
 .hero03-con {
@@ -88,8 +88,7 @@ nav {
 
 .hero03-info {
     width: 100%;
-    padding: 2rem;
-    padding-left: 250px;
+    padding-left: 220px;
     color: #fff;
 }
 
@@ -131,6 +130,184 @@ nav {
     object-fit: cover; /* ทำให้วิดีโอขยายตามสัดส่วนและครอบคลุมพื้นที่ */
     border-radius: 10px; /* เพิ่มมุมโค้ง */
   }
+
+
+/* Popup */
+.popup {
+  color: #fff;
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); 
+  justify-content: center;
+  align-items: center;
+}
+
+.popup-content {
+  background-color: #000;
+  margin: 0 auto;
+  padding: 40px;
+  border-radius: 15px; /* เพิ่มความโค้งให้กรอบ */
+  width: 80%;
+  max-width: 600px;
+  text-align: center;
+}
+
+.popup-content button {
+  background-color: #DF00B1;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  width: 100%; /* ให้ปุ่มกินพื้นที่ container */
+  max-width: 300px; /* ขนาดสูงสุดของปุ่ม */
+  margin-bottom: 15px;
+}
+
+.popup-content textarea {
+  width: 100%; /* ให้ textarea กินพื้นที่เต็ม */
+  height: 40px; /* กำหนดความสูงให้เหมือนกับ input */
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 25px; /* เพิ่มความโค้งให้เหมือนกับ input */
+  box-sizing: border-box;
+  resize: none; /* ปิดการยืดหดของ textarea */
+  font-size: 16px; /* ปรับขนาดตัวอักษร */
+  background-color: #f9f9f9; /* สีพื้นหลังเหมือนกับ input */
+  color: #333; /* สีตัวอักษรเหมือนกับ input */
+  overflow: hidden; /* ปิดการแสดง scroll bar */
+}
+
+.form-group {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.form-group .form-field {
+  flex: 0 0 48%; /* กำหนดให้แต่ละฟอร์มกินพื้นที่ 48% เพื่อให้มีระยะห่างระหว่างฟอร์ม */
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #fff;
+  font-family: 'Kanit', sans-serif;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  padding: 10px;
+  border-radius: 25px; /* เพิ่มความโค้งให้เหมือนกับภาพตัวอย่าง */
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  font-family: 'Kanit', sans-serif;
+}
+
+.popup-content button {
+  background-color: #DF00B1;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  width: 100%; /* ทำให้ปุ่มกว้างเท่ากับ container */
+  max-width: 300px; /* กำหนดขนาดสูงสุด */
+  margin-bottom: 15px; /* เพิ่มช่องว่างระหว่างปุ่ม */
+}
+
+.form-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px; /* เพิ่มช่องว่างระหว่างฟอร์ม */
+  margin-bottom: 20px;
+}
+
+.form-group {
+  flex: 1;
+  margin-right: 10px;
+}
+
+.form-group:last-child {
+  margin-right: 0;
+}
+
+input[type="checkbox"] {
+  display: none; /* ซ่อน checkbox เดิม */
+}
+
+input[type="checkbox"] + label img {
+  cursor: pointer; /* ให้มี cursor แบบ pointer เมื่อ hover */
+}
+
+input[type="checkbox"]:checked + label img {
+  border: 2px solid #DF00B1; /* ใส่กรอบให้กับรูปที่เลือก */
+}
+
+.checkbox-container {
+  display: flex;
+  justify-content: flex-start; /* ให้มีช่องว่างระหว่างคอลัมน์ */
+  margin-top: 10px;
+  padding-left: 0px;
+  gap: 30px;
+}
+
+.checkbox-column {
+  display: flex;
+  flex-direction: column; /* จัดรายการ checkbox ให้อยู่ในแนวตั้ง */
+}
+
+.checkbox-group {
+  display: flex;
+  align-items:flex-start;
+  margin-bottom: 10px; /* เพิ่มช่องว่างระหว่างแถว */
+}
+
+.checkbox-group input {
+  margin-right: 10px; /* เพิ่มช่องว่างระหว่าง checkbox และข้อความ */
+}
+
+.checkbox-group label {
+  display: block;
+  font-weight: bold;
+  color: #fff;
+}
+
+button.close-btn:first-of-type {
+  width: 100%; /* ให้ปุ่มยาวเต็มความกว้าง */
+  padding: 8px 0;
+  background-color: #DF00B1; /* สีพื้นหลัง */
+  color: #fff; /* สีตัวอักษร */
+  border: none; /* เอากรอบออก */
+  border-radius: 25px; /* เพิ่มความโค้ง */
+  margin-top: 10px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  max-width: 500px; /* เพิ่มความยาวของปุ่ม */
+  font-family: 'Kanit', sans-serif;
+}
+
+button#closePopupBtn2 {
+  background-color: transparent; /* ทำให้พื้นหลังโปร่งใส */
+  color: #ffffff; /* สีตัวอักษร */
+  font-size: 1rem;
+  border: none; /* เอากรอบออก */
+  cursor: pointer;
+  margin-bottom: 10px;
+  font-family: 'Kanit', sans-serif;
+}
+
+
+
 
 
   .services {

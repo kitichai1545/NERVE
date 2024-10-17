@@ -47,36 +47,8 @@
                         ด้วยการนำเสนอที่เน้นความต่างและการออกแบบประสบการณ์ที่แปลกใหม่<br>
                         เพื่อให้ Customer Journey กับ Brand ของลูกค้าตอบโจทย์การตลาดมากที่สุด</p> <br>
 
-
                     <!-- ปุ่มที่เชื่อมไปเปิด Popup -->
                     <a href="#" id="openPopupBtn" class="hero-btn">ปรึกษาแผนสร้างสรรค์งาน</a>
-
-                    <!-- Popup Structure ที่เพิ่มใหม่ -->
-                    <div id="popupForm" class="popup">
-                        <div class="popup-content">
-                            <span id="closePopupBtn" class="close">&times;</span>
-                            <h2>ร่วมงานกับเรา</h2>
-                            <p>กรุณากรอกรายละเอียดด้านล่างเพื่อให้เราติดต่อคุณกลับ</p>
-
-                            <form>
-                                <label for="name">ชื่อ</label>
-                                <input type="text" id="name" name="name" placeholder="ระบุชื่อของคุณ" required>
-
-                                <label for="email">อีเมล</label>
-                                <input type="email" id="email" name="email" placeholder="ระบุอีเมลของคุณ" required>
-
-                                <label for="phone">เบอร์ติดต่อ</label>
-                                <input type="tel" id="phone" name="phone" placeholder="ระบุเบอร์โทรศัพท์" required>
-
-                                <label for="message">ข้อความ</label>
-                                <textarea id="message" name="message" placeholder="ระบุข้อความที่คุณต้องการ"
-                                    required></textarea>
-
-                                <button type="submit" class="close-btn">ส่งข้อมูล</button>
-                                <button type="button" id="closePopupBtn2" class="close-btn">ปิด</button>
-                            </form>
-                        </div>
-                    </div>
                 </div>
 
                 <div class="hero-img fade-in">
@@ -88,6 +60,95 @@
             </div>
         </div>
     </section>
+
+    <!-- Popup Structure แยกออกมา -->
+    <div id="popupForm" class="popup">
+        <div class="popup-content">
+            <span id="closePopupBtn" class="close">&times;</span>
+            <img src="Logo.png" alt="">
+            <h2>สร้างสรรค์ทุกโอกาสบนโลกดิจิตอล</h2>
+            <p>ให้เราเป็นส่วนหนึ่งในธุรกิจคุณ</p> <br>
+
+            <form>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="name">ชื่อ*</label>
+                        <input type="text" id="name" name="name" placeholder="ระบุชื่อของคุณ" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">อีเมล*</label>
+                        <input type="email" id="email" name="email" placeholder="ระบุอีเมลของคุณ" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="url">URL Link*</label>
+                        <input type="url" id="url" name="url" placeholder="ระบุเว็บไซต์ หรือ ลิงก์ Facebook" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">เบอร์ติดต่อ*</label>
+                        <input type="tel" id="phone" name="phone" placeholder="ระบุเบอร์โทรศัพท์" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="Budget">บัทเจ็ทรายเดือน*</label>
+                    <textarea id="Budget" name="Budget" placeholder="เลือกบัทเจ็ทรายเดือน" required></textarea>
+                </div> <br>
+
+                <div class="form-group">
+                    <label>บริการ</label>
+                    <div class="checkbox-container">
+                        <div class="checkbox-column"> <br>
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="digitalMarketing">
+                                <label for="digitalMarketing">
+                                    <img src="Checkbox.png" alt="Checkbox for Digital Marketing"> Digital Marketing
+                                </label>
+                            </div>
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="creativeBusiness">
+                                <label for="creativeBusiness">
+                                    <img src="Checkbox.png" alt="Checkbox for Creative Business"> Creative Business
+                                </label>
+                            </div>
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="googleAds">
+                                <label for="googleAds">
+                                    <img src="Checkbox.png" alt="Checkbox for Google Ads"> Google Ads
+                                </label>
+                            </div>
+                        </div>
+                        <div class="checkbox-column">
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="seo">
+                                <label for="seo"><br>
+                                    <img src="Checkbox.png" alt="Checkbox for SEO"> SEO
+                                </label>
+                            </div>
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="multimediaProduction">
+                                <label for="multimediaProduction">
+                                    <img src="Checkbox.png" alt="Checkbox for Multimedia Production"> Multimedia
+                                    Production
+                                </label>
+                            </div>
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="ecommerceCPAS">
+                                <label for="ecommerceCPAS">
+                                    <img src="Checkbox.png" alt="Checkbox for Ecommerce & CPAS"> Ecommerce & CPAS
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <button type="submit" class="close-btn">ร่วมงานกับเรา</button>
+                <button type="button" id="closePopupBtn2" class="close-btn">ปิด</button>
+            </form>
+        </div>
+    </div>
 
 
 
@@ -134,6 +195,12 @@
                 <img src="LINE_ALBUM_888_240913_25 2.jpg" alt="Image 3">
                 <img src="LINE_ALBUM_888_240913_31 2.jpg" alt="Image 4">
                 <img src="LINE_ALBUM_888_240913_40 2.jpg" alt="Image 5">
+                <!-- คัดลอกภาพชุดแรก -->
+                <img src="LINE_ALBUM_888_240913_1 2.jpg" alt="Image 1 duplicate">
+                <img src="LINE_ALBUM_888_240913_13 2.jpg" alt="Image 2 duplicate">
+                <img src="LINE_ALBUM_888_240913_25 2.jpg" alt="Image 3 duplicate">
+                <img src="LINE_ALBUM_888_240913_31 2.jpg" alt="Image 4 duplicate">
+                <img src="LINE_ALBUM_888_240913_40 2.jpg" alt="Image 5 duplicate">
             </div>
 
             <!-- แถวที่ 2 -->
@@ -143,6 +210,13 @@
                 <img src="LINE_ALBUM_behind_240913_1 2.jpg" alt="Image 8">
                 <img src="LINE_ALBUM_behind_240913_13 2.jpg" alt="Image 9">
                 <img src="LINE_ALBUM_behind_240913_15 2.jpg" alt="Image 10">
+                <!-- คัดลอกภาพชุดแรก -->
+                <img src="LINE_ALBUM_888_240913_42 2.jpg" alt="Image 6">
+                <img src="LINE_ALBUM_888_240913_43 2.jpg" alt="Image 7">
+                <img src="LINE_ALBUM_behind_240913_1 2.jpg" alt="Image 8">
+                <img src="LINE_ALBUM_behind_240913_13 2.jpg" alt="Image 9">
+                <img src="LINE_ALBUM_behind_240913_15 2.jpg" alt="Image 10">
+                
             </div>
         </div>
     </section>
@@ -186,10 +260,10 @@
                                 <p>เราคือสายตาที่ทรงพลังในการจัดอันดับเพื่อคว้าชัยชนะ SEO/SEM
                                     ที่อยู่เหนือกว่าคู่แข่งในทุกการค้นหา
                                     และยกระดับคอนเทนต์ให้โดดเด่นบนโลกดิจิตอล พร้อมการันตีผลลัพธ์ภายใน 90 วัน</p>
-                                    <div class="imgarrow-right">
-                                        <img src="arrow-right.png" alt="Right Arrow">
-                                    </div>
+                                <div class="imgarrow-right">
+                                    <img src="arrow-right.png" alt="Right Arrow">
                                 </div>
+                            </div>
                         </a>
 
                         <a href="index5-1.html" class="card">
@@ -200,9 +274,9 @@
                                     ที่อยู่เหนือกว่าคู่แข่งในทุกการค้นหา
                                     และยกระดับคอนเทนต์ให้โดดเด่นบนโลกดิจิตอล พร้อมการันตีผลลัพธ์ภายใน 90 วัน</p>
 
-                                    <div class="imgarrow-right">
-                                        <img src="arrow-right.png" alt="Right Arrow">
-                                    </div>
+                                <div class="imgarrow-right">
+                                    <img src="arrow-right.png" alt="Right Arrow">
+                                </div>
                             </div>
                         </a>
                     </div>
@@ -224,32 +298,34 @@
     </section>
 
     <section class="blog7">
-        <div class="blog7-text">
+        <div class="blog7-text fade-in">
             <h3>ลูกค้าของเรา</h3>
-            <div class="logo-container">
-                <div class="logo-row left-slide"> <!-- แถบโลโก้แถวบน -->
-                    <img src="image 1.png" alt="Logo 1">
-                    <img src="image 2.png" alt="Logo 2">
-                    <img src="image 3.png" alt="Logo 3">
-                    <img src="image 4.png" alt="Logo 4">
-                    <img src="image 5.png" alt="Logo 5">
-                    <img src="image 7.png" alt="Logo 6">
-                    <img src="image 16.png" alt="Logo 7">
-                    <img src="image 18.png" alt="Logo 8">
-                    <!-- เพิ่มโลโก้อื่นๆ ตามต้องการ -->
-                </div>
-                <div class="logo-row right-slide"> <!-- แถบโลโก้แถวล่าง -->
-                    <img src="image 11.png" alt="Logo 9">
-                    <img src="image 12.png" alt="Logo 10">
-                    <img src="image 13.png" alt="Logo 11">
-                    <img src="image 14.png" alt="Logo 12">
-                    <img src="image 15.png" alt="Logo 3">
-                    <img src="image 17.png" alt="Logo 4">
-                    <img src="image 8.png" alt="Logo 3">
-                    <img src="image 9.png" alt="Logo 4">
-                    <!-- เพิ่มโลโก้อื่นๆ ตามต้องการ -->
-                </div>
+        </div>
+        <div class="logo-container fade-in">
+             <!-- แถวที่ 1 -->
+             <div class="logo-row left-slide fade-in">
+                <img src="image 1.png" alt="Logo 1">
+                <img src="image 2.png" alt="Logo 2">
+                <img src="image 3.png" alt="Logo 3">
+                <img src="image 4.png" alt="Logo 4">
+                <img src="image 5.png" alt="Logo 5">
+                <img src="image 7.png" alt="Logo 6">
+                <img src="image 16.png" alt="Logo 7">
+                <img src="image 18.png" alt="Logo 8">
+                <!-- เพิ่มโลโก้อื่นๆ ตามต้องการ -->
             </div>
+            <div class="logo-row right-slide fade-in">
+                <img src="image 11.png" alt="Logo 9">
+                <img src="image 12.png" alt="Logo 10">
+                <img src="image 13.png" alt="Logo 11">
+                <img src="image 14.png" alt="Logo 12">
+                <img src="image 15.png" alt="Logo 3">
+                <img src="image 17.png" alt="Logo 4">
+                <img src="image 8.png" alt="Logo 3">
+                <img src="image 9.png" alt="Logo 4">
+                <!-- เพิ่มโลโก้อื่นๆ ตามต้องการ -->
+            </div>
+        </div>
         </div>
     </section>
 
@@ -310,10 +386,12 @@
 
 
 
-    <script src="javascript.js"></script> <!-- เชื่อมโยงไฟล์ JavaScript -->
     <script src="Parallax.js"></script> <!-- เชื่อมโยงไฟล์ JavaScript -->
     <script src="logo slide.js"></script> <!-- เชื่อมโยงไฟล์ JavaScript -->
     <script src="popup.js"></script> <!-- เชื่อมโยงไฟล์ JavaScript -->
+    <script src="checbox.js"></script> <!-- เชื่อมโยงไฟล์ JavaScript -->
+    <script src="javascript.js"></script> <!-- เชื่อมโยงไฟล์ JavaScript -->
+
 
 </body>
 

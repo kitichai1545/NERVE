@@ -39,19 +39,109 @@
             <div class="hero04-con">
                 <div class="hero04-info fade-in">
                     <h1>Creative Business Development</h1>
-                        <h2>Special Creative Branding Experiences</h2>
-                        <p>เสร้างสรรค์ธุรกิจที่ให้ประสบการณ์รูปแบบใหม่ อันมีเอกลักษณ์เฉพาะตัว <br>
-                            การันตีความสำเร็จด้วยผลงานระดับตำนาน</p>
-                        <a href="#" class="hero04-btn fade-in">ปรึกษาแผนสร้างสรรค์งาน</a>
+                    <h2>Special Creative Branding Experiences</h2>
+                    <p>เสร้างสรรค์ธุรกิจที่ให้ประสบการณ์รูปแบบใหม่ อันมีเอกลักษณ์เฉพาะตัว <br>
+                        การันตีความสำเร็จด้วยผลงานระดับตำนาน</p>
+                    <a href="#" id="openPopupBtn" class="hero04-btn fade-in">ปรึกษาแผนสร้างสรรค์งาน</a>
                 </div>
 
             </div>
         </div>
     </section>
 
+    <!-- Popup Structure แยกออกมา -->
+    <div id="popupForm" class="popup">
+        <div class="popup-content">
+            <span id="closePopupBtn" class="close">&times;</span>
+            <img src="Logo.png" alt="">
+            <h2>สร้างสรรค์ทุกโอกาสบนโลกดิจิตอล</h2>
+            <p>ให้เราเป็นส่วนหนึ่งในธุรกิจคุณ</p> <br>
+
+            <form>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="name">ชื่อ*</label>
+                        <input type="text" id="name" name="name" placeholder="ระบุชื่อของคุณ" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">อีเมล*</label>
+                        <input type="email" id="email" name="email" placeholder="ระบุอีเมลของคุณ" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="url">URL Link*</label>
+                        <input type="url" id="url" name="url" placeholder="ระบุเว็บไซต์ หรือ ลิงก์ Facebook" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">เบอร์ติดต่อ*</label>
+                        <input type="tel" id="phone" name="phone" placeholder="ระบุเบอร์โทรศัพท์" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="Budget">บัทเจ็ทรายเดือน*</label>
+                    <textarea id="Budget" name="Budget" placeholder="เลือกบัทเจ็ทรายเดือน" required></textarea>
+                </div> <br>
+
+                <div class="form-group">
+                    <label>บริการ</label>
+                    <div class="checkbox-container">
+                        <div class="checkbox-column"> <br>
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="digitalMarketing">
+                                <label for="digitalMarketing">
+                                    <img src="Checkbox.png" alt="Checkbox for Digital Marketing"> Digital Marketing
+                                </label>
+                            </div>
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="creativeBusiness">
+                                <label for="creativeBusiness">
+                                    <img src="Checkbox.png" alt="Checkbox for Creative Business"> Creative Business
+                                </label>
+                            </div>
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="googleAds">
+                                <label for="googleAds">
+                                    <img src="Checkbox.png" alt="Checkbox for Google Ads"> Google Ads
+                                </label>
+                            </div>
+                        </div>
+                        <div class="checkbox-column">
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="seo">
+                                <label for="seo"><br>
+                                    <img src="Checkbox.png" alt="Checkbox for SEO"> SEO
+                                </label>
+                            </div>
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="multimediaProduction">
+                                <label for="multimediaProduction">
+                                    <img src="Checkbox.png" alt="Checkbox for Multimedia Production"> Multimedia
+                                    Production
+                                </label>
+                            </div>
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="ecommerceCPAS">
+                                <label for="ecommerceCPAS">
+                                    <img src="Checkbox.png" alt="Checkbox for Ecommerce & CPAS"> Ecommerce & CPAS
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <button type="submit" class="close-btn">ร่วมงานกับเรา</button>
+                <button type="button" id="closePopupBtn2" class="close-btn">ปิด</button>
+            </form>
+        </div>
+    </div>
+
+
     <section class="services">
         <h2 class="services-title fade-in">บริการของเรา</h2> <!-- หัวข้อที่เพิ่มเข้ามา -->
-        
+
         <div class="service-item">
             <div class="service-icon fade-in">
                 <img src="Event Accepted.png" alt="Icon 1">
@@ -62,25 +152,27 @@
                 <a href="#" class="cta-link">ปรึกษา Creative วางแผน ➔</a>
             </div>
         </div>
-    
+
         <div class="service-item">
             <div class="service-icon fade-in">
                 <img src="3D.png" alt="Icon 2">
             </div>
             <div class="service-content fade-in">
                 <h3>สัมผัสประสบการณ์ศิลปะมิติใหม่</h3>
-                <p>ปลดล็อกความรู้สึก พาคุณเข้าสู่โลกแห่งความก้าวหน้าของศิลปะและเทคโนโลยี ด้วยการใช้เทคโนโลยีล้ำสมัย สร้างความเชื่อมโยงระหว่างผู้ใช้และธุรกิจในมิติใหม่</p>
+                <p>ปลดล็อกความรู้สึก พาคุณเข้าสู่โลกแห่งความก้าวหน้าของศิลปะและเทคโนโลยี ด้วยการใช้เทคโนโลยีล้ำสมัย
+                    สร้างความเชื่อมโยงระหว่างผู้ใช้และธุรกิจในมิติใหม่</p>
                 <a href="#" class="cta-link">ปรึกษาผู้กำกับมืออาชีพ ➔</a>
             </div>
         </div>
-    
+
         <div class="service-item">
             <div class="service-icon fade-in">
                 <img src="Traveler.png" alt="Icon 3">
             </div>
             <div class="service-content fade-in">
                 <h3>Tourist Attraction เปิดโลกทัศน์ใหม่</h3>
-                <p>ถ่ายทอดประสบการณ์จากทีมผู้สร้างสรรค์ระดับตำนาน สร้างจุดขายที่แตกต่างของสถานที่และสถาปัตยกรรมสุดมหัศจรรย์</p>
+                <p>ถ่ายทอดประสบการณ์จากทีมผู้สร้างสรรค์ระดับตำนาน
+                    สร้างจุดขายที่แตกต่างของสถานที่และสถาปัตยกรรมสุดมหัศจรรย์</p>
                 <a href="#" class="cta-link">ปรึกษาผู้เชี่ยวชาญเกมเทคนิค ➔</a>
             </div>
         </div>
@@ -89,16 +181,34 @@
 
 
     <section class="blog5">
-        <div class="blog5-text fade-in">
+        <div class="blog5-text ">
             <h3>ผลงานของเรา</h3>
+
+            <!-- แถวที่ 1 -->
             <div class="img-container img-top fade-in">
                 <img src="LINE_ALBUM_888_240913_1 2.jpg" alt="Image 1">
                 <img src="LINE_ALBUM_888_240913_13 2.jpg" alt="Image 2">
                 <img src="LINE_ALBUM_888_240913_25 2.jpg" alt="Image 3">
                 <img src="LINE_ALBUM_888_240913_31 2.jpg" alt="Image 4">
                 <img src="LINE_ALBUM_888_240913_40 2.jpg" alt="Image 5">
+                <!-- คัดลอกภาพชุดแรก -->
+                <img src="LINE_ALBUM_888_240913_1 2.jpg" alt="Image 1 duplicate">
+                <img src="LINE_ALBUM_888_240913_13 2.jpg" alt="Image 2 duplicate">
+                <img src="LINE_ALBUM_888_240913_25 2.jpg" alt="Image 3 duplicate">
+                <img src="LINE_ALBUM_888_240913_31 2.jpg" alt="Image 4 duplicate">
+                <img src="LINE_ALBUM_888_240913_40 2.jpg" alt="Image 5 duplicate">
             </div>
+
+            <!-- ปุ่มเลื่อนด้านล่าง -->
+            <div class="carousel-indicators">
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+        </div>
     </section>
+
+
 
 
 
@@ -158,10 +268,11 @@
 
 
 
-    <script src="javascript.js"></script> <!-- เชื่อมโยงไฟล์ JavaScript -->
     <script src="Parallax.js"></script> <!-- เชื่อมโยงไฟล์ JavaScript -->
     <script src="logo slide.js"></script> <!-- เชื่อมโยงไฟล์ JavaScript -->
-
+    <script src="popup.js"></script> <!-- เชื่อมโยงไฟล์ JavaScript -->
+    <script src="checbox.js"></script> <!-- เชื่อมโยงไฟล์ JavaScript -->
+    <script src="javascript.js"></script> <!-- เชื่อมโยงไฟล์ JavaScript -->
 </body>
 
 </html>
