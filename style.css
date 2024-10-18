@@ -31,6 +31,7 @@ body {
 .container {
     max-width: 1140px;
     margin: 0 auto;
+    padding-top: 0.5rem; /* เพิ่ม padding เพื่อเว้นช่องสำหรับ nav */
 }
 
 nav {
@@ -38,6 +39,11 @@ nav {
     background-color: #000;
     display: flex;
     justify-content: space-between;
+    position: fixed; /* Fix ตำแหน่งที่ด้านบน */
+    top: 0; /* ตำแหน่งที่ด้านบนของหน้าจอ */
+    left: 0;
+    width: 100%; /* ให้กว้างเต็มหน้าจอ */
+    z-index: 1000; /* ทำให้ nav อยู่บนสุด */
 }
 
 .nav-con {
