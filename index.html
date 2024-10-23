@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@100;300;400;500;700&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 </head>
 
@@ -18,41 +19,58 @@
         <div class="container">
             <div class="nav-con">
                 <div class="logo">
-                    <a href="index.html"><img src="Logo.png" alt=""></a>
+                    <a href="index.html"><img src="Logo.png" alt="Logo"></a>
                 </div>
-                <ul class="menu">
+                <!-- Hamburger icon สำหรับมือถือ -->
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <ul class="menu" id="menu">
                     <li><a href="index2.html">Digital Marketing</a></li>
                     <li><a href="index3.html">Multimedia Production</a></li>
                     <li><a href="index4.html">Creative Business DEV</a></li>
                     <li><a href="index5.html">Blogs</a></li>
-                    <li><a href="#"><img src="Line.png" alt=""></a></li>
-                    <li><a href="#"><img src="Property 1=Variant3.png" alt=""></a></li>
-                    <li><a href="#"><img src="Line1.png" alt=""></a></li>
-
+                    <li><a href="#"><img src="line (1).png" alt="Line"></a></li>
+                    <li><a href="#"><img src="phone-flip.png" alt="telephone"> 080-919-6514</a></li>
+                    <li><a href="#"><img src="global.png" alt="global"></a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <section class="hero">
+    <section class="hero hero-section">
         <div class="container">
             <div class="hero-con">
-                <div class="hero-info fade-in">
+                <!-- คอนเทนต์แรกที่จะถูกแสดงก่อน -->
+                <div id="content1" class="hero-info content1-fade-in">
                     <h1>NERVE</h1>
-                    <h3>มองเห็นโอกาสใหม่ <br>
-                        ในโลกดิจิตอล</h3> <br>
+                    <h3>มองเห็นโอกาสใหม่ <br> ในโลกดิจิตอล</h3> <br>
                     <p>จากความเชี่ยวชาญด้าน Visual และการสร้าง Content <br>
                         รวมกับเครื่องมือทางด้านการตลาดสมัยใหม่<br>
                         สู่ Digital Content Agency ที่มองลึกถึงความสำเร็จ<br>
                         ด้วยการนำเสนอที่เน้นความต่างและการออกแบบประสบการณ์ที่แปลกใหม่<br>
                         เพื่อให้ Customer Journey กับ Brand ของลูกค้าตอบโจทย์การตลาดมากที่สุด</p> <br>
-
-                    <!-- ปุ่มที่เชื่อมไปเปิด Popup -->
                     <a href="#" id="openPopupBtn" class="hero-btn">ปรึกษาแผนสร้างสรรค์งาน</a>
                 </div>
 
-                <div class="hero-img fade-in">
-                    <video autoplay muted loop class="background-video">
+                <!-- คอนเทนต์ที่สองที่จะถูกแสดงหลังจากผ่านไป 20 วินาที -->
+                <div id="content2" class="hero-info2 content2-fade-in" style="display:none;">
+                    <h1>ผู้นำ Digital Content</h1>
+                    <h3>สู่ความล้ำสมัยด้วยนวัตกรรมและ
+                        การสร้างสรรค์ที่ไม่มีขีดจำกัด</h3> <br>
+                    <p>เริ่มต้นสู่ฤดูกาลของโลกยุค Society 5.0 เรามีเป้าหมายในการนำ Digital Content
+                        ขึ้นไปสู่โลกแห่งนวัตกรรมที่ล้ำสมัย มุ่งเน้นการสร้างสรรค์ผลงานด้วยสไตล์ที่แตกต่าง
+                        ฉีกทุกกฎของภาพเดิมๆ เพิ่มศักยภาพทางธุรกิจด้านการผลิต Media & Production
+                        มากประสบการณ์ที่แข็งแกร่ง
+                        พร้อมแล้วที่จะพาคุณมุ่งไปสู่เป้าหมายบนเส้นทางแห่งความสำเร็จที่เหนือกว่าอย่างไร้ขีดสุด</p> <br>
+                        <a href="#" id="openPopupBtn2" class="hero-btn">ปรึกษาแผนสร้างสรรค์งาน</a>
+                </div>
+
+                <!-- วิดีโอพื้นหลัง ไม่ถูกซ่อน -->
+                <div class="hero-img">
+                    <video autoplay muted loop class="background-video fade-in-on-load">
                         <source src="Eye_AM_1_4K.mp4" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
@@ -155,12 +173,15 @@
     <section class="blog2">
         <div class="container2">
             <div class="hero2-con">
+                <video class="background-video2" autoplay muted loop>
+                    <source src="S1_COM1.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
                 <div class="hero2-info fade-in">
-                    <h1>Digital Marketing</h1>
-                    <h3>สร้างกลยุทธ์โฆษณาที่คุ้มค่า <br>
-                        ด้วยจุดเด่นของธุรกิจ</h3> <br>
                     <a href="index2.html" class="hero2-btn fade-in">ดูรายละเอียด</a>
                 </div>
+            </div>
+        </div>
     </section>
 
     <section class="blog3">
@@ -188,36 +209,49 @@
         <div class="blog5-text fade-in">
             <h3>ผลงานของเรา</h3>
 
-            <!-- แถวที่ 1 -->
-            <div class="img-container img-top fade-in">
-                <img src="LINE_ALBUM_888_240913_1 2.jpg" alt="Image 1">
-                <img src="LINE_ALBUM_888_240913_13 2.jpg" alt="Image 2">
-                <img src="LINE_ALBUM_888_240913_25 2.jpg" alt="Image 3">
-                <img src="LINE_ALBUM_888_240913_31 2.jpg" alt="Image 4">
-                <img src="LINE_ALBUM_888_240913_40 2.jpg" alt="Image 5">
-                <!-- คัดลอกภาพชุดแรก -->
-                <img src="LINE_ALBUM_888_240913_1 2.jpg" alt="Image 1 duplicate">
-                <img src="LINE_ALBUM_888_240913_13 2.jpg" alt="Image 2 duplicate">
-                <img src="LINE_ALBUM_888_240913_25 2.jpg" alt="Image 3 duplicate">
-                <img src="LINE_ALBUM_888_240913_31 2.jpg" alt="Image 4 duplicate">
-                <img src="LINE_ALBUM_888_240913_40 2.jpg" alt="Image 5 duplicate">
-            </div>
+           <!-- แถวที่ 1 -->
+           <div class="img-container img-top fade-in">
+            <img src="Home performance/FB_IMG_1456224194361.png" alt="Image 1" onclick="window.open('https://youtu.be/jHh7rebhugQ?si=eRkwGicrxao_2nth');">
+            <img src="Home performance/LINE_ALBUM_888_240913_1 2.jpg" alt="Image 2" onclick="window.open('https://youtu.be/HiSvSwADfvU?si=1kaE8Hv-7AGhyN-t');">
+            <img src="Home performance/LINE_ALBUM_888_240913_13 2.jpg" alt="Image 3">
+            <img src="Home performance/LINE_ALBUM_888_240913_15 2.jpg" alt="Image 4">
+            <img src="Home performance/LINE_ALBUM_888_240913_25 2.jpg" alt="Image 5">
+            <img src="Home performance/LINE_ALBUM_888_240913_31 2.jpg" alt="Image 6" onclick="window.open('https://youtu.be/G4fN9gTfc-s?si=wzxi2mRiP1I4cjUg');">
+            <img src="Home performance/LINE_ALBUM_888_240913_40 2.jpg" alt="Image 7">
+            <img src="Home performance/LINE_ALBUM_888_240913_42 2.jpg" alt="Image 8">
+    <!-- คัดลอกภาพชุดแรก -->
+            <img src="Home performance/FB_IMG_1456224194361.png" alt="Image 1" onclick="window.open('https://youtu.be/jHh7rebhugQ?si=eRkwGicrxao_2nth');">
+            <img src="Home performance/LINE_ALBUM_888_240913_1 2.jpg" alt="Image 2" onclick="window.open('https://youtu.be/HiSvSwADfvU?si=1kaE8Hv-7AGhyN-t');">
+            <img src="Home performance/LINE_ALBUM_888_240913_13 2.jpg" alt="Image 3">
+            <img src="Home performance/LINE_ALBUM_888_240913_15 2.jpg" alt="Image 4">
+            <img src="Home performance/LINE_ALBUM_888_240913_25 2.jpg" alt="Image 5">
+            <img src="Home performance/LINE_ALBUM_888_240913_31 2.jpg" alt="Image 6" onclick="window.open('https://youtu.be/G4fN9gTfc-s?si=wzxi2mRiP1I4cjUg', '_blank');">
+            <img src="Home performance/LINE_ALBUM_888_240913_40 2.jpg" alt="Image 7">
+            <img src="Home performance/LINE_ALBUM_888_240913_42 2.jpg" alt="Image 8">
+        </div>
 
-            <!-- แถวที่ 2 -->
-            <div class="img-container img-bottom fade-in">
-                <img src="LINE_ALBUM_888_240913_42 2.jpg" alt="Image 6">
-                <img src="LINE_ALBUM_888_240913_43 2.jpg" alt="Image 7">
-                <img src="LINE_ALBUM_behind_240913_1 2.jpg" alt="Image 8">
-                <img src="LINE_ALBUM_behind_240913_13 2.jpg" alt="Image 9">
-                <img src="LINE_ALBUM_behind_240913_15 2.jpg" alt="Image 10">
-                <!-- คัดลอกภาพชุดแรก -->
-                <img src="LINE_ALBUM_888_240913_42 2.jpg" alt="Image 6">
-                <img src="LINE_ALBUM_888_240913_43 2.jpg" alt="Image 7">
-                <img src="LINE_ALBUM_behind_240913_1 2.jpg" alt="Image 8">
-                <img src="LINE_ALBUM_behind_240913_13 2.jpg" alt="Image 9">
-                <img src="LINE_ALBUM_behind_240913_15 2.jpg" alt="Image 10">
-                
-            </div>
+
+
+        <!-- แถวที่ 2 -->
+        <div class="img-container img-bottom fade-in">
+        <img src="Home performance/LINE_ALBUM_888_240913_43 2.jpg" alt="Image 9">
+        <img src="Home performance/LINE_ALBUM_behind_240913_1 2.jpg" alt="Image 10">
+        <img src="Home performance/LINE_ALBUM_behind_240913_13 2.jpg" alt="Image 11">
+        <img src="Home performance/LINE_ALBUM_behind_240913_15 2.jpg" alt="Image 12" onclick="window.open('https://youtu.be/Sd-PgTSkjaQ?si=AayGqaHOQxU5WgPU', '_blank');">
+        <img src="Home performance/man-filming-with-professional-camera.jpg" alt="Image 13">
+        <img src="Home performance/QSNCC.png" alt="Image 14" onclick="window.open('https://youtu.be/GiRAx02P22o?si=PSOYr3sTVLH51-0h', '_blank');">
+        <img src="Home performance/Screenshot 2567-10-03 at 14.40.04.png" alt="Image 15">
+        <img src="Home performance/Screenshot 2567-10-17 at 13.31.26.png" alt="Image 16" onclick="window.open('https://youtu.be/Gc-YFGCvEX4?si=-6vlmnksiBPPNTtG');">
+    <!-- คัดลอกภาพชุดแรก -->
+        <img src="Home performance/LINE_ALBUM_888_240913_43 2.jpg" alt="Image 9">
+        <img src="Home performance/LINE_ALBUM_behind_240913_1 2.jpg" alt="Image 10">
+        <img src="Home performance/LINE_ALBUM_behind_240913_13 2.jpg" alt="Image 11">
+        <img src="Heom performance/LINE_ALBUM_behind_240913_15 2.jpg" alt="Image 12" onclick="window.open('https://youtu.be/Sd-PgTSkjaQ?si=AayGqaHOQxU5WgPU', '_blank');">
+        <img src="Home performance/man-filming-with-professional-camera.jpg" alt="Image 13">
+        <img src="Home performance/QSNCC.png" alt="Image 14" onclick="window.open('https://youtu.be/GiRAx02P22o?si=PSOYr3sTVLH51-0h', '_blank');">
+        <img src="Home performance/Screenshot 2567-10-03 at 14.40.04.png" alt="Image 15">
+        <img src="Home performance/Screenshot 2567-10-17 at 13.31.26.png" alt="Image 16" onclick="window.open('https://youtu.be/Gc-YFGCvEX4?si=-6vlmnksiBPPNTtG');">
+        </div>
         </div>
     </section>
 
@@ -299,39 +333,57 @@
 
     <section class="blog7">
         <div class="blog7-text fade-in">
-            <h3>ลูกค้าของเรา</h3>
+            <h3>ลูกค้าของเรา</h3> <br>
         </div>
-        <div class="logo-container fade-in">
-             <!-- แถวที่ 1 -->
-             <div class="logo-row left-slide fade-in">
-                <img src="image 1.png" alt="Logo 1">
-                <img src="image 2.png" alt="Logo 2">
-                <img src="image 3.png" alt="Logo 3">
-                <img src="image 4.png" alt="Logo 4">
-                <img src="image 5.png" alt="Logo 5">
-                <img src="image 7.png" alt="Logo 6">
-                <img src="image 16.png" alt="Logo 7">
-                <img src="image 18.png" alt="Logo 8">
-                <!-- เพิ่มโลโก้อื่นๆ ตามต้องการ -->
+
+        <!-- ชุดที่ 1 (แสดงก่อน) -->
+        <div id="logo-container-1" class="logo-container">
+            <div class="logo-row left-slide">
+                <img src="Clients logo/1.png" alt="Logo 1" style="max-width: 96px; height: 96px;">
+                <img src="Clients logo/2.png" alt="Logo 2" style="max-width: 96px; height: 96px;">
+                <img src="Clients logo/3.png" alt="Logo 3" style="max-width: 96px; height: 96px;">
+                <img src="Clients logo/4.png" alt="Logo 4" style="max-width: 96px; height: 96px;">
+                <img src="Clients logo/5.png" alt="Logo 5" style="max-width: 96px; height: 96px;">
+                <img src="Clients logo/6.png" alt="Logo 6" style="max-width: 96px; height: 96px;">
+                <img src="Clients logo/7.png" alt="Logo 7" style="max-width: 96px; height: 96px;">
+                <img src="Clients logo/8.png" alt="Logo 8" style="max-width: 96px; height: 96px;">
             </div>
-            <div class="logo-row right-slide fade-in">
-                <img src="image 11.png" alt="Logo 9">
-                <img src="image 12.png" alt="Logo 10">
-                <img src="image 13.png" alt="Logo 11">
-                <img src="image 14.png" alt="Logo 12">
-                <img src="image 15.png" alt="Logo 3">
-                <img src="image 17.png" alt="Logo 4">
-                <img src="image 8.png" alt="Logo 3">
-                <img src="image 9.png" alt="Logo 4">
-                <!-- เพิ่มโลโก้อื่นๆ ตามต้องการ -->
+            <div class="logo-row right-slide">
+                <img src="Clients logo/9.png" alt="Logo 9" style="max-width: 96px; height: 96px;">
+                <img src="Clients logo/10.png" alt="Logo 10" style="max-width: 96px; height: 96px;">
+                <img src="Clients logo/11.png" alt="Logo 11" style="max-width: 96px; height: 96px;">
+                <img src="Clients logo/12.png" alt="Logo 12" style="max-width: 96px; height: 96px;">
+                <img src="Clients logo/13.png" alt="Logo 13" style="max-width: 96px; height: 96px;">
+                <img src="Clients logo/14.png" alt="Logo 14" style="max-width: 96px; height: 96px;">
+                <img src="Clients logo/15.png" alt="Logo 15" style="max-width: 96px; height: 96px;">
+                <img src="Clients logo/16.png" alt="Logo 16" style="max-width: 96px; height: 96px;">
             </div>
         </div>
+
+        <!-- ชุดที่ 2 (แสดงทีหลัง) -->
+        <div id="logo-container-2" class="logo-container2">
+            <div class="logo-row">
+                <img src="Clients logo/19.png" alt="Logo 19" style="max-width: 96px; height: 96px;">
+                <img src="Clients logo/20.png" alt="Logo 20" style="max-width: 96px; height: 96px;">
+                <img src="Clients logo/21.png" alt="Logo 21" style="max-width: 96px; height: 96px;">
+                <img src="Clients logo/22.png" alt="Logo 22" style="max-width: 96px; height: 96px;">
+                <img src="Clients logo/23.png" alt="Logo 23" style="max-width: 96px; height: 96px;">
+                <img src="Clients logo/24.png" alt="Logo 24" style="max-width: 96px; height: 96px;">
+                <img src="Clients logo/25.png" alt="Logo 25" style="max-width: 96px; height: 96px;">
+                <img src="Clients logo/26.png" alt="Logo 26" style="max-width: 96px; height: 96px;">
+            </div>
+            <div class="logo-row">
+                <img src="Clients logo/27.png" alt="Logo 27" style="max-width: 96px; height: 96px;">
+                <img src="Clients logo/28.png" alt="Logo 28" style="max-width: 96px; height: 96px;">
+                <img src="Clients logo/29.png" alt="Logo 29" style="max-width: 96px; height: 96px;">
+                <img src="Clients logo/30.png" alt="Logo 30" style="max-width: 96px; height: 96px;">
+            </div>
         </div>
     </section>
 
     <footer class="footer">
         <div class="footer-container">
-            <div class="footer-column">
+            <div class="footer-column1">
                 <h3>NERVE DIGITAL CONTENT AGENCY</h3>
                 <p>
                     เรามุ่งมั่นในการให้บริการอย่างดีที่สุดเพื่อตอบโจทย์ทุกความต้องการของคุณ พร้อมเป็นพันธมิตรที่ดี
@@ -339,9 +391,12 @@
                     เราเชื่อว่าคุณกำลังเดินทางสู่ความสำเร็จบนโลกดิจิทัล
                     เริ่มต้นการเดินทางสู่อนาคตที่คุณวาดฝันได้แล้ววันนี้
                 </p> <br>
-                <button class="cta-btn">ให้เราช่วยวางแผนให้คุณ</button>
+
+                <!-- ปุ่มที่เชื่อมไปเปิด Popup -->
+                <a href="#" id="openPopupBtnFooter" class="hero-btn">ปรึกษาแผนสร้างสรรค์งาน</a>
             </div>
-            <div class="footer-column">
+
+            <div class="footer-column2">
                 <h3>Our Services</h3>
                 <ul>
                     <li><a href="#">Digital Marketing</a></li>
@@ -350,7 +405,7 @@
                     <li><a href="#">Blog</a></li>
                 </ul>
             </div>
-            <div class="footer-column">
+            <div class="footer-column3">
                 <h3>Contact us</h3>
 
                 <div class="map-container">
@@ -369,11 +424,12 @@
                 <p>Social media:</p>
 
                 <div class="social-icons">
-                    <a href="#"><img src="Youtube.png" alt="YouTube"></a>
-                    <a href="#"><img src="Facebook.png" alt="Facebook"></a>
-                    <a href="#"><img src="TikTok.png" alt="TikTok"></a>
-                    <a href="#"><img src="X.png" alt="X"></a>
-                    <a href="#"><img src="Line.png" alt="Line"></a>
+                    <a href="#"><img src="youtube (1).png" alt="YouTube"></a>
+                    <a href="#"><img src="facebook (1).png" alt="Facebook"></a>
+                    <a href="#"><img src="instagram (1).png" alt="instagram"></a>
+                    <a href="#"><img src="tiktok (2).png" alt="TikTok"></a>
+                    <a href="#"><img src="twitter (1).png" alt="X"></a>
+                    <a href="#"><img src="line (1).png" alt="Line"></a>
                 </div>
             </div>
         </div>
@@ -387,12 +443,14 @@
 
 
     <script src="Parallax.js"></script> <!-- เชื่อมโยงไฟล์ JavaScript -->
+    <script src="Parallax1.js"></script> <!-- เชื่อมโยงไฟล์ JavaScript -->
     <script src="logo slide.js"></script> <!-- เชื่อมโยงไฟล์ JavaScript -->
     <script src="popup.js"></script> <!-- เชื่อมโยงไฟล์ JavaScript -->
+    <script src="popupfooter.js"></script> <!-- เชื่อมโยงไฟล์ JavaScript -->
     <script src="checbox.js"></script> <!-- เชื่อมโยงไฟล์ JavaScript -->
     <script src="javascript.js"></script> <!-- เชื่อมโยงไฟล์ JavaScript -->
-
-
+    <script src="Moblie.js"></script> <!-- เชื่อมโยงไฟล์ JavaScript -->
+    <script src="content.js"></script> <!-- เชื่อมโยงไฟล์ JavaScript -->
 </body>
 
 </html>

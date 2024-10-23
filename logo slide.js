@@ -1,28 +1,27 @@
-window.addEventListener('scroll', function() {
-    const leftSlide = document.querySelector('.left-slide');
-    const rightSlide = document.querySelector('.right-slide');
-    const screenPosition = window.innerHeight;
-    
-    const leftPosition = leftSlide.getBoundingClientRect().top;
-    const rightPosition = rightSlide.getBoundingClientRect().top;
-    const leftBottomPosition = leftSlide.getBoundingClientRect().bottom;
-    const rightBottomPosition = rightSlide.getBoundingClientRect().bottom;
-  
-    // ตรวจสอบเมื่อแถวบนเข้ามาในมุมมอง
-    if (leftPosition < screenPosition && leftBottomPosition > 0) {
-      leftSlide.classList.add('visible');
-      leftSlide.classList.remove('hidden');
+document.addEventListener("DOMContentLoaded", function() {
+  const logoContainer1 = document.getElementById('logo-container-1');
+  const logoContainer2 = document.getElementById('logo-container-2');
+
+  // เริ่มต้นให้โลโก้ชุดที่ 1 แสดง
+  logoContainer1.classList.add('active');
+
+  setInterval(() => {
+    if (logoContainer1.classList.contains('active')) {
+      // ถ้าโลโก้ชุดที่ 1 กำลังแสดง
+      logoContainer1.classList.add('exit'); // ให้โลโก้ชุดที่ 1 เลื่อนออก
+      setTimeout(() => {
+        logoContainer1.classList.remove('active'); // ซ่อนโลโก้ชุดที่ 1
+        logoContainer2.classList.add('active'); // ให้โลโก้ชุดที่ 2 เลื่อนเข้า
+        logoContainer2.classList.remove('exit'); // รีเซ็ตคลาส exit
+      }, 1500); // เวลาที่ใช้สำหรับเลื่อนออก
     } else {
-      leftSlide.classList.remove('visible');
-      leftSlide.classList.add('hidden');
+      // ถ้าโลโก้ชุดที่ 2 กำลังแสดง
+      logoContainer2.classList.add('exit'); // ให้โลโก้ชุดที่ 2 เลื่อนออก
+      setTimeout(() => {
+        logoContainer2.classList.remove('active'); // ซ่อนโลโก้ชุดที่ 2
+        logoContainer1.classList.add('active'); // ให้โลโก้ชุดที่ 1 เลื่อนเข้า
+        logoContainer1.classList.remove('exit'); // รีเซ็ตคลาส exit
+      }, 1500); // เวลาที่ใช้สำหรับเลื่อนออก
     }
-  
-    // ตรวจสอบเมื่อแถวล่างเข้ามาในมุมมอง
-    if (rightPosition < screenPosition && rightBottomPosition > 0) {
-      rightSlide.classList.add('visible');
-      rightSlide.classList.remove('hidden');
-    } else {
-      rightSlide.classList.remove('visible');
-      rightSlide.classList.add('hidden');
-    }
-  });
+  }, 20000); // ตั้งให้สลับทุก 20 วินาที
+});

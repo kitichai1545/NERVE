@@ -16,18 +16,27 @@ body {
 /* Fade-in effect */
 .fade-in {
   opacity: 0;
-  transform: translateY(20px);
-  /* เริ่มจากตำแหน่งที่ต่ำกว่าปกติ */
-  transition: opacity 1s ease-out, transform 1s ease-out;
-  /* ปรับความเร็วของการเลื่อนและความโปร่งใส */
+  transform: translateY(20px); /* เริ่มจากตำแหน่งที่ต่ำกว่าปกติ */
+  transition: opacity 1s ease-out, transform 1s ease-out; /* ปรับความเร็วของการเลื่อนและความโปร่งใส */
 }
 
 .fade-in.visible {
   opacity: 1;
-  transform: translateY(0);
-  /* เลื่อนกลับมาตำแหน่งปกติ */
+  transform: translateY(0); /* เลื่อนกลับมาตำแหน่งปกติ */
 }
 
+
+/* แอนิเมชันสำหรับคอนเทนต์แรก */
+.content1-fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1.5s ease-out, transform 1.5s ease-out;
+}
+
+.content1-fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
 
 
 
@@ -38,40 +47,64 @@ body {
 }
 
 nav {
-  padding: 1rem;
-  background-color: #000;
+  padding: 1rem 2rem;
+  background-color: rgba(0, 0, 0, 0.6); /* สีดำที่มีความโปร่งใส 50% */
   display: flex;
   justify-content: space-between;
-  position: fixed; /* Fix ตำแหน่งที่ด้านบน */
-  top: 0; /* ตำแหน่งที่ด้านบนของหน้าจอ */
-  left: 0;
-  width: 100%; /* ให้กว้างเต็มหน้าจอ */
-  z-index: 1000; /* ทำให้ nav อยู่บนสุด */
+  align-items: center;
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70%;
+  border-radius: 80px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
 }
 
 .nav-con {
   display: flex;
-  justify-content: space-between;
+  align-items: center;
+  padding-right: 0px; /* ลดให้ไม่มี padding ซ้ายเลย */
+  margin-left: 0px; /* เพิ่ม margin-left แทนหากต้องการ */
+}
+
+
+.logo {
+  margin-right: 2rem; /* ลดระยะห่างโลโก้ */
 }
 
 .menu {
   display: flex;
-  list-style: none;
-  align-items: center;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 30px; /* ระยะห่างระหว่างแต่ละเมนูและไอคอน */
 }
 
 .menu li {
-  margin: 0 1.5rem;
+  display: flex;
+  align-items: center;
 }
 
 .menu li a {
-  color: #fff;
-  text-decoration: none;
-
+  display: flex;
+    align-items: center;
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
 }
 
+.menu li a img {
+  width: 24px; /* ปรับขนาดไอคอนตามที่ต้องการ */
+  margin-right: 5px; /* ระยะห่างระหว่างไอคอนกับข้อความ */
+}
+
+
 .hero04 {
-  background-color: #ff007a;
+  background-color: #000;
   position: relative;
   height: 100vh;
   /* ให้ความสูงเต็มหน้าจอ */
@@ -83,14 +116,6 @@ nav {
   /* จัดให้อยู่ตรงกลางแนวตั้ง */
   text-align: left;
   /* จัดข้อความให้ชิดกลางในบรรทัด */
-  background-image: url('abstract-uv-ultraviolet-light-composition.jpg');
-  /* ถ้าใช้รูปเป็นพื้นหลัง */
-  background-size: cover;
-  /* ทำให้รูปภาพครอบคลุมเต็มพื้นที่ */
-  background-position: center;
-  /* จัดตำแหน่งของพื้นหลังให้อยู่ตรงกลาง */
-  background-repeat: no-repeat;
-  /* ป้องกันการซ้ำของรูปภาพพื้นหลัง */
 }
 
 .hero04-con {
@@ -133,6 +158,19 @@ nav {
   text-decoration: none;
 }
 
+.hero04-btn {
+  display: inline-block;
+  background-color: #DF00B1;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 18px;
+  text-decoration: none;
+}
+
+#openPopupBtnFooter {
+  text-decoration: none !important;
+}
+
 .hero04-img {
   position: relative;
   width: 100%;
@@ -144,15 +182,14 @@ nav {
   /* จัดให้อยู่ตรงกลาง */
 }
 
-.background-video {
+.background-video2 {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  /* วิดีโอเต็มความกว้างของคอนเทนเนอร์ */
-  height: 400px;
-  /* ขยายความสูงของวิดีโอ */
-  object-fit: cover;
-  /* ทำให้วิดีโอขยายตามสัดส่วนและครอบคลุมพื้นที่ */
-  border-radius: 10px;
-  /* เพิ่มมุมโค้ง */
+  height: 100%;
+  object-fit: cover; /* หรือคุณสามารถลองใช้ contain หากไม่ต้องการครอบตัด */
+  z-index: 0;
 }
 
 
@@ -370,7 +407,7 @@ button#closePopupBtn2 {
   flex-wrap: wrap;
   /* ทำให้รายการบริการห่อกลับไปบรรทัดใหม่เมื่อหน้าจอเล็ก */
   justify-content: space-between;
-  padding: 50px 150px;
+  padding: 50px 210px;
   /* ลด padding เพื่อให้มีพื้นที่แสดงผลมากขึ้น */
   background-color: #000;
 }
@@ -588,40 +625,97 @@ button#closePopupBtn2 {
   height: auto;
 }
 
-.footer-column {
+.footer-column1 {
   flex: 1;
   margin: 0 20px;
   min-width: 200px;
   /* กำหนดขนาดขั้นต่ำของคอลัมน์ */
+  text-align: left;
 }
 
-.footer-column3 {
-  flex: 1;
-  margin: 0 20px;
-  min-width: 200px;
-  /* กำหนดขนาดขั้นต่ำของคอลัมน์ */
-  text-align: center;
-}
-
-.footer-column h3 {
+.footer-column1 h3 {
   margin-bottom: 20px;
   font-size: 18px;
   font-weight: bold;
 }
 
 .footer-column p,
-.footer-column ul {
+.footer-column1 ul {
   margin-bottom: 20px;
   font-size: 14px;
   list-style-type: none;
 }
 
-.footer-column a {
+.footer-column1 a {
   color: #fff;
   text-decoration: none;
 }
 
-.footer-column a:hover {
+.footer-column1 a:hover {
+  text-decoration: underline;
+}
+
+
+
+.footer-column2 {
+  flex: 1;
+  margin: 0 20px;
+  min-width: 200px;
+  /* กำหนดขนาดขั้นต่ำของคอลัมน์ */
+  padding-left: 150px;
+}
+
+.footer-column2 h3 {
+  margin-bottom: 20px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.footer-column2 p,
+.footer-column2 ul {
+  margin-bottom: 20px;
+  font-size: 14px;
+  list-style-type: none;
+}
+
+.footer-column2 a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer-column2 a:hover {
+  text-decoration: underline;
+}
+
+
+
+.footer-column3 {
+  flex: 1;
+  margin: 0 20px;
+  min-width: 200px;
+  /* กำหนดขนาดขั้นต่ำของคอลัมน์ */
+  text-align: left;
+}
+
+.footer-column3 h3 {
+  margin-bottom: 20px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.footer-column3 p,
+.footer-column3 ul {
+  margin-bottom: 20px;
+  font-size: 14px;
+  list-style-type: none;
+}
+
+.footer-column3 a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer-column3 a:hover {
   text-decoration: underline;
 }
 

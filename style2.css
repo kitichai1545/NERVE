@@ -8,21 +8,65 @@ body {
   font-family: 'Kanit', sans-serif;
 }
 
-
-
-
-
-
 /* Fade-in effect */
 .fade-in {
   opacity: 0;
-  transform: translateY(20px); /* เริ่มจากตำแหน่งที่ต่ำกว่าปกติ */
-  transition: opacity 1s ease-out, transform 1s ease-out; /* ปรับความเร็วของการเลื่อนและความโปร่งใส */
+  transform: translateY(20px);
+  /* เริ่มจากตำแหน่งที่ต่ำกว่าปกติ */
+  transition: opacity 1s ease-out, transform 1s ease-out;
+  /* ปรับความเร็วของการเลื่อนและความโปร่งใส */
 }
 
 .fade-in.visible {
   opacity: 1;
-  transform: translateY(0); /* เลื่อนกลับมาตำแหน่งปกติ */
+  transform: translateY(0);
+  /* เลื่อนกลับมาตำแหน่งปกติ */
+}
+
+/* หน้าแรก: แอนิเมชันทำงานเมื่อโหลดหน้า */
+.fade-in-on-load {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.fade-in-on-load.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* แอนิเมชันสำหรับคอนเทนต์แรก */
+.content1-fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1.5s ease-out, transform 1.5s ease-out;
+}
+
+.content1-fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* แอนิเมชันสำหรับคอนเทนต์ที่สอง */
+.content2-fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1.5s ease-out, transform 1.5s ease-out;
+}
+
+.content2-fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* แอนิเมชันสำหรับคอนเทนต์แรก */
+.content1-fade-in, .content2-fade-in {
+  opacity: 0;
+  transition: opacity 1.5s ease-out; /* ใช้ transition เพื่อทำให้ค่อยๆ แสดงหรือซ่อน */
+}
+
+.content1-fade-in.visible, .content2-fade-in.visible {
+  opacity: 1; /* แสดงคอนเทนต์ */
 }
 
 
@@ -35,110 +79,176 @@ body {
 }
 
 nav {
-  padding: 1rem;
-  background-color: #000;
+  padding: 1rem 2rem;
+  background-color: rgba(0, 0, 0, 0.6); /* สีดำที่มีความโปร่งใส 50% */
   display: flex;
   justify-content: space-between;
-  position: fixed; /* Fix ตำแหน่งที่ด้านบน */
-  top: 0; /* ตำแหน่งที่ด้านบนของหน้าจอ */
-  left: 0;
-  width: 100%; /* ให้กว้างเต็มหน้าจอ */
-  z-index: 1000; /* ทำให้ nav อยู่บนสุด */
+  align-items: center;
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70%;
+  border-radius: 80px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
 }
 
 .nav-con {
   display: flex;
-  justify-content: space-between;
+  align-items: center;
+  padding-right: 0px; /* ลดให้ไม่มี padding ซ้ายเลย */
+  margin-left: 0px; /* เพิ่ม margin-left แทนหากต้องการ */
+}
+
+
+.logo {
+  margin-right: 2rem; /* ลดระยะห่างโลโก้ */
 }
 
 .menu {
   display: flex;
-  list-style: none;
-  align-items: center;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 30px; /* ระยะห่างระหว่างแต่ละเมนูและไอคอน */
 }
 
 .menu li {
-  margin: 0 1.5rem;
+  display: flex;
+  align-items: center;
 }
 
 .menu li a {
-  color: #fff;
-  text-decoration: none;
-
+  display: flex;
+    align-items: center;
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
 }
 
-.hero {
-  background-color: #ff007a;
+.menu li a img {
+  width: 24px; /* ปรับขนาดไอคอนตามที่ต้องการ */
+  margin-right: 5px; /* ระยะห่างระหว่างไอคอนกับข้อความ */
+}
+
+
+.hero02 {
   position: relative;
-  height: 100vh;
-  /* ให้ความสูงเต็มหน้าจอ */
-  display: flex;
-  /* ใช้ Flexbox */
-  justify-content: flex-start;
-  /* จัดให้อยู่ตรงกลางแนวนอน */
-  align-items: center;
-  /* จัดให้อยู่ตรงกลางแนวตั้ง */
-  text-align: left;
-  /* จัดข้อความให้ชิดกลางในบรรทัด */
-  background-image : url('path-to-your-image.jpg');
-  /* ถ้าใช้รูปเป็นพื้นหลัง */
-  background-size: cover;
-  /* ทำให้รูปภาพครอบคลุมเต็มพื้นที่ */
-  background-position: center;
-  /* จัดตำแหน่งของพื้นหลังให้อยู่ตรงกลาง */
-  background-repeat: no-repeat;
-  /* ป้องกันการซ้ำของรูปภาพพื้นหลัง */
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: left;
+    padding-left: 190px;
 }
 
-.hero-con {
-  display: flex;
+.background-video {
+  position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* หรือคุณสามารถลองใช้ contain หากไม่ต้องการครอบตัด */
+    z-index: -1;
 }
 
-.hero-info {
+.hero02-con {
+  display: flex;
+
+}
+
+.hero02-info {
   width: 100%;
   padding: 2rem;
   color: #fff;
 }
 
-.hero-info h3 {
+.hero02-info h1 {
+  font-size: 3rem;
+  font-weight: 400;
+  color: #DF00B1;
+}
+
+.hero02-info h3 {
   font-size: 2rem;
 }
 
 
-.hero-info p {
+.hero02-info p {
   margin: 1rem 0;
 }
 
-.hero-info .hero-btn {
+.hero02-info .hero02-btn {
   display: inline-block;
-  background-color: pink;
+  background-color: #DF00B1;
   color: #fff;
-  padding: 1rem;
-  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  border-radius: 18px;
   text-decoration: none;
 }
 
-.hero-img {
+
+/*คอนเท้นที่ 2 20วิ */
+.hero-info2 {
   position: relative;
+  z-index: 2;
   width: 100%;
-  /* ใช้พื้นที่เต็ม */
-  max-width: 600px;
-  /* ขยายความกว้างสูงสุดของวิดีโอให้ใหญ่ขึ้น */
-  height: auto;
-  margin: 0 auto;
-  /* จัดให้อยู่ตรงกลาง */
+  padding: 2rem;
+  color: #fff;
 }
 
-.background-video {
-  width: 100%;
-  /* วิดีโอเต็มความกว้างของคอนเทนเนอร์ */
-  height: 400px;
-  /* ขยายความสูงของวิดีโอ */
-  object-fit: cover;
-  /* ทำให้วิดีโอขยายตามสัดส่วนและครอบคลุมพื้นที่ */
-  border-radius: 10px;
-  /* เพิ่มมุมโค้ง */
+.hero-info2 h1 {
+  font-family: 'Kanit', sans-serif;
+  font-size: 3rem !important;
+  /* ขนาดตัวอักษรใหญ่ขึ้น */
+  font-weight: 400 !important;
+  /* ปรับน้ำหนักให้บาง */
+  color: #DF00B1;
+  line-height: 1; /* ค่าที่สูงกว่านี้จะเพิ่มระยะห่างระหว่างบรรทัด */
 }
+
+.hero-info2 h3 {
+  font-family: 'Kanit', sans-serif;
+  font-size: 2.5rem !important;
+  /* ขนาดตัวอักษรใหญ่ขึ้น */
+  font-weight: 500 !important;
+  /* ปรับน้ำหนักให้บาง */
+  color: #ffffff;
+  line-height: 1;
+  /* เพิ่มระยะห่างระหว่างบรรทัด */
+}
+
+.hero-info2 p {
+  font-family: 'Kanit', sans-serif;
+  font-size: 1rem !important;
+  /* ขนาดตัวอักษรใหญ่ขึ้น */
+  font-weight: 300 !important;
+  /* ปรับน้ำหนักให้บาง */
+  color: #ffffff;
+}
+
+.hero-info2 .hero02-btn {
+  display: inline-block;
+  background-color: #DF00B1;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 18px;
+  text-decoration: none;
+}
+
+.hero-btn {
+  display: inline-block;
+  background-color: #DF00B1;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 18px;
+  text-decoration: none;
+}
+
 
 /* Popup */
 .popup {
@@ -330,6 +440,10 @@ button#closePopupBtn2 {
   padding-top: 30px;
   text-align: center;
   margin-bottom: 30px;
+}
+
+.service-heading a {
+  text-decoration: none; /* เอาเส้นใต้ของลิงก์ออก */
 }
 
 .service-heading h2 {
@@ -617,6 +731,10 @@ button#closePopupBtn2 {
   margin-bottom: 30px;
 }
 
+.service2-6-heading a {
+  text-decoration: none; /* เอาเส้นใต้ของลิงก์ออก */
+}
+
 .service2-6-heading p {
   font-size: 16px;
   font-weight: Normal;
@@ -795,79 +913,6 @@ button#closePopupBtn2 {
   margin-bottom: 20px;
 }
 
-.hero02 {
-  background-color: #ff007a;
-  position: relative;
-  height: 100vh;
-  /* ให้ความสูงเต็มหน้าจอ */
-  display: flex;
-  /* ใช้ Flexbox */
-  justify-content: flex-start;
-  /* จัดให้อยู่ตรงกลางแนวนอน */
-  align-items: center;
-  /* จัดให้อยู่ตรงกลางแนวตั้ง */
-  text-align: left;
-  /* จัดข้อความให้ชิดกลางในบรรทัด */
-  background-image: url('518e07f4f68da43fed838995ae7ea0a7.jpg');
-  /* ถ้าใช้รูปเป็นพื้นหลัง */
-  background-size: cover;
-  /* ทำให้รูปภาพครอบคลุมเต็มพื้นที่ */
-  background-position: center;
-  /* จัดตำแหน่งของพื้นหลังให้อยู่ตรงกลาง */
-  background-repeat: no-repeat;
-  /* ป้องกันการซ้ำของรูปภาพพื้นหลัง */
-  padding-left: 190px;
-  /* กำหนดค่าให้ตรงกับระยะห่างของโลโก้ */
-}
-
-.hero02-con {
-  display: flex;
-
-}
-
-.hero02-info {
-  width: 100%;
-  padding: 2rem;
-  color: #fff;
-}
-
-.hero02-info h1 {
-  font-size: 3rem;
-  font-weight: 400;
-  color: #DF00B1;
-}
-
-.hero02-info h3 {
-  font-size: 2rem;
-}
-
-
-.hero02-info p {
-  margin: 1rem 0;
-}
-
-.hero02-info .hero02-btn {
-  display: inline-block;
-  background-color: #DF00B1;
-  color: #fff;
-  padding: 0.5rem 1rem;
-  border-radius: 18px;
-  text-decoration: none;
-}
-
-.hero02-img {
-  position: relative;
-  width: 100%;
-  /* ใช้พื้นที่เต็ม */
-  max-width: 600px;
-  /* ขยายความกว้างสูงสุดของวิดีโอให้ใหญ่ขึ้น */
-  height: auto;
-  margin: 0 auto;
-  /* จัดให้อยู่ตรงกลาง */
-}
-
-
-
 /** footer */
 .footer {
   background-color: #000;
@@ -914,48 +959,107 @@ button#closePopupBtn2 {
 }
 
 .footer .social-icons a {
-  margin-right: 10px;
+  margin-right: 15px; /* เพิ่มระยะห่างเท่ากันระหว่างแต่ละไอคอน */
+  display: inline-block; /* ทำให้ไอคอนเรียงตามแนวนอน */
 }
 
 .footer .social-icons img {
   width: 24px;
-  height: auto;
+  height: 24px;
+  object-fit: cover; /* เพื่อให้ภาพไอคอนเต็มพื้นที่โดยไม่เสียอัตราส่วน */
 }
 
-.footer-column {
+.footer-column1 {
   flex: 1;
   margin: 0 20px;
   min-width: 200px;
   /* กำหนดขนาดขั้นต่ำของคอลัมน์ */
+  text-align: left;
 }
 
-.footer-column3 {
-  flex: 1;
-  margin: 0 20px;
-  min-width: 200px;
-  /* กำหนดขนาดขั้นต่ำของคอลัมน์ */
-  text-align: center;
-}
-
-.footer-column h3 {
+.footer-column1 h3 {
   margin-bottom: 20px;
   font-size: 18px;
   font-weight: bold;
 }
 
 .footer-column p,
-.footer-column ul {
+.footer-column1 ul {
   margin-bottom: 20px;
   font-size: 14px;
   list-style-type: none;
 }
 
-.footer-column a {
+.footer-column1 a {
   color: #fff;
   text-decoration: none;
 }
 
-.footer-column a:hover {
+.footer-column1 a:hover {
+  text-decoration: underline;
+}
+
+
+
+.footer-column2 {
+  flex: 1;
+  margin: 0 20px;
+  min-width: 200px;
+  /* กำหนดขนาดขั้นต่ำของคอลัมน์ */
+  padding-left: 150px;
+}
+
+.footer-column2 h3 {
+  margin-bottom: 20px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.footer-column2 p,
+.footer-column2 ul {
+  margin-bottom: 20px;
+  font-size: 14px;
+  list-style-type: none;
+}
+
+.footer-column2 a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer-column2 a:hover {
+  text-decoration: underline;
+}
+
+
+
+.footer-column3 {
+  flex: 1;
+  margin: 0 20px;
+  min-width: 200px;
+  /* กำหนดขนาดขั้นต่ำของคอลัมน์ */
+  text-align: left;
+}
+
+.footer-column3 h3 {
+  margin-bottom: 20px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.footer-column3 p,
+.footer-column3 ul {
+  margin-bottom: 20px;
+  font-size: 14px;
+  list-style-type: none;
+}
+
+.footer-column3 a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer-column3 a:hover {
   text-decoration: underline;
 }
 
