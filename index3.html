@@ -36,12 +36,18 @@
     <section class="hero03">
         <div class="container03">
             <div class="hero03-con">
+
+                <video class="background-video2" autoplay muted loop>
+                    <source src="S2_COM.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+
                 <div id="content1" class="hero03-info content1-fade-in">
                     <h1>Media Production</h1>
                     <h3>38 ปีแห่งความเชี่ยวชาญ</h3>
                     <p>เราคือบริษัท Media Production ที่แข็งแกร่งด้วยประสบการณ์ยาวนานกว่า <br>
                          38 ปี ที่มาพร้อมความเชี่ยวชาญด้าน Creative Content Design & Strategy<br> 
-                         สร้างสรรค์ Visualทุกรูปแบบด้วยความเชี่ยวชาญระดับมืออาชีพ</p>
+                         สร้างสรรค์ Visual ทุกรูปแบบด้วยความเชี่ยวชาญระดับมืออาชีพ</p>
                     <a href="#" id="openPopupBtn" class="hero03-btn">ปรึกษาแผนสร้างสรรค์งาน</a>
                 </div>
 
@@ -53,11 +59,9 @@
     <!-- Popup Structure แยกออกมา -->
     <div id="popupForm" class="popup">
         <div class="popup-content">
-            <span id="closePopupBtn" class="close">&times;</span>
-            <img src="Logo.png" alt="">
+            <img src="Logo.png" alt=""><br>
             <h2>สร้างสรรค์ทุกโอกาสบนโลกดิจิตอล</h2>
             <p>ให้เราเป็นส่วนหนึ่งในธุรกิจคุณ</p> <br>
-
             <form>
                 <div class="form-row">
                     <div class="form-group">
@@ -82,51 +86,55 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="Budget">บัทเจ็ทรายเดือน*</label>
-                    <textarea id="Budget" name="Budget" placeholder="เลือกบัทเจ็ทรายเดือน" required></textarea>
-                </div> <br>
+                    <label for="Budget">เลือกบัทเจ็ทรายเดือน</label>
+                    <select id="Budget" class="dropdown-with-arrow" name="Budget" required>
+                        <option value="" disabled selected>เลือกบัทเจ็ทรายเดือน</option>
+                        <option value="30-50k">30,000 - 50,000 Baht</option>
+                        <option value="50-100k">50,000 - 100,000 Baht</option>
+                        <option value="100-300k">100,000 - 300,000 Baht</option>
+                        <option value="500-1M">500,000 - 1,000,000 Baht</option>
+                        <option value="more than 1M">More than 1,000,000 Baht</option>
+                    </select>
+                </div><br>
 
                 <div class="form-group">
-                    <label>บริการ</label>
+                    <label class="service-label">บริการ</label>
                     <div class="checkbox-container">
-                        <div class="checkbox-column"> <br>
+                        <div class="checkbox-column">
                             <div class="checkbox-group">
-                                <input type="checkbox" id="digitalMarketing">
+                                <input type="checkbox" id="digitalMarketing" class="custom-checkbox">
                                 <label for="digitalMarketing">
-                                    <img src="Checkbox.png" alt="Checkbox for Digital Marketing"> Digital Marketing
+                                    <img src="Checkbox.png" alt="Checkbox for Digital Marketing" class="checkbox-icon">
+                                    Digital Marketing
                                 </label>
                             </div>
                             <div class="checkbox-group">
-                                <input type="checkbox" id="creativeBusiness">
+                                <input type="checkbox" id="creativeBusiness" class="custom-checkbox">
                                 <label for="creativeBusiness">
-                                    <img src="Checkbox.png" alt="Checkbox for Creative Business"> Creative Business
+                                    <img src="Checkbox.png" alt="Checkbox for Creative Business" class="checkbox-icon">
+                                    Creative Business
                                 </label>
                             </div>
                             <div class="checkbox-group">
-                                <input type="checkbox" id="googleAds">
+                                <input type="checkbox" id="googleAds" class="custom-checkbox">
                                 <label for="googleAds">
-                                    <img src="Checkbox.png" alt="Checkbox for Google Ads"> Google Ads
+                                    <img src="Checkbox.png" alt="Checkbox for Google Ads" class="checkbox-icon"> Google
+                                    Ads
                                 </label>
                             </div>
                         </div>
                         <div class="checkbox-column">
                             <div class="checkbox-group">
-                                <input type="checkbox" id="seo">
-                                <label for="seo"><br>
-                                    <img src="Checkbox.png" alt="Checkbox for SEO"> SEO
+                                <input type="checkbox" id="seo" class="custom-checkbox">
+                                <label for="seo">
+                                    <img src="Checkbox.png" alt="Checkbox for SEO" class="checkbox-icon"> SEO
                                 </label>
                             </div>
                             <div class="checkbox-group">
-                                <input type="checkbox" id="multimediaProduction">
+                                <input type="checkbox" id="multimediaProduction" class="custom-checkbox">
                                 <label for="multimediaProduction">
-                                    <img src="Checkbox.png" alt="Checkbox for Multimedia Production"> Multimedia
-                                    Production
-                                </label>
-                            </div>
-                            <div class="checkbox-group">
-                                <input type="checkbox" id="ecommerceCPAS">
-                                <label for="ecommerceCPAS">
-                                    <img src="Checkbox.png" alt="Checkbox for Ecommerce & CPAS"> Ecommerce & CPAS
+                                    <img src="Checkbox.png" alt="Checkbox for Multimedia Production"
+                                        class="checkbox-icon"> Multimedia Production
                                 </label>
                             </div>
                         </div>
@@ -140,6 +148,10 @@
     </div>
 
 
+
+    <section class="services-heading">
+        <h3 class="service-heading fade-in">บริการของเรา</h3>
+    </section>
 
     <section class="services">
         <div class="service-item">
@@ -244,10 +256,10 @@
             <div class="footer-column2">
                 <h3>Our Services</h3>
                 <ul>
-                    <li><a href="#">Digital Marketing</a></li>
-                    <li><a href="#">Multimedia Production</a></li>
-                    <li><a href="#">Creative Business DEV</a></li>
-                    <li><a href="#">Blog</a></li>
+                    <li><a href="index2.html">Digital Marketing</a></li>
+                    <li><a href="index3.html">Multimedia Production</a></li>
+                    <li><a href="index4.html">Creative Business DEV</a></li>
+                    <li><a href="index5.html">Blog</a></li>
                 </ul>
             </div>
             <div class="footer-column3">
@@ -269,12 +281,12 @@
                 <p>Social media:</p>
 
                 <div class="social-icons">
-                    <a href="#"><img src="youtube (1).png" alt="YouTube"></a>
-                    <a href="#"><img src="facebook (1).png" alt="Facebook"></a>
-                    <a href="#"><img src="instagram (1).png" alt="instagram"></a>
-                    <a href="#"><img src="tiktok (2).png" alt="TikTok"></a>
-                    <a href="#"><img src="twitter (1).png" alt="X"></a>
-                    <a href="#"><img src="line (1).png" alt="Line"></a>
+                    <a href="https://www.youtube.com/@NerveCreative"><img src="youtube (1).png" alt="YouTube"></a>
+                    <a href="https://www.facebook.com/nervecreative.co.th"><img src="facebook (1).png" alt="Facebook"></a>
+                    <a href="https://www.instagram.com/nervecreative.co.th"><img src="instagram (1).png" alt="instagram"></a>
+                    <a href="https://www.tiktok.com/@nerve_creative"><img src="tiktok (2).png" alt="TikTok"></a>
+                    <a href="twitter.com/NerveCreative"><img src="twitter (1).png" alt="X"></a>
+                    <a href="https://lin.ee/Mpyftnf"><img"><img src="line (1).png" alt="Line"></a>
                 </div>
             </div>
         </div>

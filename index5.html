@@ -39,12 +39,12 @@
             <div class="hero05-con">
                 <div id="content1" class="hero05-info content1-fade-in">
                     <h1>Blog</h1>
-                        <h2>แบ่งปันไอเดีย
-                            อัปเดตเทรนด์ดิจิทัล</h2>
-                        <p>สร้างสรรค์เนื้อหาด้านคอนเทนต์คุณภาพจาก Nerve Digital Content Agency <br>
-                            เราแบ่งปันบทความจากเนิร์ฟถึงใจคุณ แชร์งานเขียนจากประสบการณ์และ <br> 
-                            อัปเดตเทรนด์ใหม่ที่มีประโยชน์บนโลกดิจิทัลจากทีมผู้เชี่ยวชาญ</p>
-                            <a href="#" id="openPopupBtn" class="hero05-btn">ปรึกษาแผนสร้างสรรค์งาน</a>
+                    <h2>แบ่งปันไอเดีย
+                        อัปเดตเทรนด์ดิจิทัล</h2>
+                    <p>สร้างสรรค์เนื้อหาด้านคอนเทนต์คุณภาพจาก Nerve Digital Content Agency <br>
+                        เราแบ่งปันบทความจากเนิร์ฟถึงใจคุณ แชร์งานเขียนจากประสบการณ์และ <br>
+                        อัปเดตเทรนด์ใหม่ที่มีประโยชน์บนโลกดิจิทัลจากทีมผู้เชี่ยวชาญ</p>
+                    <a href="#" id="openPopupBtn" class="hero05-btn">ปรึกษาแผนสร้างสรรค์งาน</a>
                 </div>
 
             </div>
@@ -55,11 +55,9 @@
     <!-- Popup Structure แยกออกมา -->
     <div id="popupForm" class="popup">
         <div class="popup-content">
-            <span id="closePopupBtn" class="close">&times;</span>
-            <img src="Logo.png" alt="">
+            <img src="Logo.png" alt=""><br>
             <h2>สร้างสรรค์ทุกโอกาสบนโลกดิจิตอล</h2>
             <p>ให้เราเป็นส่วนหนึ่งในธุรกิจคุณ</p> <br>
-
             <form>
                 <div class="form-row">
                     <div class="form-group">
@@ -84,51 +82,55 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="Budget">บัทเจ็ทรายเดือน*</label>
-                    <textarea id="Budget" name="Budget" placeholder="เลือกบัทเจ็ทรายเดือน" required></textarea>
-                </div> <br>
+                    <label for="Budget">เลือกบัทเจ็ทรายเดือน</label>
+                    <select id="Budget" class="dropdown-with-arrow" name="Budget" required>
+                        <option value="" disabled selected>เลือกบัทเจ็ทรายเดือน</option>
+                        <option value="30-50k">30,000 - 50,000 Baht</option>
+                        <option value="50-100k">50,000 - 100,000 Baht</option>
+                        <option value="100-300k">100,000 - 300,000 Baht</option>
+                        <option value="500-1M">500,000 - 1,000,000 Baht</option>
+                        <option value="more than 1M">More than 1,000,000 Baht</option>
+                    </select>
+                </div><br>
 
                 <div class="form-group">
-                    <label>บริการ</label>
+                    <label class="service-label">บริการ</label>
                     <div class="checkbox-container">
-                        <div class="checkbox-column"> <br>
+                        <div class="checkbox-column">
                             <div class="checkbox-group">
-                                <input type="checkbox" id="digitalMarketing">
+                                <input type="checkbox" id="digitalMarketing" class="custom-checkbox">
                                 <label for="digitalMarketing">
-                                    <img src="Checkbox.png" alt="Checkbox for Digital Marketing"> Digital Marketing
+                                    <img src="Checkbox.png" alt="Checkbox for Digital Marketing" class="checkbox-icon">
+                                    Digital Marketing
                                 </label>
                             </div>
                             <div class="checkbox-group">
-                                <input type="checkbox" id="creativeBusiness">
+                                <input type="checkbox" id="creativeBusiness" class="custom-checkbox">
                                 <label for="creativeBusiness">
-                                    <img src="Checkbox.png" alt="Checkbox for Creative Business"> Creative Business
+                                    <img src="Checkbox.png" alt="Checkbox for Creative Business" class="checkbox-icon">
+                                    Creative Business
                                 </label>
                             </div>
                             <div class="checkbox-group">
-                                <input type="checkbox" id="googleAds">
+                                <input type="checkbox" id="googleAds" class="custom-checkbox">
                                 <label for="googleAds">
-                                    <img src="Checkbox.png" alt="Checkbox for Google Ads"> Google Ads
+                                    <img src="Checkbox.png" alt="Checkbox for Google Ads" class="checkbox-icon"> Google
+                                    Ads
                                 </label>
                             </div>
                         </div>
                         <div class="checkbox-column">
                             <div class="checkbox-group">
-                                <input type="checkbox" id="seo">
-                                <label for="seo"><br>
-                                    <img src="Checkbox.png" alt="Checkbox for SEO"> SEO
+                                <input type="checkbox" id="seo" class="custom-checkbox">
+                                <label for="seo">
+                                    <img src="Checkbox.png" alt="Checkbox for SEO" class="checkbox-icon"> SEO
                                 </label>
                             </div>
                             <div class="checkbox-group">
-                                <input type="checkbox" id="multimediaProduction">
+                                <input type="checkbox" id="multimediaProduction" class="custom-checkbox">
                                 <label for="multimediaProduction">
-                                    <img src="Checkbox.png" alt="Checkbox for Multimedia Production"> Multimedia
-                                    Production
-                                </label>
-                            </div>
-                            <div class="checkbox-group">
-                                <input type="checkbox" id="ecommerceCPAS">
-                                <label for="ecommerceCPAS">
-                                    <img src="Checkbox.png" alt="Checkbox for Ecommerce & CPAS"> Ecommerce & CPAS
+                                    <img src="Checkbox.png" alt="Checkbox for Multimedia Production"
+                                        class="checkbox-icon"> Multimedia Production
                                 </label>
                             </div>
                         </div>
@@ -141,7 +143,7 @@
         </div>
     </div>
 
-    
+
 
     <section class="blog6">
         <div class="container6">
@@ -152,7 +154,7 @@
 
             <div class="carousel fade-in">
                 <!-- ลูกศรด้านซ้าย -->
-                <div class="carousel-arrow left-arrow">
+                <div class="carousel-arrow left-arrow" id="left-arrow">
                     <img src="Frame 427318989.png" alt="Frame 427318989">
                 </div>
 
@@ -161,12 +163,13 @@
                 <div class="carousel-items">
                     <div class="hero6-con">
                         <a href="index5-1.html" class="card">
-                            <img src="img1.png" alt="Image 1">
+                            <img src="4_342x222.jpg" alt="Image 1">
                             <div class="card-content">
-                                <h3>Facebook Ads เชื่อมต่อลูกค้า มองหากลุ่มที่ใช่</h3>
-                                <p>เราคือสายตาที่ทรงพลังในการจัดอันดับเพื่อคว้าชัยชนะ SEO/SEM
-                                    ที่อยู่เหนือกว่าคู่แข่งในทุกการค้นหา และยกระดับคอนเทนต์ให้โดดเด่นบนโลกดิจิตอล
-                                    พร้อมการันตีผลลัพธ์ภายใน 90 วัน</p>
+                                <h3>Facebook Ads & AI รวมพลังทำคอนเทนต์ที่ทัชใจลูกค้า</h3>
+                                <p>ยุคที่การตลาดดิจิทัลมีการพัฒนามากขึ้นทุกวัน
+                                    เทรนด์ทุกอย่างในโซเซียลมีเดียเปลี่ยนแปลงไปตามกระแสไวรัล หรือหากอธิบายให้เข้าใจง่าย ๆ
+                                    คือ มาไวไปเร็ว ทำให้หลายธุรกิจต้องปรับตัวจับกระแสเรียลไทม์เพื่อเพิ่มยอดการเข้าถึง
+                                </p>
 
                                 <div class="imgarrow-right">
                                     <img src="arrow-right.png" alt="Right Arrow">
@@ -174,37 +177,70 @@
                             </div>
                         </a>
 
-                        <a href="index5-1.html" class="card">
-                            <img src="img2.png" alt="Image 2">
+                        <a href="index5-2.html" class="card">
+                            <img src="1_342x222.jpg" alt="Image 2">
                             <div class="card-content">
-                                <h3>Facebook Ads เชื่อมต่อลูกค้า มองหากลุ่มที่ใช่</h3>
-                                <p>เราคือสายตาที่ทรงพลังในการจัดอันดับเพื่อคว้าชัยชนะ SEO/SEM
-                                    ที่อยู่เหนือกว่าคู่แข่งในทุกการค้นหา
-                                    และยกระดับคอนเทนต์ให้โดดเด่นบนโลกดิจิตอล พร้อมการันตีผลลัพธ์ภายใน 90 วัน</p>
-                                    <div class="imgarrow-right">
-                                        <img src="arrow-right.png" alt="Right Arrow">
-                                    </div>
+                                <h3>เคล็ดลับจาก 0 สู่ TOP Search ทำ SEO ให้ติดอันดับบน Google แบบมือโปร</h3>
+                                <p>หลายคนมักมีความเข้าใจผิดหรือไม่รู้ว่าควรเริ่มต้นจากตรงไหน
+                                    วันนี้เราจะนำเสนอเคล็ดลับที่คุณอาจยังไม่เคยได้รู้มาก่อนเกี่ยวกับสิ่งสำคัญ
+                                    ที่จะพาธุรกิจของคุณไปสู่การเติบโตของจริงบนโลกออนไลน์
+                                    เพื่อช่วยให้คุณสามารถดันอันดับบนเว็บไซต์จาก 0 ขึ้นไปสู่ . . .</p>
+                                <div class="imgarrow-right">
+                                    <img src="arrow-right.png" alt="Right Arrow">
                                 </div>
-                        </a>
-
-                        <a href="index5-1.html" class="card">
-                            <img src="img3.png" alt="Image 3">
-                            <div class="card-content">
-                                <h3>Facebook Ads เชื่อมต่อลูกค้า มองหากลุ่มที่ใช่</h3>
-                                <p>เราคือสายตาที่ทรงพลังในการจัดอันดับเพื่อคว้าชัยชนะ SEO/SEM
-                                    ที่อยู่เหนือกว่าคู่แข่งในทุกการค้นหา
-                                    และยกระดับคอนเทนต์ให้โดดเด่นบนโลกดิจิตอล พร้อมการันตีผลลัพธ์ภายใน 90 วัน</p>
-
-                                    <div class="imgarrow-right">
-                                        <img src="arrow-right.png" alt="Right Arrow">
-                                    </div>
                             </div>
                         </a>
+
+                        <a href="index5-3.html" class="card">
+                            <img src="3_342x222.jpg" alt="Image 3">
+                            <div class="card-content">
+                                <h3>แนวโน้ม DIGITAL MARKETING 2025 เทรนด์ที่ไหนที่จะมาแรงที่สุด</h3>
+                                <p>หากคุณคิดจะเริ่มทำการตลาดออนไลน์ สิ่งแรกที่ควรรู้ คือ
+                                    การทำความเข้าใจให้ลึกซึ้งเกี่ยวกับการตลาดในรูปแบบดิจิทัล
+                                    ซึ่งเป็นการตลาดผ่านช่องทางออนไลน์เพื่อโปรโมตและขายสินค้า/บริการ
+                                    โดยใช้กลยุทธ์และเครื่องมือต่าง ๆ เช่น SEO, SEM, . . .</p>
+
+                                <div class="imgarrow-right">
+                                    <img src="arrow-right.png" alt="Right Arrow">
+                                </div>
+                            </div>
+                        </a>
+
+                        <a href="index5-4.html" class="card">
+                            <img src="2_342x222.jpg" alt="Image 3">
+                            <div class="card-content">
+                                <h3>5 สัญญาณเตือนที่ควรทำ SEO Technical Audit</h3>
+                                <p>SEO Technical Audit คือ การวิเคราะห์และปรับปรุงประสิทธิภาพทางเทคนิคของเว็บไซต์
+                                    ตัวช่วยเพิ่มประสบการณ์ของผู้ใช้จากการตรวจสอบปัญหาเชิงลึกที่มีผลกระทบกับอันดับการค้นหาบนเว็บไซต์ของคุณ
+                                </p>
+
+                                <div class="imgarrow-right">
+                                    <img src="arrow-right.png" alt="Right Arrow">
+                                </div>
+                            </div>
+                        </a>
+
+                        <a href="index5-5.html" class="card">
+                            <img src="5_342x222.jpg" alt="Image 3">
+                            <div class="card-content">
+                                <h3>Hyper-Realistic Ads <br> 
+                                    เล่นใหญ่ซื้อใจคนดู </h3>
+                                <p>เคยรู้สึกไหมว่าบางครั้งโฆษณาดูดีจนไม่อยากเชื่อเหมือนกับว่าสินค้านี้มีชีวิตอยู่จริง ๆ
+                                    นั่นคือพลังของการสร้างโฆษณาในรูปแบบ Hyper-Realistic Ads จากจอภาพสู่การสร้าง
+                                    Augmented Reality (AR) ที่เหมือนจนเกินจริง ทำให้ใครเห็นก็ต้องหยุดดู
+                                </p>
+
+                                <div class="imgarrow-right">
+                                    <img src="arrow-right.png" alt="Right Arrow">
+                                </div>
+                            </div>
+                        </a>
+
                     </div>
                 </div>
 
                 <!-- ลูกศรด้านขวา -->
-                <div class="carousel-arrow right-arrow">
+                <div class="carousel-arrow right-arrow" id="right-arrow">
                     <img src="Frame 427318988.png" alt="Frame 427318989">
                 </div>
 
@@ -234,10 +270,10 @@
             <div class="footer-column2">
                 <h3>Our Services</h3>
                 <ul>
-                    <li><a href="#">Digital Marketing</a></li>
-                    <li><a href="#">Multimedia Production</a></li>
-                    <li><a href="#">Creative Business DEV</a></li>
-                    <li><a href="#">Blog</a></li>
+                    <li><a href="index2.html">Digital Marketing</a></li>
+                    <li><a href="index3.html">Multimedia Production</a></li>
+                    <li><a href="index4.html">Creative Business DEV</a></li>
+                    <li><a href="index5.html">Blog</a></li>
                 </ul>
             </div>
             <div class="footer-column3">
@@ -259,12 +295,16 @@
                 <p>Social media:</p>
 
                 <div class="social-icons">
-                    <a href="#"><img src="youtube (1).png" alt="YouTube"></a>
-                    <a href="#"><img src="facebook (1).png" alt="Facebook"></a>
-                    <a href="#"><img src="instagram (1).png" alt="instagram"></a>
-                    <a href="#"><img src="tiktok (2).png" alt="TikTok"></a>
-                    <a href="#"><img src="twitter (1).png" alt="X"></a>
-                    <a href="#"><img src="line (1).png" alt="Line"></a>
+                    <a href="https://www.youtube.com/@NerveCreative"><img src="youtube (1).png" alt="YouTube"></a>
+                    <a href="https://www.facebook.com/nervecreative.co.th"><img src="facebook (1).png"
+                            alt="Facebook"></a>
+                    <a href="https://www.instagram.com/nervecreative.co.th"><img src="instagram (1).png"
+                            alt="instagram"></a>
+                    <a href="https://www.tiktok.com/@nerve_creative"><img src="tiktok (2).png" alt="TikTok"></a>
+                    <a href="twitter.com/NerveCreative"><img src="twitter (1).png" alt="X"></a>
+                    <a href="https://lin.ee/Mpyftnf">
+                        <img"><img src="line (1).png" alt="Line">
+                    </a>
                 </div>
             </div>
         </div>
@@ -285,6 +325,7 @@
     <script src="javascript.js"></script> <!-- เชื่อมโยงไฟล์ JavaScript -->
     <script src="Moblie.js"></script> <!-- เชื่อมโยงไฟล์ JavaScript -->
     <script src="content CBD.js"></script> <!-- เชื่อมโยงไฟล์ JavaScript -->
+    <script src="Article slide.js"></script> <!-- เชื่อมโยงไฟล์ JavaScript -->
 
 </body>
 

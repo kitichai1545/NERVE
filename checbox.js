@@ -1,9 +1,11 @@
-document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
-    checkbox.addEventListener('change', (event) => {
-        if (event.target.checked) {
-            console.log(`${event.target.id} ถูกเลือก`);
+document.querySelectorAll('.custom-checkbox').forEach(checkbox => {
+    checkbox.addEventListener('change', function() {
+        const label = this.nextElementSibling;
+        const img = label.querySelector('.checkbox-icon');
+        if (this.checked) {
+            img.src = 'Checked.png'; // ไอคอนที่แสดงเมื่อถูกเลือก
         } else {
-            console.log(`${event.target.id} ไม่ถูกเลือก`);
+            img.src = 'Checkbox.png'; // ไอคอนเดิมเมื่อไม่ถูกเลือก
         }
     });
 });

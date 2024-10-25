@@ -36,32 +36,36 @@
     <section class="hero02 hero-section">
         <!-- วิดีโอพื้นหลัง ไม่ถูกซ่อน -->
         <div class="hero-img">
-            <video autoplay muted loop class="background-video fade-in-on-load">
+            <video autoplay muted loop class="background-video">
                 <source src="S1_COM2.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
-        <div class="container02">
-            <div class="hero02-con">
-                <!-- คอนเทนต์แรกที่จะถูกแสดงก่อน -->
-                <div id="content1" class="hero02-info content1-fade-in">
-                    <h1>Digital Marketing</h1>
-                    <h3>สร้างกลยุทธ์โฆษณาที่คุ้มค่า <br>
-                        ด้วยจุดเด่นของธุรกิจ</h3>
-                    <p>เราช่วยพัฒนากลยุทธ์โฆษณาให้แตกต่างและได้ผลลัพธ์ที่ดีเกินคาด<br>
-                        พร้อมให้บริการที่ครอบคลุมทุกแพลตฟอร์มออนไลน์เพื่อเพิ่มการ<br>
-                        เข้าถึงได้ในวงกว้าง</p>
-                    <a href="#" id="openPopupBtn" class="hero02-btn">รับแผนการตลาด</a>
-                </div>
+            <div class="container02">
+                <div class="hero02-con">
+                    <!-- คอนเทนต์แรกที่จะถูกแสดงก่อน -->
+                    <div id="content1" class="hero02-info content1-fade-in">
+                        <h1>Digital Marketing</h1>
+                        <h3>สร้างกลยุทธ์โฆษณาที่คุ้มค่า <br>
+                            ด้วยจุดเด่นของธุรกิจ</h3>
+                        <p>สร้างกลยุทธ์โฆษณาที่แตกต่างและได้ผลลัพธ์ที่ดีเกินคาด <br>
+                            พร้อมให้บริการที่ครอบคลุมทุกแพลตฟอร์มออนไลน์ <br>
+                            ปลอดภัยด้วยทีมกฎหมายจากเรา</p>
+                    </div>
 
-                <!-- คอนเทนต์ที่สองที่จะถูกแสดงหลังจากผ่านไป 20 วินาที -->
-                <div id="content2" class="hero-info2 content2-fade-in" style="display:none;">
-                    <h1>สัมผัสความมหัศจรรย์ <br>
-                        ของ SEO</h1>
-                    <h3>(Social Media Ads & SEO/SEM)</h3> <br>
-                    <p>เราคือดวงตาวิเศษที่สร้างคอนเทนต์ด้วยการมองลึกเข้าไปในโลกของ SEO <br>
-                        และพร้อมเปลี่ยนเกม SEM ให้ธุรกิจของคุณขึ้นไปถึงจุดสูงสุดบนยอดการค้นหาหน้าแรกของ Google</p> <br>
-                    <a href="#" id="openPopupBtn2" class="hero02-btn">รับแผนการตลาด</a>
-                </div>
+                    <!-- คอนเทนต์ที่สองที่จะถูกแสดงหลังจากผ่านไป 20 วินาที -->
+                    <div id="content2" class="hero-info2 content2-fade-in" style="display:none;">
+                        <h1>สัมผัสความมหัศจรรย์ <br>
+                            ของ SEO</h1>
+                        <h3>(Social Media Ads & SEO/SEM)</h3> <br>
+                        <p>เราคือดวงตาวิเศษที่สร้างคอนเทนต์ด้วยการมองลึกเข้าไปในโลกของ SEO <br>
+                            และพร้อมเปลี่ยนเกม SEM ให้ธุรกิจของคุณขึ้นไปถึงจุดสูงสุดบนยอดการค้นหาหน้าแรกของ Google</p>
+                    </div>
+                
+
+                    <div class="hero2-btn-wrapper">
+                    <a href="#" id="openPopupBtn2" class="hero02-btn fade-in1">รับแผนการตลาด</a>
+                    </div>
+
                 </div>
             </div>
     </section>
@@ -69,15 +73,12 @@
 
 
 
-
     <!-- Popup Structure แยกออกมา -->
     <div id="popupForm" class="popup">
         <div class="popup-content">
-            <span id="closePopupBtn" class="close">&times;</span>
-            <img src="Logo.png" alt="">
+            <img src="Logo.png" alt=""><br>
             <h2>สร้างสรรค์ทุกโอกาสบนโลกดิจิตอล</h2>
             <p>ให้เราเป็นส่วนหนึ่งในธุรกิจคุณ</p> <br>
-
             <form>
                 <div class="form-row">
                     <div class="form-group">
@@ -102,51 +103,55 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="Budget">บัทเจ็ทรายเดือน*</label>
-                    <textarea id="Budget" name="Budget" placeholder="เลือกบัทเจ็ทรายเดือน" required></textarea>
-                </div> <br>
+                    <label for="Budget">เลือกบัทเจ็ทรายเดือน</label>
+                    <select id="Budget" class="dropdown-with-arrow" name="Budget" required>
+                        <option value="" disabled selected>เลือกบัทเจ็ทรายเดือน</option>
+                        <option value="30-50k">30,000 - 50,000 Baht</option>
+                        <option value="50-100k">50,000 - 100,000 Baht</option>
+                        <option value="100-300k">100,000 - 300,000 Baht</option>
+                        <option value="500-1M">500,000 - 1,000,000 Baht</option>
+                        <option value="more than 1M">More than 1,000,000 Baht</option>
+                    </select>
+                </div><br>
 
                 <div class="form-group">
-                    <label>บริการ</label>
+                    <label class="service-label">บริการ</label>
                     <div class="checkbox-container">
-                        <div class="checkbox-column"> <br>
+                        <div class="checkbox-column">
                             <div class="checkbox-group">
-                                <input type="checkbox" id="digitalMarketing">
+                                <input type="checkbox" id="digitalMarketing" class="custom-checkbox">
                                 <label for="digitalMarketing">
-                                    <img src="Checkbox.png" alt="Checkbox for Digital Marketing"> Digital Marketing
+                                    <img src="Checkbox.png" alt="Checkbox for Digital Marketing" class="checkbox-icon">
+                                    Digital Marketing
                                 </label>
                             </div>
                             <div class="checkbox-group">
-                                <input type="checkbox" id="creativeBusiness">
+                                <input type="checkbox" id="creativeBusiness" class="custom-checkbox">
                                 <label for="creativeBusiness">
-                                    <img src="Checkbox.png" alt="Checkbox for Creative Business"> Creative Business
+                                    <img src="Checkbox.png" alt="Checkbox for Creative Business" class="checkbox-icon">
+                                    Creative Business
                                 </label>
                             </div>
                             <div class="checkbox-group">
-                                <input type="checkbox" id="googleAds">
+                                <input type="checkbox" id="googleAds" class="custom-checkbox">
                                 <label for="googleAds">
-                                    <img src="Checkbox.png" alt="Checkbox for Google Ads"> Google Ads
+                                    <img src="Checkbox.png" alt="Checkbox for Google Ads" class="checkbox-icon"> Google
+                                    Ads
                                 </label>
                             </div>
                         </div>
                         <div class="checkbox-column">
                             <div class="checkbox-group">
-                                <input type="checkbox" id="seo">
-                                <label for="seo"><br>
-                                    <img src="Checkbox.png" alt="Checkbox for SEO"> SEO
+                                <input type="checkbox" id="seo" class="custom-checkbox">
+                                <label for="seo">
+                                    <img src="Checkbox.png" alt="Checkbox for SEO" class="checkbox-icon"> SEO
                                 </label>
                             </div>
                             <div class="checkbox-group">
-                                <input type="checkbox" id="multimediaProduction">
+                                <input type="checkbox" id="multimediaProduction" class="custom-checkbox">
                                 <label for="multimediaProduction">
-                                    <img src="Checkbox.png" alt="Checkbox for Multimedia Production"> Multimedia
-                                    Production
-                                </label>
-                            </div>
-                            <div class="checkbox-group">
-                                <input type="checkbox" id="ecommerceCPAS">
-                                <label for="ecommerceCPAS">
-                                    <img src="Checkbox.png" alt="Checkbox for Ecommerce & CPAS"> Ecommerce & CPAS
+                                    <img src="Checkbox.png" alt="Checkbox for Multimedia Production"
+                                        class="checkbox-icon"> Multimedia Production
                                 </label>
                             </div>
                         </div>
@@ -161,7 +166,12 @@
 
     <section class="page2-section">
         <div class="service-heading fade-in">
-            <a href="index2-1.html"><h2>บริการดูแลโซเชียลมีเดียครบวงจร</h2></a>
+            <a href="#">
+                <h2>บริการดูแลโซเชียลมีเดียครบวงจร</h2>
+            </a>
+
+            <p>มุ่งสู่ความสำเร็จด้วยบริการที่หลากหลาย <br>
+                ตอบโจทย์ทุกมิติของความต้องการทางการตลาดออนไลน์ </p>
         </div>
 
         <div class="page2-container ">
@@ -173,9 +183,9 @@
                 <h3>Facebook Ads เชื่อมต่อลูกค้า
                     มองหากลุ่มที่ใช่</h3>
                 <p>
-                    วางแผนกลยุทธ์ผลักดันแบรนด์ธุรกิจของคุณแบบรอบด้าน สร้าง Facebook Ads ที่มีประสิทธิภาพสูง
-                    ด้วยการเชื่อมต่อลูกค้าที่ถูกกลุ่มตามความต้องการของลูกค้า
-                    และนำเสนอโฆษณาแบบเฉพาะเจาะจงอย่างเต็มประสิทธิภาพ แต่ไม่ลืมสร้างความโดดเด่นที่ดึงดูดผู้ใช้
+                    วางแผนกลยุทธ์ผลักดันแบรนด์ธุรกิจของคุณแบบรอบด้าน
+                    สร้าง Facebook Ads ที่มีประสิทธิภาพสูง ด้วยการเชื่อมต่อลูกค้าที่ถูกกลุ่ม
+                    ตามความต้องการ นำเสนอโฆษณาแบบเฉพาะเจาะจงอย่างเต็มประสิทธิภาพ และสร้างความโดดเด่นที่ดึงดูดผู้ใช้
                     พร้อมตรวจสอบทุกความคืบหน้าให้ได้ทุกรูปแบบ
                 </p>
 
@@ -275,11 +285,12 @@
 
     <section class="page2-6-section">
         <div class="service2-6-heading fade-in">
-            <a href="index2-2.html"><h2>สัมผัสความมหัศจรรย์ของ SEO&SEM (PPC)</h2></a>
+            <a href="#">
+                <h2>บริการทำ SEO&SEM (PPC)</h2>
+            </a>
 
-            <p>เราคือดวงตาวิเศษที่สร้างคอนเทนต์ด้วยการมองลึกเข้าไปในโลกของ SEO  <br>
-                และพร้อมเปลี่ยนเกม SEM
-                ให้ธุรกิจของคุณขึ้นไปถึงจุดสูงสุดบนยอดการค้นหาหน้าแรกของ Google (PPC)</p>
+            <p>พิชิต SEO/SEM ด้วยการจัดอันดับที่อยู่เหนือกว่าคู่แข่งในทุกการค้นหา <br>
+                และยกระดับคอนเทนต์ให้โดดเด่นบนโลกดิจิตอล พร้อมการันตีผลลัพธ์ภายใน 90 วัน </p>
         </div>
 
         <div class="page2-6-container">
@@ -312,7 +323,7 @@
                 <h3>สร้างสรรค์สุดยอด Content SEO  
                     กับทีมครีเอทีฟคอนเทนต์ผู้เชี่ยวชาญ</h3>
                 <p>
-                    เทางเลือกที่ดีที่สุดในการมองหาเขียนบทความใหม่ ๆ 
+                    ทางเลือกที่ดีที่สุดในการมองหาเขียนบทความใหม่ ๆ 
                     คอนเทนต์ที่ดีต้องตอบโจทย์และต่อเนื่องเพื่อให้ได้ Blog ที่ดึงดูดใจลูกค้าได้ดีที่สุด
                 </p>
                 <a href="https://lin.ee/Mpyftnf" class="page2-button fade-in">ปรึกษา Team Lead Content ➔</a>
@@ -356,10 +367,10 @@
             <div class="footer-column2">
                 <h3>Our Services</h3>
                 <ul>
-                    <li><a href="#">Digital Marketing</a></li>
-                    <li><a href="#">Multimedia Production</a></li>
-                    <li><a href="#">Creative Business DEV</a></li>
-                    <li><a href="#">Blog</a></li>
+                    <li><a href="index2.html">Digital Marketing</a></li>
+                    <li><a href="index3.html">Multimedia Production</a></li>
+                    <li><a href="index4.html">Creative Business DEV</a></li>
+                    <li><a href="index5.html">Blog</a></li>
                 </ul>
             </div>
             <div class="footer-column3">
@@ -381,12 +392,16 @@
                 <p>Social media:</p>
 
                 <div class="social-icons">
-                    <a href="#"><img src="youtube (1).png" alt="YouTube"></a>
-                    <a href="#"><img src="facebook (1).png" alt="Facebook"></a>
-                    <a href="#"><img src="instagram (1).png" alt="instagram"></a>
-                    <a href="#"><img src="tiktok (2).png" alt="TikTok"></a>
-                    <a href="#"><img src="twitter (1).png" alt="X"></a>
-                    <a href="#"><img src="line (1).png" alt="Line"></a>
+                    <a href="https://www.youtube.com/@NerveCreative"><img src="youtube (1).png" alt="YouTube"></a>
+                    <a href="https://www.facebook.com/nervecreative.co.th"><img src="facebook (1).png"
+                            alt="Facebook"></a>
+                    <a href="https://www.instagram.com/nervecreative.co.th"><img src="instagram (1).png"
+                            alt="instagram"></a>
+                    <a href="https://www.tiktok.com/@nerve_creative"><img src="tiktok (2).png" alt="TikTok"></a>
+                    <a href="twitter.com/NerveCreative"><img src="twitter (1).png" alt="X"></a>
+                    <a href="https://lin.ee/Mpyftnf">
+                        <img"><img src="line (1).png" alt="Line">
+                    </a>
                 </div>
             </div>
         </div>

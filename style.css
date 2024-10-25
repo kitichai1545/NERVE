@@ -41,25 +41,36 @@ body {
 /* แอนิเมชันสำหรับคอนเทนต์แรก */
 .content1-fade-in {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateX(-100px); /* เปลี่ยนจาก translateY เป็น translateX เพื่อเลื่อนจากทางซ้าย */
     transition: opacity 1.5s ease-out, transform 1.5s ease-out;
 }
 
 .content1-fade-in.visible {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateX(0); /* กลับมาตรงกลาง */
 }
 
 /* แอนิเมชันสำหรับคอนเทนต์ที่สอง */
 .content2-fade-in {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateX(-100px); /* เลื่อนจากทางซ้าย */
     transition: opacity 1.5s ease-out, transform 1.5s ease-out;
 }
 
 .content2-fade-in.visible {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateX(0); /* กลับมาตรงกลาง */
+}
+/* ปุ่มแยกออกมาอยู่นอกคอนเทนต์ พร้อมกับแอนิเมชัน */
+.fade-in1 {
+    opacity: 0;
+    transform: translateX(-100px); /* เลื่อนเข้าจากทางซ้าย */
+    transition: opacity 1.5s ease-out, transform 1.5s ease-out;
+}
+
+.fade-in1.visible {
+    opacity: 1;
+    transform: translateX(0); /* กลับมาตรงกลาง */
 }
 
 
@@ -191,27 +202,34 @@ body {
 
 
 
-.hero {
+/* สำหรับพื้นหลังและเลย์เอาต์หลัก */
+.hero-section {
     background-color: #000;
-    position: relative;
     height: 100vh;
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
-    text-align: left;
-    overflow: visible;
-    /* แก้จาก hidden เป็น visible เพื่อให้เนื้อหาไม่ถูกตัด */
-    background-image: url('path-to-your-image.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    flex-direction: column;
+}
+
+.container {
+    width: 100%;
+    display: flex;
+    flex-direction: column; /* จัดเรียงเนื้อหาให้เป็นแนวตั้ง */
+    justify-content: center;
+    align-items: center;
 }
 
 .hero-con {
     display: flex;
+    justify-content: space-between; /* วางข้อความและวิดีโอข้างกัน */
+    align-items: center;
+    width: 100%;
+    padding: 0 20px;
 }
 
 .hero-info {
+    width: 45%; /* ปรับให้ใช้พื้นที่ 45% ของความกว้าง */
     position: relative;
     z-index: 2;
     width: 100%;
@@ -221,7 +239,7 @@ body {
 
 .hero-info h1 {
     font-family: 'Kanit', sans-serif;
-    font-size: 5rem !important;
+    font-size: 4rem !important;
     /* ขนาดตัวอักษรใหญ่ขึ้น */
     font-weight: 400 !important;
     /* ปรับน้ำหนักให้บาง */
@@ -230,12 +248,12 @@ body {
 
 .hero-info h3 {
     font-family: 'Kanit', sans-serif;
-    font-size: 3rem !important;
+    font-size: 2.5rem !important;
     /* ขนาดตัวอักษรใหญ่ขึ้น */
     font-weight: 500 !important;
     /* ปรับน้ำหนักให้บาง */
     color: #ffffff;
-    line-height: 1;
+    line-height: 1.2;
     /* เพิ่มระยะห่างระหว่างบรรทัด */
 }
 
@@ -246,24 +264,92 @@ body {
     font-weight: 300 !important;
     /* ปรับน้ำหนักให้บาง */
     color: #ffffff;
+    text-align: justify;
 }
 
-.hero-info .hero-btn {
-    display: inline-block;
-    background-color: #DF00B1;
+
+
+.hero-info2 {
+    width: 45%; /* ปรับให้ใช้พื้นที่ 45% ของความกว้าง */
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    padding: 2rem;
     color: #fff;
-    padding: 0.5rem 1rem;
-    border-radius: 18px;
-    text-decoration: none;
 }
 
-.hero-btn {
-    display: inline-block;
-    background-color: #DF00B1;
-    color: #fff;
-    padding: 0.5rem 1rem;
-    border-radius: 18px;
-    text-decoration: none;
+.hero-info2 h1 {
+    font-family: 'Kanit', sans-serif;
+    font-size: 3rem !important;
+    /* ขนาดตัวอักษรใหญ่ขึ้น */
+    font-weight: 400 !important;
+    /* ปรับน้ำหนักให้บาง */
+    color: #DF00B1;
+}
+
+.hero-info2 h3 {
+    font-family: 'Kanit', sans-serif;
+    font-size: 2.5rem !important;
+    /* ขนาดตัวอักษรใหญ่ขึ้น */
+    font-weight: 500 !important;
+    /* ปรับน้ำหนักให้บาง */
+    color: #ffffff;
+    line-height: 1.2;
+    /* เพิ่มระยะห่างระหว่างบรรทัด */
+}
+
+.hero-info2 p {
+    font-family: 'Kanit', sans-serif;
+    font-size: 1rem !important;
+    /* ขนาดตัวอักษรใหญ่ขึ้น */
+    font-weight: 300 !important;
+    /* ปรับน้ำหนักให้บาง */
+    color: #ffffff;
+    text-align: justify;
+}
+
+
+
+
+
+
+.hero-img {
+    width: 120%; /* ปรับขนาดความกว้างของวิดีโอ */
+    padding: 20px; /* เพิ่ม padding เพื่อเว้นช่องว่างระหว่างวิดีโอกับขอบ */
+    display: flex;
+    justify-content: center;
+}
+
+.background-video {
+    width: 120%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.hero-btn-wrapper {
+    text-align: center; /* จัดปุ่มให้อยู่ตรงกลาง */
+    margin-top: 20px; /* เพิ่มระยะห่างระหว่างคอนเทนต์และปุ่ม */
+    position: absolute;
+    bottom: 120px;
+    left: 22%;
+    transform: translateX(-50%);
+}
+
+/* สำหรับหน้าจอขนาดเล็ก */
+@media (max-width: 768px) {
+    .hero-con {
+        flex-direction: column;
+    }
+
+    .hero-info, .hero-info2, .hero-img {
+    width: 40%; /* ลดขนาดของคอนเทนต์ข้อความ */
+    padding-right: 20px;
+    }
+
+    .background-video {
+        width: 100%;
+    }
 }
 
 #openPopupBtnFooter {
@@ -296,12 +382,12 @@ body {
 
 .hero-info2 h3 {
     font-family: 'Kanit', sans-serif;
-    font-size: 2.5rem !important;
+    font-size: 2rem !important;
     /* ขนาดตัวอักษรใหญ่ขึ้น */
     font-weight: 500 !important;
     /* ปรับน้ำหนักให้บาง */
     color: #ffffff;
-    line-height: 1;
+    line-height: 1.2;
     /* เพิ่มระยะห่างระหว่างบรรทัด */
 }
 
@@ -312,6 +398,7 @@ body {
     font-weight: 300 !important;
     /* ปรับน้ำหนักให้บาง */
     color: #ffffff;
+    text-align: justify;
 }
 
 .hero-info2 .hero-btn {
@@ -333,22 +420,6 @@ body {
 }
 
 
-
-.hero-img {
-    position: relative;
-    width: 100%;
-    height: auto;
-    margin: 0 auto;
-}
-
-.background-video {
-    width: 100%;
-    height: 400px;
-    object-fit: cover;
-    border-radius: 10px;
-    z-index: 1;
-}
-
 .background-video2 {
     position: absolute;
     top: 0;
@@ -357,6 +428,17 @@ body {
     height: 100%;
     object-fit: cover; /* หรือคุณสามารถลองใช้ contain หากไม่ต้องการครอบตัด */
     z-index: -1;
+}
+
+.background-video3 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* หรือคุณสามารถลองใช้ contain หากไม่ต้องการครอบตัด */
+    z-index: 0;
+    filter: brightness(50%); /* ลดความสว่างลง */
 }
 
 
@@ -430,9 +512,18 @@ body {
     /* ปิดการแสดง scroll bar */
 }
 
+.service-label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 10px; /* เพิ่มช่องว่างระหว่าง label กับ checkbox */
+    font-size: 18px;
+    color: #fff; /* หรือสีอื่นที่คุณต้องการ */
+}
+
 .form-group {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column; /* จัดวางเนื้อหาภายใน form-group ให้เป็นแนวตั้ง */
+    align-items: flex-start; /* จัดข้อความและ checkbox ให้อยู่ซ้าย */
 }
 
 .form-group .form-field {
@@ -451,14 +542,24 @@ body {
 
 .form-group input,
 .form-group textarea,
+/* สไตล์ทั่วไปสำหรับทุก dropdown */
 .form-group select {
     width: 100%;
     padding: 10px;
     border-radius: 25px;
-    /* เพิ่มความโค้งให้เหมือนกับภาพตัวอย่าง */
     border: 1px solid #ccc;
     box-sizing: border-box;
     font-family: 'Kanit', sans-serif;
+    appearance: none;
+    background-color: white;
+    color: #8E8B8B;
+}
+
+/* สไตล์เฉพาะสำหรับ dropdown ที่มีลูกศร */
+.dropdown-with-arrow {
+    padding-right: 40px; /* เพิ่มพื้นที่ด้านขวาให้ลูกศร */
+    background: url('Chevron\ down.png') no-repeat right 10px center;
+    background-size: 15px; /* ขนาดลูกศร */
 }
 
 .popup-content button {
@@ -508,38 +609,46 @@ input[type="checkbox"]:checked+label img {
     /* ใส่กรอบให้กับรูปที่เลือก */
 }
 
+
+
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.checkbox-group label {
+    margin-left: 10px; /* เพิ่มช่องว่างระหว่าง checkbox กับ label */
+    white-space: nowrap; /* บังคับให้ข้อความอยู่ในบรรทัดเดียว */
+}
+
+.custom-checkbox {
+    display: none; /* ซ่อน checkbox ดั้งเดิม */
+}
+
+.checkbox-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
 .checkbox-container {
     display: flex;
-    justify-content: flex-start;
-    /* ให้มีช่องว่างระหว่างคอลัมน์ */
-    margin-top: 10px;
-    padding-left: 0px;
-    gap: 30px;
+    flex-wrap: wrap; /* ให้ checkbox ที่เหลือขยับขึ้นมาข้างกันถ้ามีที่ว่าง */
+    gap: 30px; /* ช่องว่างระหว่างคอลัมน์ */
 }
 
 .checkbox-column {
     display: flex;
     flex-direction: column;
-    /* จัดรายการ checkbox ให้อยู่ในแนวตั้ง */
+    width: 45%; /* กำหนดความกว้างให้ checkbox แต่ละกลุ่ม */
 }
 
-.checkbox-group {
-    display: flex;
-    align-items: flex-start;
-    margin-bottom: 10px;
-    /* เพิ่มช่องว่างระหว่างแถว */
+.custom-checkbox:checked + label .checkbox-icon {
+    content: url('Checkbox1.png'); /* แสดงรูปภาพ "ถูก" เมื่อ checkbox ถูกเลือก */
 }
 
-.checkbox-group input {
-    margin-right: 10px;
-    /* เพิ่มช่องว่างระหว่าง checkbox และข้อความ */
-}
-
-.checkbox-group label {
-    display: block;
-    font-weight: bold;
-    color: #fff;
-}
 
 button.close-btn:first-of-type {
     width: 100%;
@@ -658,7 +767,6 @@ button#closePopupBtn2 {
     position: relative;
     height: 100vh;
     /* ให้ความสูงเต็มหน้าจอ */
-    background-image: url('camera-set-with-camera-camera-set-up.jpg');
     /* ใส่รูปภาพที่ต้องการ */
     background-size: cover;
     /* ทำให้รูปครอบคลุมเต็มพื้นที่ */
@@ -830,12 +938,13 @@ button#closePopupBtn2 {
 }
 
 .img-container img {
-    width: 30%;
-    height: auto;
+    width: 100%;
+    height: 250px;
     object-fit: cover;
     border-radius: 15px;
     margin-right: 10px;
     /* ปรับให้รูปภาพอยู่ในกรอบ */
+
 }
 
 /* แอนิเมชันสำหรับแถวที่ 1 */
@@ -877,8 +986,8 @@ button#closePopupBtn2 {
 
 
 
-/** หน้า 6 การ์ด */
-.container6 {
+  /** หน้า 6 การ์ด */
+  .container6 {
     background-color: #000;
     height: 100vh;
     /* ให้ความสูงเต็มหน้าจอ */
@@ -888,76 +997,77 @@ button#closePopupBtn2 {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-}
-
-.header-container {
+  }
+  
+  .header-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
     max-width: 1100px;
     margin-bottom: 20px;
-}
-
-.article-title {
+  }
+  
+  .article-title {
     font-family: 'Kanit', sans-serif;
     font-size: 2.5rem;
     font-weight: bold;
     color: #fff;
-}
-
-.view-all-btn {
+  }
+  
+  .view-all-btn {
     font-family: 'Kanit', sans-serif;
     font-size: 16px;
     color: #fff;
     text-decoration: none;
-}
-
-.hero6-con {
+  }
+  
+  .hero6-con {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start; /* เรียงการ์ดจากซ้ายไปขวา */
     gap: 35px;
     width: 100%;
     max-width: 1200px;
-}
-
-.card {
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  .card {
     background-color: transparent;
-    border: 1px solid #808080;
-    color: #fff;
-    flex: 0 0 342px;
-    margin: 0;
-    padding: 0;
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: none;
-    text-decoration: none;
-    position: relative;
-    min-height: 530px; /* เพิ่มความสูงขั้นต่ำเพื่อให้การ์ดยาวขึ้น */
-}
-
-.card img {
+      border: 1px solid #808080;
+      color: #fff;
+      flex: 0 0 342px;
+      margin: 0;
+      padding: 0;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: none;
+      text-decoration: none;
+      position: relative;
+      min-height: 530px; /* เพิ่มความสูงขั้นต่ำเพื่อให้การ์ดยาวขึ้น */
+  }
+  
+  .card img {
     width: 100%;
     height: auto;
-}
-
-.card-content {
+  }
+  
+  .card-content {
     padding: 20px;
     text-align: left;
-}
-
-.card-content h3 {
+  }
+  
+  .card-content h3 {
     font-size: 18px;
     margin-bottom: 10px;
-}
-
-.card-content p {
+  }
+  
+  .card-content p {
     font-size: 14px;
     color: #fff;
     margin-bottom: 20px;
-}
-
-.card-btn {
+  }
+  
+  .card-btn {
     display: block;
     background-color: #e6007e;
     color: #fff;
@@ -965,27 +1075,26 @@ button#closePopupBtn2 {
     text-align: center;
     border-radius: 5px;
     text-decoration: none;
-}
-
-/* จัดสไลด์ */
-.carousel {
+  }
+  
+  /* จัดสไลด์ */
+  .carousel {
     position: relative;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 0 auto;
-}
-
-.carousel-items {
+  }
+  
+  .carousel-items {
     display: flex;
-    justify-content: space-between;
-    flex-wrap: nowrap; /* ห้ามการ์ดขึ้นบรรทัดใหม่ */
-    gap: 10px; /* ปรับระยะห่างระหว่างการ์ดให้ใกล้กัน */
-}
-
-/* ลูกศร */
-.carousel-arrow {
+    overflow: hidden;
+    scroll-behavior: smooth;
+  }
+  
+  /* ลูกศร */
+  .carousel-arrow {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -996,18 +1105,29 @@ button#closePopupBtn2 {
     cursor: pointer;
     border-radius: 50%;
     z-index: 10;
-}
-
-.left-arrow {
+    cursor: pointer;
+  }
+  
+  .left-arrow {
     left: 50px;
-}
-
-.right-arrow {
-    right: 50px;
-}
-
-/* ปุ่ม 3 ปุ่มข้างล่าง */
-.carousel-indicators {
+  }
+  
+  .right-arrow {
+    position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 2rem;
+      color: #fff;
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 10px;
+      cursor: pointer;
+      border-radius: 50%;
+      z-index: 10;
+      right: 50px;
+  }
+  
+  /* ปุ่ม 3 ปุ่มข้างล่าง */
+  .carousel-indicators {
     position: absolute;
     bottom: -50px;
     /* ปรับตำแหน่งให้อยู่นอกกรอบการ์ด */
@@ -1015,22 +1135,22 @@ button#closePopupBtn2 {
     transform: translateX(-50%);
     display: flex;
     gap: 5px;
-}
-
-.dot {
+  }
+  
+  .dot {
     height: 10px;
     width: 10px;
     background-color: #bbb;
     border-radius: 50%;
     display: inline-block;
     cursor: pointer;
-}
-
-.dot.active {
+  }
+  
+  .dot.active {
     background-color: #717171;
-}
-
-.dot {
+  }
+  
+  .dot {
     height: 15px;
     width: 15px;
     background-color: #bbb;
@@ -1038,12 +1158,19 @@ button#closePopupBtn2 {
     display: inline-block;
     margin: 0 5px;
     cursor: pointer;
-}
-
-.dot.active {
+  }
+  
+  .dot.active {
     background-color: #717171;
-}
-
+  }
+  
+  .imgarrow-right {
+    position: absolute;
+    right: 20px; /* ระยะห่างจากขอบขวา */
+    bottom: 10px; /* ระยะห่างจากขอบล่าง */
+    width: 25px; /* ขนาดของลูกศร */
+    height: auto;
+  }
 
 
 
@@ -1251,7 +1378,9 @@ button#closePopupBtn2 {
     font-weight: bold;
 }
 
-.footer-column p,
+.footer-column1 p{
+    text-align: justify;
+}
 .footer-column1 ul {
     margin-bottom: 20px;
     font-size: 14px;

@@ -256,9 +256,18 @@ nav {
   /* ปิดการแสดง scroll bar */
 }
 
+.service-label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 10px; /* เพิ่มช่องว่างระหว่าง label กับ checkbox */
+  font-size: 18px;
+  color: #fff; /* หรือสีอื่นที่คุณต้องการ */
+}
+
 .form-group {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column; /* จัดวางเนื้อหาภายใน form-group ให้เป็นแนวตั้ง */
+  align-items: flex-start; /* จัดข้อความและ checkbox ให้อยู่ซ้าย */
 }
 
 .form-group .form-field {
@@ -277,14 +286,24 @@ nav {
 
 .form-group input,
 .form-group textarea,
+/* สไตล์ทั่วไปสำหรับทุก dropdown */
 .form-group select {
   width: 100%;
   padding: 10px;
   border-radius: 25px;
-  /* เพิ่มความโค้งให้เหมือนกับภาพตัวอย่าง */
   border: 1px solid #ccc;
   box-sizing: border-box;
   font-family: 'Kanit', sans-serif;
+  appearance: none;
+  background-color: white;
+  color: #8E8B8B;
+}
+
+/* สไตล์เฉพาะสำหรับ dropdown ที่มีลูกศร */
+.dropdown-with-arrow {
+  padding-right: 40px; /* เพิ่มพื้นที่ด้านขวาให้ลูกศร */
+  background: url('Chevron\ down.png') no-repeat right 10px center;
+  background-size: 15px; /* ขนาดลูกศร */
 }
 
 .popup-content button {
@@ -334,37 +353,44 @@ input[type="checkbox"]:checked+label img {
   /* ใส่กรอบให้กับรูปที่เลือก */
 }
 
+
+
+.checkbox-group {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.checkbox-group label {
+  margin-left: 10px; /* เพิ่มช่องว่างระหว่าง checkbox กับ label */
+  white-space: nowrap; /* บังคับให้ข้อความอยู่ในบรรทัดเดียว */
+}
+
+.custom-checkbox {
+  display: none; /* ซ่อน checkbox ดั้งเดิม */
+}
+
+.checkbox-icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
 .checkbox-container {
   display: flex;
-  justify-content: flex-start;
-  /* ให้มีช่องว่างระหว่างคอลัมน์ */
-  margin-top: 10px;
-  padding-left: 0px;
-  gap: 30px;
+  flex-wrap: wrap; /* ให้ checkbox ที่เหลือขยับขึ้นมาข้างกันถ้ามีที่ว่าง */
+  gap: 30px; /* ช่องว่างระหว่างคอลัมน์ */
 }
 
 .checkbox-column {
   display: flex;
   flex-direction: column;
-  /* จัดรายการ checkbox ให้อยู่ในแนวตั้ง */
+  width: 45%; /* กำหนดความกว้างให้ checkbox แต่ละกลุ่ม */
 }
 
-.checkbox-group {
-  display: flex;
-  align-items: flex-start;
-  margin-bottom: 10px;
-  /* เพิ่มช่องว่างระหว่างแถว */
-}
-
-.checkbox-group input {
-  margin-right: 10px;
-  /* เพิ่มช่องว่างระหว่าง checkbox และข้อความ */
-}
-
-.checkbox-group label {
-  display: block;
-  font-weight: bold;
-  color: #fff;
+.custom-checkbox:checked + label .checkbox-icon {
+  content: url('Checkbox1.png'); /* แสดงรูปภาพ "ถูก" เมื่อ checkbox ถูกเลือก */
 }
 
 button.close-btn:first-of-type {
@@ -448,6 +474,7 @@ button#closePopupBtn2 {
   font-size: 16px;
   line-height: 1.5;
   margin-bottom: 20px;
+  text-align: justify;
 }
 
 .cta-link {
@@ -486,8 +513,8 @@ button#closePopupBtn2 {
 }
 
 .img-container img {
-  width: 30%;
-  height: auto;
+  width: 100%;
+  height: 250px;
   object-fit: cover;
   border-radius: 15px;
   margin-right: 10px;
@@ -639,7 +666,9 @@ button#closePopupBtn2 {
   font-weight: bold;
 }
 
-.footer-column p,
+.footer-column1 p{
+  text-align: justify;
+}
 .footer-column1 ul {
   margin-bottom: 20px;
   font-size: 14px;
