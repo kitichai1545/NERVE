@@ -18,9 +18,15 @@
         <div class="container">
             <div class="nav-con">
                 <div class="logo">
-                    <a href="index.html"><img src="Logo.png" alt=""></a>
+                    <a href="index.html"><img src="Logo.png" alt="Logo"></a>
                 </div>
-                <ul class="menu">
+                <!-- Hamburger icon สำหรับมือถือ -->
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <ul class="menu" id="menu">
                     <li><a href="index2.html" style="color: #DF00B1;">Digital Marketing</a></li>
                     <li><a href="index3.html">Multimedia Production</a></li>
                     <li><a href="index4.html">Creative Business DEV</a></li>
@@ -33,10 +39,13 @@
         </div>
     </nav>
 
-    <section class="hero02 hero-section">
+    <section class="hero02 ">
         <!-- วิดีโอพื้นหลัง ไม่ถูกซ่อน -->
         <div class="hero-img">
-            <video autoplay muted loop class="background-video">
+            <video class="background-video" autoplay muted loop>
+                <!-- วิดีโอสำหรับหน้าจอมือถือ -->
+            <source src="S1_Mobile2.mp4" type="video/mp4" media="(max-width: 768px)">
+                 <!-- วิดีโอสำหรับหน้าจอใหญ่ -->
                 <source src="S1_COM2.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
@@ -422,6 +431,7 @@
     <script src="javascript.js"></script> <!-- เชื่อมโยงไฟล์ JavaScript -->
     <script src="Moblie.js"></script> <!-- เชื่อมโยงไฟล์ JavaScript -->
     <script src="content.js"></script> <!-- เชื่อมโยงไฟล์ JavaScript -->
+    <script src="Article slide.js"></script> <!-- เชื่อมโยงไฟล์ JavaScript -->
 </body>
 
 </html>

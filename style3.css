@@ -141,6 +141,9 @@ nav {
 
 .hero03-info p {
     margin: 1rem 0;
+    white-space: normal; /* อนุญาตให้ตัดบรรทัด */
+  overflow-wrap: break-word; /* ตัดคำที่ยาวเกิน */
+  max-width: 500px; /* กำหนดความกว้างสูงสุดของข้อความ */
 }
 
 .hero03-info .hero03-btn {
@@ -709,4 +712,324 @@ button#closePopupBtn2 {
   padding-top: 20px;
   font-size: 12px;
   color: #fff;
+}
+
+
+
+
+
+
+
+
+/* ซ่อนเมนูสำหรับหน้าจอเล็ก */
+@media (max-width: 768px) {
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* ซ่อนส่วนที่เกินออกทางด้านข้างบนหน้าจอโทรศัพท์ */
+  }
+
+  nav {
+      padding: 1rem 2rem;
+      top: 0;
+      left: 0;
+      background-color: #000;
+      width: 100%; /* ให้ครอบคลุมความกว้างของหน้าจอ */
+      border-radius: 0;
+      z-index: 1000;
+      transform: translateX(0); /* เอา translateX ออกเพื่อให้อยู่ชิดขอบซ้าย */
+  }
+
+  .nav-con {
+      display: flex;
+      justify-content: flex-start; /* จัดเนื้อหาไปทางซ้าย */
+      align-items: center; /* ให้อยู่ตรงกลางแนวตั้ง */
+      padding-left: 1rem; /* เพิ่ม padding เพื่อขยับโลโก้ออกจากขอบซ้าย */
+      width: 100%;
+  }
+
+  .logo {
+      margin-left: 0px;
+      /* ขยับโลโก้ให้อยู่ห่างจากขอบซ้าย */
+  }
+
+  .menu {
+      display: none;
+      /* ซ่อนเมนู */
+      flex-direction: column;
+      background-color: #000;
+      position: absolute;
+      top: 60px;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      align-items: self-start;
+      line-height: 1.0; /* ปรับให้ใกล้กันมากขึ้น */
+      padding-top: 10px;
+      padding-bottom: 20px;
+  }
+
+  .menu li {
+      padding-left: 45px; /* ปรับขนาดตามความต้องการ */
+    }
+
+  .menu.active {
+      display: flex;
+      /* แสดงเมนูเมื่อคลิกไอคอน */
+  }
+
+
+  /* Hamburger icon */
+  .hamburger {
+      position: absolute;
+      right: 20px;
+      /* บังคับให้แฮมเบอร์เกอร์อยู่ชิดซ้าย */
+      top: 50%;
+      /* ปรับให้แฮมเบอร์เกอร์อยู่กึ่งกลางในแนวตั้ง */
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 25px;
+      cursor: pointer;
+  }
+
+  .hamburger span {
+      display: block;
+      width: 30px;
+      height: 3px;
+      background-color: #fff;
+      margin: 4px 0;
+      transition: all 0.3s ease-in-out;
+  }
+
+  .container {
+    width: 100%;
+    display: flex;
+    flex-direction: column; /* จัดเรียงเนื้อหาให้เป็นแนวตั้ง */
+    justify-content: center;
+    align-items: center;
+  }
+
+
+
+
+
+
+  /********************************************************************************/
+
+
+
+  /* สำหรับพื้นหลังและเลย์เอาต์หลัก */
+.hero03 {
+  height: 100vh; /* ให้กินพื้นที่ทั้งหน้าจอ */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center; /* ให้อยู่ตรงกลางทั้งแนวตั้งและแนวนอน */
+    margin: 0;
+    padding: 0;
+}
+
+.container03 {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center; /* ให้อยู่ตรงกลางทั้งแนวตั้งและแนวนอน */
+    padding: 0;
+    margin: 0;
+}
+
+.hero03-con {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 0 20px; /* ตรวจสอบค่า padding */
+  margin: 0; /* ลด margin ถ้ามี */
+
+}
+
+/*****************************content 1*********************************************/
+
+.hero03-info {
+  max-width: 600px; /* ให้ข้อความมีความกว้างไม่เกินนี้ */
+    margin: 0 auto; /* ให้ข้อความอยู่ตรงกลาง */
+    padding: 0 20px; /* เพิ่ม padding ข้างเพื่อให้อ่านง่ายขึ้น */
+    text-align: center;
+}
+
+.hero03-info h1 {
+  font-family: 'Kanit', sans-serif;
+  font-size: 48px !important;
+  /* ขนาดตัวอักษรใหญ่ขึ้น */
+  font-weight: 400 !important;
+  /* ปรับน้ำหนักให้บาง */
+  color: #DF00B1;
+  margin: 0; /* ปรับ margin ให้เหมาะสม */
+    padding: 0;
+  
+}
+
+.hero03-info h3 {
+  font-family: 'Kanit', sans-serif;
+  font-size: 24px !important;
+  /* ขนาดตัวอักษรใหญ่ขึ้น */
+  font-weight: 500 !important;
+  /* ปรับน้ำหนักให้บาง */
+  color: #ffffff;
+  line-height: 1.2;
+  /* เพิ่มระยะห่างระหว่างบรรทัด */
+  margin-bottom: 20px; /* ปรับระยะห่างด้านล่างของ h3 */
+    padding: 0;
+  
+}
+
+.hero03-info p {
+  font-family: 'Kanit', sans-serif;
+  font-size: 1rem !important;
+  /* ขนาดตัวอักษรใหญ่ขึ้น */
+  font-weight: 300 !important;
+  /* ปรับน้ำหนักให้บาง */
+  color: #ffffff;
+  text-align: center;
+  margin: 0; /* ปรับ margin ให้เหมาะสม */
+  padding: 0;
+}
+
+/********************************ปุ่ม popup*************************************************/
+
+.hero03-btn {
+  display: inline-block;
+  background-color: #DF00B1;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 18px;
+  text-decoration: none;
+  margin-top: 20px;
+}
+
+#openPopupBtnFooter {
+  text-decoration: none !important;
+}
+
+
+.background-video2 {
+
+  height: 100vh; /* ให้สูงเต็มหน้าจอ */
+      object-fit: cover; /* ครอบคลุมพื้นที่ */
+}
+
+/*****************************************บริการของเรา*******************************************/
+
+
+.services-heading {
+  flex-direction: column;
+  text-align: center;
+  padding-top: 50px;
+  padding-bottom: 20px;
+  padding-left: 50px;
+  padding-right: 50px;
+  background-color: #000;
+}
+
+.services-heading h3 {
+  color: #fff;
+  font-size: 50px;
+}
+
+
+  .services {
+    flex-direction: column;
+    display: flex;
+    padding: 50px;
+    background-color: #000; /* สีพื้นหลัง */
+  }
+  
+  .service-item {
+    max-width: 300px;
+    text-align: left;
+    color: #fff;
+  }
+
+  .service-content p {
+    font-size: 15px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    text-align: left;
+  }
+  
+  .service-icon img {
+    width: 50px; /* ปรับขนาดไอคอน */
+    margin-bottom: 20px;
+    margin-top: 20px;
+  }
+  .cta-link {
+    color: #DF00B1;
+    text-decoration: none;
+    font-weight: 400;
+
+  }
+  
+  .cta-link:hover {
+    color: #fff;
+    text-decoration: underline;
+  }
+
+  .img-container {
+    display: flex;
+    gap: 20px;
+    margin: 20px 0;
+    /* ให้การเคลื่อนที่เป็นแนวนอน */
+    white-space: nowrap;
+}
+
+.img-container img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 15px;
+    margin-right: 10px;
+    /* ปรับให้รูปภาพอยู่ในกรอบ */
+
+}
+
+.footer-column2 {
+  flex: 1;
+  margin: 0 20px;
+  min-width: 200px;
+  /* กำหนดขนาดขั้นต่ำของคอลัมน์ */
+  padding-left: 0px;
+}
+
+.footer-column2 h3 {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.footer-column2 p,
+.footer-column2 ul {
+  margin-bottom: 20px;
+  font-size: 14px;
+  list-style-type: none;
+}
+
+.footer-column2 a {
+  color: #fff;
+  text-decoration: none;
+  line-height: 2; /* ระยะห่างระหว่างบรรทัด */
+}
+
+.footer-column2 a:hover {
+  text-decoration: underline;
+}
+  
+  
+
 }
