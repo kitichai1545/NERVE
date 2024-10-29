@@ -1865,6 +1865,117 @@ button#closePopupBtn2 {
     height: auto;
   }
 
+
+
+
+  .blog7 {
+    position: relative;
+    background-color: #000;
+    padding: 10px 20px;
+    height: 100vh;
+}
+
+.blog7-text {
+    font-size: 50px;
+    color: #fff;
+    text-align: center;
+    padding-bottom: 40px;
+}
+
+.logo-row img {
+    max-width: 50px !important; /* ลดขนาดโลโก้ให้เหมาะกับมือถือ */
+    height: auto;
+}
+
+/* ตั้งค่าเหมือนกันสำหรับทั้งชุดที่ 1 และ 2 */
+.logo-container, .logo-container2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    position: absolute;
+    top: 120px;
+    left: 0;
+    width: 100%;
+}
+
+/* ใช้ grid เพื่อให้แสดงผลแบบ 2 คอลัมน์ */
+.logo-row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-row img {
+    max-width: 80px !important;
+    height: auto;
+}
+
+/* การเลื่อนเข้าและออกในแนวตั้ง */
+.left-slide {
+    transform: translateY(-100%); /* เลื่อนขึ้น */
+    transition: transform 1.5s ease;
+}
+
+.right-slide {
+    transform: translateY(100%); /* เลื่อนลง */
+    transition: transform 1.5s ease;
+}
+
+.logo-container.active .left-slide,
+.logo-container2.active .left-slide {
+    transform: translateY(0); /* แสดงแถวบน */
+}
+
+.logo-container.active .right-slide,
+.logo-container2.active .right-slide {
+    transform: translateY(0); /* แสดงแถวล่าง */
+}
+
+.logo-container.exit .left-slide,
+.logo-container2.exit .left-slide {
+    transform: translateY(-100%); /* ซ่อนแถวบน */
+}
+
+.logo-container.exit .right-slide,
+.logo-container2.exit .right-slide {
+    transform: translateY(100%); /* ซ่อนแถวล่าง */
+}
+
+/* ตั้งค่าให้ logo-container2 ไม่แสดงเมื่อยังไม่ active */
+.logo-container2 {
+    transform: translateY(100%);
+    opacity: 0;
+    transition: opacity 1.5s ease, transform 1.5s ease;
+}
+
+.logo-container2.active {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.logo-container2.exit {
+    transform: translateY(100%);
+    opacity: 0;
+}
+
+
+
+
+.footer-container {
+    display: flex;
+    justify-content: flex-start;
+    /* กระจายคอลัมน์ให้ห่างกัน */
+    max-width: 1200px;
+    margin-top: 350px;
+    flex-wrap: wrap;
+    /* ทำให้ตอบสนองต่อหน้าจอขนาดเล็กได้ */
+}
+
+
   .footer-column2 {
     flex: 1;
     margin: 0 20px;
@@ -1897,45 +2008,5 @@ button#closePopupBtn2 {
     text-decoration: underline;
 }
 
-.logo-row img {
-    max-width: 40px !important;  /* ลดขนาดโลโก้สำหรับมือถือ */
-    height: 40px !important;     /* ลดความสูงโลโก้ให้สัมพันธ์กัน */
 }
 
-
-/* ซ่อนชุดที่ 2 */
-.logo-container2 {
-    position: absolute; /* ให้ซ้อนทับกัน */
-    top: 50%; /* เริ่มจากด้านบน */
-    left: 50%; /* จัดกลาง */
-    transform: translateX(-50%); /* ปรับให้อยู่ตรงกลาง */
-    opacity: 0; /* เริ่มต้นด้วยความโปร่งใส 0 */
-    pointer-events: none; /* ไม่ให้ตอบสนองต่อการคลิก */
-    transition: opacity 0.5s ease, transform 1.5s ease; /* ตั้งค่า transition */
-    overflow-x: hidden; /* ป้องกันการเลื่อนในแนวนอน */
-}
-
-/* การเลื่อนเข้า */
-.logo-container {
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.5s ease, transform 1.5s ease;
-    display: flex; /* ใช้ flexbox */
-    justify-content: center; /* จัดให้อยู่ตรงกลางแนวนอน */
-    align-items: center; /* จัดให้อยู่ตรงกลางแนวตั้ง */
-    flex-direction: column; /* จัดแถวในแนวตั้ง */
-    overflow-x: hidden; /* ป้องกันการเลื่อนในแนวนอน */
-}
-
-.logo-row {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px; /* ระยะห่างระหว่างโลโก้ */
-    margin-bottom: 10px; /* ระยะห่างระหว่างแถว */
-    overflow-x: hidden; /* ป้องกันการเลื่อนในแนวนอน */
-}
-
-
-
-}
