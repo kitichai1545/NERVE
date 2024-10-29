@@ -919,6 +919,20 @@ button#closePopupBtn2 {
 
 
   @media (max-width: 768px) {
+
+    body {
+      overflow-x: hidden; /* ป้องกันการเลื่อนในแนวนอน */
+  }
+  /* ปรับขนาดของวิดีโอหรือภาพให้พอดีกับหน้าจอมือถือ */
+  .hero-img {
+      width: 100%;
+      margin: 0 auto;
+  }
+  .background-video {
+      width: 100%;
+      height: auto;
+  }
+  
     .footer-container, .hero-con, .page2-container, .page2-1-container {
       flex-direction: column; /* เปลี่ยนเป็นแนวตั้ง */
     }

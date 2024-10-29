@@ -860,11 +860,19 @@ button#closePopupBtn2 {
   /* ซ่อนเมนูสำหรับหน้าจอเล็ก */
 @media (max-width: 768px) {
 
-  html, body {
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden; /* ซ่อนส่วนที่เกินออกทางด้านข้างบนหน้าจอโทรศัพท์ */
-  }
+  body {
+    overflow-x: hidden; /* ป้องกันการเลื่อนในแนวนอน */
+}
+/* ปรับขนาดของวิดีโอหรือภาพให้พอดีกับหน้าจอมือถือ */
+.hero-img {
+    width: 100%;
+    margin: 0 auto;
+}
+.background-video {
+    width: 100%;
+    height: auto;
+}
+
 
   nav {
       padding: 1rem 2rem;
