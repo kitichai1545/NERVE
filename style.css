@@ -1411,35 +1411,29 @@ button#closePopupBtn2 {
 @media (max-width: 768px) {
 
     body {
-        overflow-x: hidden; /* ป้องกันการเลื่อนแนวนอน */
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+        overflow-x: hidden;
     }
+
+    
     /* ปรับขนาดของวิดีโอหรือภาพให้พอดีกับหน้าจอมือถือ */
     .hero-img, .background-video {
-        width: 100%; /* ปรับให้ภาพขยายเต็มความกว้างหน้าจอมือถือ */
-        max-width: 100vw; /* จำกัดขนาดสูงสุดไม่ให้เกินความกว้างหน้าจอ */
-        height: auto; /* ให้ปรับความสูงอัตโนมัติตามสัดส่วน */
-        object-fit: cover; /* ทำให้ภาพครอบคลุมพื้นที่อย่างเหมาะสม */
+        flex-direction: column; /* จัดเรียงคอนเทนต์เป็นแนวตั้งสำหรับมือถือ */
     }
     
     nav {
         padding: 1rem 2rem;
-        top: 0;
-        left: 0;
         background-color: #000;
         width: 100%; /* ให้ครอบคลุมความกว้างของหน้าจอ */
         border-radius: 0;
         z-index: 1000;
-        transform: translateX(0); /* เอา translateX ออกเพื่อให้อยู่ชิดขอบซ้าย */
+        transform: translateX(0); 
     }
 
     .nav-con {
         display: flex;
-        justify-content: flex-start; /* จัดเนื้อหาไปทางซ้าย */
-        align-items: center; /* ให้อยู่ตรงกลางแนวตั้ง */
-        padding-left: 1rem; /* เพิ่ม padding เพื่อขยับโลโก้ออกจากขอบซ้าย */
+        justify-content: flex-start;
+        align-items: center;
+        padding-left: 1rem;
         width: 100%;
     }
 
