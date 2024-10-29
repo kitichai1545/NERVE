@@ -1897,8 +1897,8 @@ button#closePopupBtn2 {
 }
 
 .logo-row img {
-    max-width: 70px;  /* ลดขนาดโลโก้สำหรับมือถือ */
-    height: 70px;     /* ลดความสูงโลโก้ให้สัมพันธ์กัน */
+    max-width: 20px;  /* ลดขนาดโลโก้สำหรับมือถือ */
+    height: 20px;     /* ลดความสูงโลโก้ให้สัมพันธ์กัน */
 }
 
 /* ซ่อนชุดที่ 2 */
@@ -1926,10 +1926,12 @@ button#closePopupBtn2 {
 }
 
 .logo-row {
-    flex-direction: row; /* ยังคงเรียงในแนวนอน */
-        justify-content: center;
-        align-items: center;
-        gap: 10px; /* ลดระยะห่างระหว่างโลโก้ */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px; /* ระยะห่างระหว่างโลโก้ */
+    margin-bottom: 10px; /* ระยะห่างระหว่างแถว */
+    overflow-x: hidden; /* ป้องกันการเลื่อนในแนวนอน */
 }
 
 
