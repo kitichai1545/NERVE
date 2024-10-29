@@ -1513,7 +1513,7 @@ button#closePopupBtn2 {
 }
 
 .container {
-    max-width: 1140px;
+    max-width: 768px;
     margin: 0 auto;
     padding-top: 0.5rem; /* เพิ่ม padding เพื่อเว้นช่องสำหรับ nav */
     width: 100%;
