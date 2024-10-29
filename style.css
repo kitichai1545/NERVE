@@ -1896,6 +1896,10 @@ button#closePopupBtn2 {
     text-decoration: underline;
 }
 
+.logo-row img {
+    max-width: 70px;  /* ลดขนาดโลโก้สำหรับมือถือ */
+    height: 70px;     /* ลดความสูงโลโก้ให้สัมพันธ์กัน */
+}
 
 /* ซ่อนชุดที่ 2 */
 .logo-container2 {
@@ -1922,12 +1926,10 @@ button#closePopupBtn2 {
 }
 
 .logo-row {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px; /* ระยะห่างระหว่างโลโก้ */
-    margin-bottom: 20px; /* ระยะห่างระหว่างแถว */
-    overflow-x: hidden; /* ป้องกันการเลื่อนในแนวนอน */
+    flex-direction: row; /* ยังคงเรียงในแนวนอน */
+        justify-content: center;
+        align-items: center;
+        gap: 10px; /* ลดระยะห่างระหว่างโลโก้ */
 }
 
 
