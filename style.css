@@ -1410,38 +1410,18 @@ button#closePopupBtn2 {
 /* ซ่อนเมนูสำหรับหน้าจอเล็ก */
 @media (max-width: 768px) {
 
-    * จัดการภาพให้เหมาะกับมือถือ */
-    .image-section img {
-        width: 100%; /* ให้ภาพครอบคลุมหน้าจอมือถือ */
-        height: auto;
-    }
-
-    /* ปรับขนาด container */
-    .container {
-        width: 100%; /* ให้ container ครอบคลุมหน้าจอมือถือ */
-        padding: 0 15px; /* เพิ่ม padding เพื่อให้เนื้อหาไม่ติดขอบ */
-    }
-
-    /* ปรับขนาดข้อความ */
-    .article-content h1 {
-        font-size: 1.8rem; /* ลดขนาดของหัวข้อให้เหมาะกับหน้าจอมือถือ */
-    }
-
-    .article-content p {
-        font-size: 1rem; /* ปรับขนาดตัวอักษร */
-    }
-    
     body {
-        overflow-x: hidden; /* ป้องกันการเลื่อนในแนวนอน */
+        overflow-x: hidden; /* ป้องกันการเลื่อนแนวนอน */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
     }
     /* ปรับขนาดของวิดีโอหรือภาพให้พอดีกับหน้าจอมือถือ */
-    .hero-img {
-        width: 100%;
-        margin: 0 auto;
-    }
-    .background-video {
-        width: 100%;
-        height: auto;
+    .hero-img, .background-video {
+        width: 100%; /* ปรับให้ภาพขยายเต็มความกว้างหน้าจอมือถือ */
+        max-width: 100vw; /* จำกัดขนาดสูงสุดไม่ให้เกินความกว้างหน้าจอ */
+        height: auto; /* ให้ปรับความสูงอัตโนมัติตามสัดส่วน */
+        object-fit: cover; /* ทำให้ภาพครอบคลุมพื้นที่อย่างเหมาะสม */
     }
     
     nav {
@@ -1914,12 +1894,6 @@ button#closePopupBtn2 {
 
 .footer-column2 a:hover {
     text-decoration: underline;
-}
-@media (min-width: 1440px) and (max-width: 1920px) {
-    .container {
-        max-width: 1440px;
-        margin: 0 auto;
-    }
 }
 
 }
