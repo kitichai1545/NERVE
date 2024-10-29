@@ -1898,8 +1898,9 @@ button#closePopupBtn2 {
 }
 
 .logo-row img {
-    max-width: 40px !important;  /* ลดขนาดโลโก้สำหรับมือถือ */
-    height: 40px !important;     /* ลดความสูงโลโก้ให้สัมพันธ์กัน */
+    max-width: 70px !important;  /* ลดขนาดโลโก้สำหรับมือถือ */
+    height: 70px !important;     /* ลดความสูงโลโก้ให้สัมพันธ์กัน */
+    overflow-x: hidden; /* ป้องกันการเลื่อนในแนวนอน */
 }
 
 
