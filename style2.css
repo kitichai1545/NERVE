@@ -1541,8 +1541,11 @@ button#closePopupBtn2 {
 .footer-column2 a:hover {
   text-decoration: underline;
 }
-
-
-
+@media (min-width: 1440px) and (max-width: 1920px) {
+  .container {
+      max-width: 1440px;
+      margin: 0 auto;
+  }
+}
 
 }

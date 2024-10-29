@@ -941,3 +941,10 @@ button#closePopupBtn2 {
       font-size: 1rem;
     }
   }
+
+  @media (min-width: 1440px) and (max-width: 1920px) {
+    .container {
+        max-width: 1440px;
+        margin: 0 auto;
+    }
+}

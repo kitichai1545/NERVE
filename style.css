@@ -1881,27 +1881,10 @@ button#closePopupBtn2 {
 .footer-column2 a:hover {
     text-decoration: underline;
 }
-
 @media (min-width: 1440px) and (max-width: 1920px) {
     .container {
         max-width: 1440px;
         margin: 0 auto;
-    }
-}
-
-/* สำหรับหน้าจอขนาดเล็ก (สูงสุด 768px) */
-@media (max-width: 768px) {
-    .container {
-        width: 100%;
-        padding: 0 15px;
-    }
-}
-
-/* สำหรับหน้าจอขนาดกลาง (768px - 1024px) */
-@media (min-width: 768px) and (max-width: 1024px) {
-    .container {
-        max-width: 1024px;
-        padding: 0 20px;
     }
 }
 
