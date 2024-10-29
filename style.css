@@ -1422,6 +1422,7 @@ button#closePopupBtn2 {
         max-width: 100vw; /* จำกัดขนาดสูงสุดไม่ให้เกินความกว้างหน้าจอ */
         height: auto; /* ให้ปรับความสูงอัตโนมัติตามสัดส่วน */
         object-fit: cover; /* ทำให้ภาพครอบคลุมพื้นที่อย่างเหมาะสม */
+        
     }
     
     nav {
@@ -1897,9 +1898,10 @@ button#closePopupBtn2 {
 }
 
 .logo-row img {
-    max-width: 20px;  /* ลดขนาดโลโก้สำหรับมือถือ */
-    height: 20px;     /* ลดความสูงโลโก้ให้สัมพันธ์กัน */
+    max-width: 40px !important;  /* ลดขนาดโลโก้สำหรับมือถือ */
+    height: 40px !important;     /* ลดความสูงโลโก้ให้สัมพันธ์กัน */
 }
+
 
 /* ซ่อนชุดที่ 2 */
 .logo-container2 {
