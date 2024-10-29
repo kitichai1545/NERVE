@@ -1887,7 +1887,7 @@ button#closePopupBtn2 {
     height: auto;
 }
 
-/* ตั้งค่าเหมือนกันสำหรับทั้งชุดที่ 1 และ 2 */
+/* การเลื่อนเข้าและออกสำหรับทั้งสองชุดแบบแนวตั้ง */
 .logo-container, .logo-container2 {
     display: flex;
     flex-direction: column;
@@ -1915,51 +1915,40 @@ button#closePopupBtn2 {
 }
 
 /* การเลื่อนเข้าและออกในแนวตั้ง */
-.left-slide {
-    transform: translateY(-100%); /* เลื่อนขึ้น */
-    transition: transform 1.5s ease;
-}
-
-.right-slide {
-    transform: translateY(100%); /* เลื่อนลง */
+.left-slide, .right-slide {
+    transform: translateY(-100%); /* เลื่อนขึ้นจากด้านบน */
     transition: transform 1.5s ease;
 }
 
 .logo-container.active .left-slide,
-.logo-container2.active .left-slide {
-    transform: translateY(0); /* แสดงแถวบน */
-}
-
 .logo-container.active .right-slide,
+.logo-container2.active .left-slide,
 .logo-container2.active .right-slide {
-    transform: translateY(0); /* แสดงแถวล่าง */
+    transform: translateY(0); /* แสดงแถวบนและแถวล่าง */
 }
 
 .logo-container.exit .left-slide,
-.logo-container2.exit .left-slide {
-    transform: translateY(-100%); /* ซ่อนแถวบน */
-}
-
 .logo-container.exit .right-slide,
+.logo-container2.exit .left-slide,
 .logo-container2.exit .right-slide {
-    transform: translateY(100%); /* ซ่อนแถวล่าง */
+    transform: translateY(100%); /* ซ่อนแถวล่างทั้งหมด */
 }
 
 /* ตั้งค่าให้ logo-container2 ไม่แสดงเมื่อยังไม่ active */
 .logo-container2 {
-    transform: translateY(100%);
     opacity: 0;
+    transform: translateY(-100%);
     transition: opacity 1.5s ease, transform 1.5s ease;
 }
 
 .logo-container2.active {
-    transform: translateY(0);
     opacity: 1;
+    transform: translateY(0); /* แสดงผล */
 }
 
 .logo-container2.exit {
-    transform: translateY(100%);
     opacity: 0;
+    transform: translateY(100%); /* ซ่อนผล */
 }
 
 
