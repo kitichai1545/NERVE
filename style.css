@@ -1881,15 +1881,16 @@ button#closePopupBtn2 {
     padding-bottom: 40px;
 }
 
+/* ตั้งค่าขนาดของโลโก้ */
 .logo-row img {
-    max-width: 60px !important; /* ลดขนาดโลโก้ให้เหมาะกับมือถือ */
+    max-width: 96px !important;
     height: auto;
-    margin: 0 10px; /* เพิ่มระยะห่างทางซ้ายและขวา 20px */
+    margin: 0 10px;
 }
 
 /* การเลื่อนเข้าและออกสำหรับทั้งสองชุดแบบแนวตั้ง */
 .logo-container, .logo-container2 {
-    display: flex;
+    display: grid;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -1903,10 +1904,23 @@ button#closePopupBtn2 {
 /* ใช้ grid เพื่อให้แสดงผลแบบ 2 คอลัมน์ */
 .logo-row {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 5px;
-    justify-content: space-between;
+    grid-template-columns: repeat(1, 1fr); /* แสดงผลแบบ 4 คอลัมน์ */
+    gap: 10px;
+    justify-content: center;
     align-items: center;
+}
+
+/* ซ่อนแถวล่าง */
+.logo-container .logo-row:nth-child(n+3) {
+    opacity: 0;
+    transform: translateY(100%);
+    transition: opacity 1.5s ease, transform 1.5s ease;
+}
+
+/* เมื่อ active จะแสดงแถวล่าง */
+.logo-container.active .logo-row:nth-child(n+3) {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 /* การเลื่อนเข้าและออกในแนวตั้ง */
