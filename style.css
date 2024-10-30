@@ -1883,8 +1883,9 @@ button#closePopupBtn2 {
 }
 
 .logo-row img {
-    max-width: 50px !important; /* ลดขนาดโลโก้ให้เหมาะกับมือถือ */
+    max-width: 35px !important; /* ลดขนาดโลโก้ให้เหมาะกับมือถือ */
     height: auto;
+    margin: 0 20px; /* เพิ่มระยะห่างทางซ้ายและขวา 20px */
 }
 
 /* การเลื่อนเข้าและออกสำหรับทั้งสองชุดแบบแนวตั้ง */
