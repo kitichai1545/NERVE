@@ -1899,6 +1899,7 @@ button#closePopupBtn2 {
     top: 120px;
     left: 0;
     width: 100%;
+    overflow: hidden; /* ป้องกันการเกิดพื้นที่ขาวข้างๆ */
 }
 
 /* ใช้ grid เพื่อให้แสดงผลแบบ 2 คอลัมน์ */
