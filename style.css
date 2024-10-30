@@ -1883,7 +1883,7 @@ button#closePopupBtn2 {
 }
 
 .logo-row img {
-    max-width: 35px !important; /* ลดขนาดโลโก้ให้เหมาะกับมือถือ */
+    max-width: 70px !important; /* ลดขนาดโลโก้ให้เหมาะกับมือถือ */
     height: auto;
     margin: 0 20px; /* เพิ่มระยะห่างทางซ้ายและขวา 20px */
 }
@@ -1908,11 +1908,6 @@ button#closePopupBtn2 {
     gap: 10px;
     justify-content: center;
     align-items: center;
-}
-
-.logo-row img {
-    max-width: 80px !important;
-    height: auto;
 }
 
 /* การเลื่อนเข้าและออกในแนวตั้ง */
