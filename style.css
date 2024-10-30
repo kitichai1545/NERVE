@@ -1872,7 +1872,6 @@ button#closePopupBtn2 {
     position: relative;
     background-color: #000;
     padding: 10px 0px;
-    height: 100vh;
 }
 
 .blog7-text {
@@ -1883,9 +1882,9 @@ button#closePopupBtn2 {
 }
 
 .logo-row img {
-    max-width: 70px !important; /* ลดขนาดโลโก้ให้เหมาะกับมือถือ */
+    max-width: 60px !important; /* ลดขนาดโลโก้ให้เหมาะกับมือถือ */
     height: auto;
-    margin: 0 20px; /* เพิ่มระยะห่างทางซ้ายและขวา 20px */
+    margin: 0 10px; /* เพิ่มระยะห่างทางซ้ายและขวา 20px */
 }
 
 /* การเลื่อนเข้าและออกสำหรับทั้งสองชุดแบบแนวตั้ง */
@@ -1904,8 +1903,8 @@ button#closePopupBtn2 {
 /* ใช้ grid เพื่อให้แสดงผลแบบ 2 คอลัมน์ */
 .logo-row {
     display: grid;
-    grid-template-columns: repeat(2, 0.5fr);
-    gap: 10px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 5px;
     justify-content: space-between;
     align-items: center;
 }
