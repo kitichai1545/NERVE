@@ -1904,9 +1904,9 @@ button#closePopupBtn2 {
 /* ใช้ grid เพื่อให้แสดงผลแบบ 2 คอลัมน์ */
 .logo-row {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(2, 0.5fr);
     gap: 10px;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
 }
 
