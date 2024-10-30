@@ -1883,9 +1883,9 @@ button#closePopupBtn2 {
 
 /* ตั้งค่าขนาดของโลโก้ */
 .logo-row img {
-    max-width: 80px !important;
+    max-width: 70px !important;
     height: auto;
-    margin: 0 10px;
+    margin: 0 20px;
 }
 
 /* การเลื่อนเข้าและออกสำหรับทั้งสองชุดแบบแนวตั้ง */
@@ -1969,7 +1969,7 @@ button#closePopupBtn2 {
     justify-content: flex-start;
     /* กระจายคอลัมน์ให้ห่างกัน */
     max-width: 1200px;
-    margin-top: 350px;
+    margin-top: 450px;
     flex-wrap: wrap;
     /* ทำให้ตอบสนองต่อหน้าจอขนาดเล็กได้ */
 }
