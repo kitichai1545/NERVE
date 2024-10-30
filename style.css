@@ -1883,7 +1883,7 @@ button#closePopupBtn2 {
 
 /* ตั้งค่าขนาดของโลโก้ */
 .logo-row img {
-    max-width: 96px !important;
+    max-width: 80px !important;
     height: auto;
     margin: 0 10px;
 }
@@ -1905,7 +1905,7 @@ button#closePopupBtn2 {
 /* ใช้ grid เพื่อให้แสดงผลแบบ 2 คอลัมน์ */
 .logo-row {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* แสดงผลแบบ 4 คอลัมน์ */
+    grid-template-columns: repeat(4, 1fr); /* แสดงผลแบบ 4 คอลัมน์ */
     gap: 10px;
     justify-content: center;
     align-items: center;
