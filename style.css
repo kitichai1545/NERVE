@@ -1912,7 +1912,7 @@ button#closePopupBtn2 {
 
 /* การเลื่อนเข้าและออกในแนวตั้ง */
 .left-slide, .right-slide {
-    transform: translateY(-100%); /* เลื่อนขึ้นจากด้านบน */
+    transform: translateY(-50%); /* เลื่อนขึ้นจากด้านบน */
     transition: transform 1.5s ease;
 }
 
@@ -1927,13 +1927,13 @@ button#closePopupBtn2 {
 .logo-container.exit .right-slide,
 .logo-container2.exit .left-slide,
 .logo-container2.exit .right-slide {
-    transform: translateY(100%); /* ซ่อนแถวล่างทั้งหมด */
+    transform: translateY(50%); /* ซ่อนแถวล่างทั้งหมด */
 }
 
 /* ตั้งค่าให้ logo-container2 ไม่แสดงเมื่อยังไม่ active */
 .logo-container2 {
     opacity: 0;
-    transform: translateY(-100%);
+    transform: translateY(-50%);
     transition: opacity 1.5s ease, transform 1.5s ease;
 }
 
@@ -1944,7 +1944,7 @@ button#closePopupBtn2 {
 
 .logo-container2.exit {
     opacity: 0;
-    transform: translateY(100%); /* ซ่อนผล */
+    transform: translateY(50%); /* ซ่อนผล */
 }
 
 
