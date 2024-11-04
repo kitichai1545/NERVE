@@ -1422,6 +1422,7 @@ button#closePopupBtn2 {
         max-width: 100vw; /* จำกัดขนาดสูงสุดไม่ให้เกินความกว้างหน้าจอ */
         height: auto; /* ให้ปรับความสูงอัตโนมัติตามสัดส่วน */
         object-fit: cover; /* ทำให้ภาพครอบคลุมพื้นที่อย่างเหมาะสม */
+        pointer-events: none; /* ไม่ให้สามารถคลิกได้ */
         
     }
     
@@ -1651,7 +1652,9 @@ button#closePopupBtn2 {
     text-decoration: none !important;
 }
 
-.background-video2,
+.background-video2 {
+    pointer-events: none; /* ไม่ให้สามารถคลิกได้ */
+}
 .background-video3 {
     pointer-events: none; /* ไม่ให้สามารถคลิกได้ */
 }

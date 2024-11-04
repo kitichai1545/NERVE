@@ -1,13 +1,11 @@
 window.onload = function() {
-    if (window.innerWidth <= 768) {
-        const video2 = document.querySelector('.background-video2');
-        const video3 = document.querySelector('.background-video3');
+    const videos = document.querySelectorAll('video'); // เลือกวิดีโอทั้งหมด
 
-        // หยุดวิดีโอและลบปุ่มควบคุม
-        video2.pause();
-        video2.removeAttribute('controls');
-
-        video3.pause();
-        video3.removeAttribute('controls');
+    if (window.innerWidth <= 768) { // เช็คถ้าขนาดหน้าจอเล็กกว่า 768px
+        videos.forEach(video => {
+            video.pause(); // หยุดเล่นวิดีโอ
+            video.removeAttribute('controls'); // ลบปุ่มควบคุม
+            video.style.pointerEvents = 'none'; // ป้องกันไม่ให้ผู้ใช้คลิกที่วิดีโอ
+        });
     }
 };
