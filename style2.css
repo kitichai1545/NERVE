@@ -201,7 +201,7 @@ nav {
   margin-top: 20px; /* เพิ่มระยะห่างระหว่างคอนเทนต์และปุ่ม */
   position: absolute;
   bottom: 160px;
-  left: 19%;
+  left: 20%;
   transform: translateX(-50%);
   
 }
@@ -1476,6 +1476,14 @@ button#closePopupBtn2 {
 .checkbox-group label {
   margin-left: 5px; /* ลดระยะห่างระหว่าง checkbox กับ label */
   white-space: nowrap; /* ให้ข้อความอยู่ในบรรทัดเดียว */
+}
+
+.hero2-btn-wrapper {
+  position: relative;
+  left: 0%;
+  transform: translateX(-50%);
+  margin-top: 20px;
+  bottom: 40px;
 }
 
 /********************************content 2*************************************************/
