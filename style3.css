@@ -915,6 +915,95 @@ button#closePopupBtn2 {
   padding: 0;
 }
 
+/* Popup */
+.popup {
+  width: 100%; /* ตั้งค่าให้กว้าง 90% ของหน้าจอ */
+  max-width: 100%; /* กำหนดความกว้างสูงสุด */
+  max-height: 100%; /* กำหนดความสูงสูงสุด */
+  overflow-y: auto; /* เปิดการเลื่อนแนวตั้ง */
+  padding: 0px; /* เพิ่ม padding ภายใน */
+  margin: 0 auto; /* จัดให้กลาง */
+  background-color: #000; /* เพิ่มพื้นหลังให้ popup */
+  border-radius: 10px; /* มุมโค้ง */
+}
+
+/* ซ่อน scrollbar */
+.popup::-webkit-scrollbar {
+  display: none; /* ซ่อน scrollbar ใน Webkit-based browsers (Chrome, Safari) */
+}
+
+/* Firefox */
+.popup {
+  scrollbar-width: none; /* ซ่อน scrollbar ใน Firefox */
+}
+
+.popup-content {
+  background-color: #000;
+  margin: 0 auto;
+  padding: 40px;
+  border-radius: 15px;
+  /* เพิ่มความโค้งให้กรอบ */
+  width: 100%;
+  max-width: 900px;
+  text-align: center;
+}
+
+.popup-content button {
+  background-color: #DF00B1;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  width: 100%;
+  /* ให้ปุ่มกินพื้นที่ container */
+  max-width: 300px;
+  /* ขนาดสูงสุดของปุ่ม */
+  margin-bottom: 15px;
+}
+
+.popup-content textarea {
+  width: 100%;
+  /* ให้ textarea กินพื้นที่เต็ม */
+  height: 40px;
+  /* กำหนดความสูงให้เหมือนกับ input */
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 25px;
+  /* เพิ่มความโค้งให้เหมือนกับ input */
+  box-sizing: border-box;
+  resize: none;
+  /* ปิดการยืดหดของ textarea */
+  font-size: 16px;
+  /* ปรับขนาดตัวอักษร */
+  background-color: #f9f9f9;
+  /* สีพื้นหลังเหมือนกับ input */
+  color: #333;
+  /* สีตัวอักษรเหมือนกับ input */
+  overflow: hidden;
+  /* ปิดการแสดง scroll bar */
+}
+.checkbox-container {
+  display: flex; /* ใช้ flexbox สำหรับการจัดเรียง */
+  flex-direction: column; /* ให้ checkbox เรียงเป็นแนวตั้ง */
+  justify-content: space-between; /* กระจายพื้นที่ระหว่างคอลัมน์ */
+  width: 100%; /* ให้คอนเทนเนอร์กินพื้นที่เต็ม */
+  flex-wrap: wrap; /* ให้ checkbox ที่เหลือขยับขึ้นมาข้างกันถ้ามีที่ว่าง */
+  gap: 3px; /* ปรับช่องว่างระหว่างคอลัมน์ให้เล็กลง */
+}
+
+.checkbox-group {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2px; /* ลดระยะห่างระหว่าง checkbox */
+}
+
+.checkbox-group label {
+  margin-left: 5px; /* ลดระยะห่างระหว่าง checkbox กับ label */
+  white-space: nowrap; /* ให้ข้อความอยู่ในบรรทัดเดียว */
+}
+
 /********************************ปุ่ม popup*************************************************/
 
 .hero03-btn {
