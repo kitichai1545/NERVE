@@ -79,6 +79,7 @@ body {
 
 
 .container {
+    display: flex;
     max-width: 1140px;
     margin: 0 auto;
     padding-top: 0.5rem; /* เพิ่ม padding เพื่อเว้นช่องสำหรับ nav */
