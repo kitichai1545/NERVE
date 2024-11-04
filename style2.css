@@ -184,6 +184,7 @@ nav {
 .hero02-info p {
   margin: 1rem 0;
   text-align: justify;
+  width: 400px;
 }
 
 .hero02-info .hero02-btn {
@@ -252,6 +253,7 @@ nav {
   font-weight: 300 !important;
   /* ปรับน้ำหนักให้บาง */
   color: #ffffff;
+  width: 300px;
 }
 
 .hero-info2 .hero02-btn {
@@ -1381,7 +1383,8 @@ button#closePopupBtn2 {
   color: #ffffff;
   text-align: justify;
   margin: 0; /* ปรับ margin ให้เหมาะสม */
-    padding: 0;
+  padding: 0;
+  width: 400px;
   
 }
 
