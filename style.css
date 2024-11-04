@@ -1651,17 +1651,10 @@ button#closePopupBtn2 {
     text-decoration: none !important;
 }
 
-.background-video2 {
-
-    height: 100vh; /* ให้สูงเต็มหน้าจอ */
-        object-fit: cover; /* ครอบคลุมพื้นที่ */
-        pointer-events: none; /* ป้องกันการคลิก */
-}
-
-.background-video3 {
-    height: 100vh; /* ให้สูงเต็มหน้าจอ */
-        object-fit: cover; /* ครอบคลุมพื้นที่ */
-        pointer-events: none; /* ป้องกันการคลิก */
+.background-video2, .background-video3 {
+    width: 100%; /* ให้ครอบคลุมเต็มพื้นที่ */
+    height: 100vh; /* ปรับความสูงอัตโนมัติตามสัดส่วน */
+    object-fit: cover; /* ทำให้ภาพครอบคลุมพื้นที่อย่างเหมาะสม */
 }
 
 .img-container {
