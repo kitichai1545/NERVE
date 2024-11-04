@@ -79,68 +79,66 @@ body {
 
 
 .container {
-    display: flex;
-    max-width: 1140px;
-    margin: 0 auto;
-    padding-top: 0.5rem; /* เพิ่ม padding เพื่อเว้นช่องสำหรับ nav */
-  }
-  
-  nav {
-    padding: 1rem 2rem;
-    background-color: rgba(0, 0, 0, 0.6); /* สีดำที่มีความโปร่งใส 50% */
-    display: flex;
+  max-width: 1140px;
+  margin: 0 auto;
+  padding-top: 0.5rem; /* เพิ่ม padding เพื่อเว้นช่องสำหรับ nav */
+}
+
+nav {
+  padding: 1rem 2rem;
+  background-color: rgba(0, 0, 0, 0.6); /* สีดำที่มีความโปร่งใส 50% */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70%;
+  border-radius: 80px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.nav-con {
+  display: flex;
+  align-items: center;
+  padding-right: 0px; /* ลดให้ไม่มี padding ซ้ายเลย */
+  margin-left: 0px; /* เพิ่ม margin-left แทนหากต้องการ */
+}
+
+
+.logo {
+  margin-right: 2rem; /* ลดระยะห่างโลโก้ */
+}
+
+.menu {
+  display: flex;
     justify-content: space-between;
     align-items: center;
-    position: fixed;
-    top: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 70%;
-    border-radius: 80px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    z-index: 1000;
-  }
-  
-  .nav-con {
-    display: flex;
-    align-items: center;
-    padding-right: 0px; /* ลดให้ไม่มี padding ซ้ายเลย */
-    margin-left: 0px; /* เพิ่ม margin-left แทนหากต้องการ */
-  }
-  
-  
-  .logo {
-    margin-right: 2rem; /* ลดระยะห่างโลโก้ */
-  }
-  
-  .menu {
-    display: flex;
-      justify-content: space-between;
-      align-items: center;
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      gap: 30px; /* ระยะห่างระหว่างแต่ละเมนูและไอคอน */
-  }
-  
-  .menu li {
-    display: flex;
-    align-items: center;
-  }
-  
-  .menu li a {
-    display: flex;
-      align-items: center;
-      color: white;
-      text-decoration: none;
-      font-size: 16px;
-  }
-  
-  .menu li a img {
-    width: 24px; /* ปรับขนาดไอคอนตามที่ต้องการ */
-    margin-right: 5px; /* ระยะห่างระหว่างไอคอนกับข้อความ */
-  }
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 30px; /* ระยะห่างระหว่างแต่ละเมนูและไอคอน */
+}
 
+.menu li {
+  display: flex;
+  align-items: center;
+}
+
+.menu li a {
+  display: flex;
+    align-items: center;
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.menu li a img {
+  width: 24px; /* ปรับขนาดไอคอนตามที่ต้องการ */
+  margin-right: 5px; /* ระยะห่างระหว่างไอคอนกับข้อความ */
+}
 
 
 
@@ -181,7 +179,7 @@ body {
 
 .hero-info h1 {
     font-family: 'Kanit', sans-serif;
-    font-size: 4rem !important;
+    font-size: 64px !important;
     /* ขนาดตัวอักษรใหญ่ขึ้น */
     font-weight: 400 !important;
     /* ปรับน้ำหนักให้บาง */
@@ -190,7 +188,7 @@ body {
 
 .hero-info h3 {
     font-family: 'Kanit', sans-serif;
-    font-size: 2.5rem !important;
+    font-size: 48px !important;
     /* ขนาดตัวอักษรใหญ่ขึ้น */
     font-weight: 500 !important;
     /* ปรับน้ำหนักให้บาง */
@@ -201,7 +199,7 @@ body {
 
 .hero-info p {
     font-family: 'Kanit', sans-serif;
-    font-size: 0.9rem !important;
+    font-size: 16px !important;
     /* ขนาดตัวอักษรใหญ่ขึ้น */
     font-weight: 300 !important;
     /* ปรับน้ำหนักให้บาง */
@@ -242,7 +240,7 @@ body {
 
 .hero-info2 p {
     font-family: 'Kanit', sans-serif;
-    font-size: 0.9rem !important;
+    font-size: 1rem !important;
     /* ขนาดตัวอักษรใหญ่ขึ้น */
     font-weight: 300 !important;
     /* ปรับน้ำหนักให้บาง */
@@ -256,26 +254,27 @@ body {
 
 
 .hero-img {
-    width: 120%; /* ปรับขนาดความกว้างของวิดีโอ */
+    width: 102%; /* ปรับขนาดความกว้างของวิดีโอ */
     padding: 20px; /* เพิ่ม padding เพื่อเว้นช่องว่างระหว่างวิดีโอกับขอบ */
     display: flex;
     justify-content: center;
 }
 
 .background-video {
-    width: 120%;
+    width: 102%;
     height: auto;
     object-fit: cover;
     border-radius: 10px;
 }
 
 .hero-btn-wrapper {
-    text-align: center; /* จัดปุ่มให้อยู่ตรงกลาง */
-    margin-top: 20px; /* เพิ่มระยะห่างระหว่างคอนเทนต์และปุ่ม */
-    position: absolute;
-    bottom: 100px;
-    left: 22%;
-    transform: translateX(-50%);
+    display: flex;
+    justify-content: flex-start; /* จัดปุ่มให้อยู่ทางซ้าย */
+    align-items: center;
+    margin-top: 20px;
+    padding-left: 50px; /* เพิ่มระยะห่างจากขอบซ้าย */
+    width: 100%; /* ให้ container กินพื้นที่เต็ม */
+    position: relative; /* ไม่ใช้ absolute เพื่อให้ตำแหน่งยืดหยุ่น */
 }
 
 #openPopupBtnFooter {
@@ -726,8 +725,6 @@ button#closePopupBtn2 {
     font-weight: 400 !important;
     /* ปรับน้ำหนักให้บาง */
     color: #ffffff;
-    line-height: 1;
-
 }
 
 .hero3-info h3 {
@@ -737,7 +734,7 @@ button#closePopupBtn2 {
     font-weight: 500 !important;
     /* ปรับน้ำหนักให้บาง */
     color: #ffffff;
-    line-height: 1.8;
+    line-height: 1;
     /* เพิ่มระยะห่างระหว่างบรรทัด */
 }
 
@@ -799,7 +796,7 @@ button#closePopupBtn2 {
 
 .hero4-info h1 {
     font-family: 'Kanit', sans-serif;
-    font-size: 3rem !important;
+    font-size: 4rem !important;
     /* ขนาดตัวอักษรใหญ่ขึ้น */
     font-weight: 400 !important;
     /* ปรับน้ำหนักให้บาง */
@@ -1534,7 +1531,7 @@ button#closePopupBtn2 {
 }
 
 .hero-info {
-    width: 45%; /* ปรับให้ใช้พื้นที่ 45% ของความกว้าง */
+    width: 90%; /* ปรับให้ใช้พื้นที่ 45% ของความกว้าง */
     position: relative;
     z-index: 2;
     width: 100%;
@@ -1545,24 +1542,24 @@ button#closePopupBtn2 {
 
 .hero-info h1 {
     font-family: 'Kanit', sans-serif;
-    font-size: 32px !important;
+    font-size: 48px !important;
     /* ขนาดตัวอักษรใหญ่ขึ้น */
     font-weight: 400 !important;
     /* ปรับน้ำหนักให้บาง */
     color: #DF00B1;
-    transform: translateY(-20px); /* ขยับขึ้นไป 40px */
+    transform: translateY(-40px); /* ขยับขึ้นไป 40px */
 }
 
 .hero-info h3 {
     font-family: 'Kanit', sans-serif;
-    font-size: 20px !important;
+    font-size: 24px !important;
     /* ขนาดตัวอักษรใหญ่ขึ้น */
     font-weight: 500 !important;
     /* ปรับน้ำหนักให้บาง */
     color: #ffffff;
     line-height: 1.2;
     /* เพิ่มระยะห่างระหว่างบรรทัด */
-    transform: translateY(-20px); /* ขยับขึ้นไป 20px */
+    transform: translateY(-40px); /* ขยับขึ้นไป 20px */
 }
 
 .hero-info p {
@@ -1579,7 +1576,7 @@ button#closePopupBtn2 {
 
 
 .hero-info2 {
-    width: 45%; /* ปรับให้ใช้พื้นที่ 45% ของความกว้าง */
+    width: 90%; /* ปรับให้ใช้พื้นที่ 45% ของความกว้าง */
     position: relative;
     z-index: 2;
     width: 100%;
@@ -1590,24 +1587,24 @@ button#closePopupBtn2 {
 
 .hero-info2 h1 {
     font-family: 'Kanit', sans-serif;
-    font-size: 32px !important;
+    font-size: 38px !important;
     /* ขนาดตัวอักษรใหญ่ขึ้น */
     font-weight: 400 !important;
     /* ปรับน้ำหนักให้บาง */
     color: #DF00B1;
-    transform: translateY(-20px); /* ขยับขึ้นไป 40px */
+    transform: translateY(-40px); /* ขยับขึ้นไป 40px */
 }
 
 .hero-info2 h3 {
     font-family: 'Kanit', sans-serif;
-    font-size: 20px !important;
+    font-size: 22px !important;
     /* ขนาดตัวอักษรใหญ่ขึ้น */
     font-weight: 500 !important;
     /* ปรับน้ำหนักให้บาง */
     color: #ffffff;
     line-height: 1.5;
     /* เพิ่มระยะห่างระหว่างบรรทัด */
-    transform: translateY(-20px); /* ขยับขึ้นไป 40px */
+    transform: translateY(-40px); /* ขยับขึ้นไป 40px */
 }
 
 .hero-info2 p {
@@ -1639,9 +1636,14 @@ button#closePopupBtn2 {
 }
 
 .hero-btn-wrapper {
-    text-align: center; /* จัดปุ่มให้อยู่ตรงกลาง */
-    position: relative;
-    bottom: 60px;
+    display: flex;
+    justify-content: center; /* จัดปุ่มให้อยู่ทางซ้าย */
+    align-items: center;
+    margin-top: 10px;
+    width: 100%; /* ให้ container กินพื้นที่เต็ม */
+    position: relative; /* ไม่ใช้ absolute เพื่อให้ตำแหน่งยืดหยุ่น */
+    padding: 1rem;
+    transform: translateY(-60px); /* ขยับขึ้นไป 20px */
 
 }
 
@@ -1653,6 +1655,13 @@ button#closePopupBtn2 {
 
     height: 100vh; /* ให้สูงเต็มหน้าจอ */
         object-fit: cover; /* ครอบคลุมพื้นที่ */
+        pointer-events: none; /* ป้องกันการคลิก */
+}
+
+.background-video3 {
+    height: 100vh; /* ให้สูงเต็มหน้าจอ */
+        object-fit: cover; /* ครอบคลุมพื้นที่ */
+        pointer-events: none; /* ป้องกันการคลิก */
 }
 
 .img-container {
@@ -1721,7 +1730,7 @@ button#closePopupBtn2 {
     gap: 20px;
     width: 100%;
     max-width: 100%;
-    padding: 0 20px; /* เพิ่ม padding เพื่อเว้นขอบ */
+    padding: 0 15px; /* เพิ่ม padding เพื่อเว้นขอบ */
   }
   
   .card {
