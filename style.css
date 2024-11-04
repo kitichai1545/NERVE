@@ -200,7 +200,7 @@ body {
 
 .hero-info p {
     font-family: 'Kanit', sans-serif;
-    font-size: 1rem !important;
+    font-size: 0.9rem !important;
     /* ขนาดตัวอักษรใหญ่ขึ้น */
     font-weight: 300 !important;
     /* ปรับน้ำหนักให้บาง */
@@ -241,7 +241,7 @@ body {
 
 .hero-info2 p {
     font-family: 'Kanit', sans-serif;
-    font-size: 1rem !important;
+    font-size: 0.9rem !important;
     /* ขนาดตัวอักษรใหญ่ขึ้น */
     font-weight: 300 !important;
     /* ปรับน้ำหนักให้บาง */
@@ -725,6 +725,8 @@ button#closePopupBtn2 {
     font-weight: 400 !important;
     /* ปรับน้ำหนักให้บาง */
     color: #ffffff;
+    line-height: 1;
+
 }
 
 .hero3-info h3 {
@@ -734,7 +736,7 @@ button#closePopupBtn2 {
     font-weight: 500 !important;
     /* ปรับน้ำหนักให้บาง */
     color: #ffffff;
-    line-height: 1;
+    line-height: 1.8;
     /* เพิ่มระยะห่างระหว่างบรรทัด */
 }
 
@@ -1542,24 +1544,24 @@ button#closePopupBtn2 {
 
 .hero-info h1 {
     font-family: 'Kanit', sans-serif;
-    font-size: 48px !important;
+    font-size: 32px !important;
     /* ขนาดตัวอักษรใหญ่ขึ้น */
     font-weight: 400 !important;
     /* ปรับน้ำหนักให้บาง */
     color: #DF00B1;
-    transform: translateY(-40px); /* ขยับขึ้นไป 40px */
+    transform: translateY(-20px); /* ขยับขึ้นไป 40px */
 }
 
 .hero-info h3 {
     font-family: 'Kanit', sans-serif;
-    font-size: 24px !important;
+    font-size: 20px !important;
     /* ขนาดตัวอักษรใหญ่ขึ้น */
     font-weight: 500 !important;
     /* ปรับน้ำหนักให้บาง */
     color: #ffffff;
     line-height: 1.2;
     /* เพิ่มระยะห่างระหว่างบรรทัด */
-    transform: translateY(-40px); /* ขยับขึ้นไป 20px */
+    transform: translateY(-20px); /* ขยับขึ้นไป 20px */
 }
 
 .hero-info p {
@@ -1587,24 +1589,24 @@ button#closePopupBtn2 {
 
 .hero-info2 h1 {
     font-family: 'Kanit', sans-serif;
-    font-size: 38px !important;
+    font-size: 32px !important;
     /* ขนาดตัวอักษรใหญ่ขึ้น */
     font-weight: 400 !important;
     /* ปรับน้ำหนักให้บาง */
     color: #DF00B1;
-    transform: translateY(-40px); /* ขยับขึ้นไป 40px */
+    transform: translateY(-20px); /* ขยับขึ้นไป 40px */
 }
 
 .hero-info2 h3 {
     font-family: 'Kanit', sans-serif;
-    font-size: 24px !important;
+    font-size: 20px !important;
     /* ขนาดตัวอักษรใหญ่ขึ้น */
     font-weight: 500 !important;
     /* ปรับน้ำหนักให้บาง */
     color: #ffffff;
     line-height: 1.5;
     /* เพิ่มระยะห่างระหว่างบรรทัด */
-    transform: translateY(-40px); /* ขยับขึ้นไป 40px */
+    transform: translateY(-20px); /* ขยับขึ้นไป 40px */
 }
 
 .hero-info2 p {
