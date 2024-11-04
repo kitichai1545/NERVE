@@ -1384,7 +1384,8 @@ button#closePopupBtn2 {
   text-align: justify;
   margin: 0; /* ปรับ margin ให้เหมาะสม */
   padding: 0;
-  width: 400px;
+  width: 100%;
+  text-align: center;
   
 }
 
@@ -1526,8 +1527,8 @@ button#closePopupBtn2 {
   /* ปรับน้ำหนักให้บาง */
   color: #ffffff;
   margin: 1rem 0;
-  text-align: justify;
-  width: 400px;
+  width: 100%;
+  text-align: center;
 }
 
 
