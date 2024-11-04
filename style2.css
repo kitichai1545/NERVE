@@ -253,6 +253,7 @@ nav {
   font-weight: 300 !important;
   /* ปรับน้ำหนักให้บาง */
   color: #ffffff;
+  width: 500px;
 }
 
 .hero-info2 .hero02-btn {
@@ -1477,6 +1478,16 @@ button#closePopupBtn2 {
 
 /********************************content 2*************************************************/
 
+
+.service-heading h2 {
+  font-size: 36px;
+  font-weight: bold;
+  color: #fff;
+  margin: 0 auto 20px; /* ตั้งค่า margin-top และ bottom พร้อมจัดกึ่งกลางด้วย auto */
+  text-align: center;
+  width: 400px; /* กำหนดความกว้างเป็น 400px */
+}
+
 .hero-info2 {
   max-width: 600px; /* ให้ข้อความมีความกว้างไม่เกินนี้ */
     margin: 0 auto; /* ให้ข้อความอยู่ตรงกลาง */
@@ -1514,7 +1525,7 @@ button#closePopupBtn2 {
   /* ปรับน้ำหนักให้บาง */
   color: #ffffff;
   text-align: justify;
-  
+  width: 400px;
 }
 
 
