@@ -1495,7 +1495,7 @@ button#closePopupBtn2 {
   color: #fff;
   margin: 0 auto 20px; /* ตั้งค่า margin-top และ bottom พร้อมจัดกึ่งกลางด้วย auto */
   text-align: center;
-  width: 400px; /* กำหนดความกว้างเป็น 400px */
+  width: 90%;
 }
 
 .hero-info2 {
@@ -1574,7 +1574,7 @@ button#closePopupBtn2 {
   gap: 30px;
 }
 
-.page2-text h2 {
+.page2-text h3 {
   font-size: 28px;
   color: #fff;
   margin-bottom: 15px;
