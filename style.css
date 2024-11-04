@@ -1653,9 +1653,6 @@ button#closePopupBtn2 {
 
 .background-video2,
 .background-video3 {
-    width: 100%; /* ปรับให้เต็มความกว้าง */
-    height: 100vh; /* ปรับความสูงอัตโนมัติตามสัดส่วน */
-    object-fit: cover; /* ทำให้ภาพครอบคลุมพื้นที่อย่างเหมาะสม */
     pointer-events: none; /* ไม่ให้สามารถคลิกได้ */
 }
 
