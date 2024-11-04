@@ -1525,6 +1525,7 @@ button#closePopupBtn2 {
   font-weight: 300 !important;
   /* ปรับน้ำหนักให้บาง */
   color: #ffffff;
+  margin: 1rem 0;
   text-align: justify;
   width: 400px;
 }
