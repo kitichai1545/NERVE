@@ -260,6 +260,7 @@ nav {
     justify-content: center;
 }
 
+
 .background-video {
     width: 102%;
     height: auto;
@@ -1590,7 +1591,7 @@ button#closePopupBtn2 {
     font-weight: 300 !important;
     /* ปรับน้ำหนักให้บาง */
     color: #ffffff;
-    text-align: justify;
+    text-align: center;
     transform: translateY(-40px); /* ขยับขึ้นไป 20px */
 }
 
@@ -1613,7 +1614,7 @@ button#closePopupBtn2 {
     font-weight: 400 !important;
     /* ปรับน้ำหนักให้บาง */
     color: #DF00B1;
-    transform: translateY(-40px); /* ขยับขึ้นไป 40px */
+    transform: translateY(-20px); /* ขยับขึ้นไป 40px */
 }
 
 .hero-info2 h3 {
@@ -1625,7 +1626,7 @@ button#closePopupBtn2 {
     color: #ffffff;
     line-height: 1.5;
     /* เพิ่มระยะห่างระหว่างบรรทัด */
-    transform: translateY(-40px); /* ขยับขึ้นไป 40px */
+    transform: translateY(-20px); /* ขยับขึ้นไป 40px */
 }
 
 .hero-info2 p {
@@ -1635,8 +1636,8 @@ button#closePopupBtn2 {
     font-weight: 300 !important;
     /* ปรับน้ำหนักให้บาง */
     color: #ffffff;
-    text-align: justify;
-    transform: translateY(-40px); /* ขยับขึ้นไป 40px */
+    text-align: center;
+    transform: translateY(-20px); /* ขยับขึ้นไป 20px */
 }
 
 .hero-img {
