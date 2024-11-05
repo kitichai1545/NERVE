@@ -1444,7 +1444,6 @@ button#closePopupBtn2 {
         height: auto; /* ให้ปรับความสูงอัตโนมัติตามสัดส่วน */
         object-fit: cover; /* ทำให้ภาพครอบคลุมพื้นที่อย่างเหมาะสม */
         pointer-events: none; /* ไม่ให้สามารถคลิกได้ */
-        
     }
     
     nav {
@@ -1616,6 +1615,7 @@ button#closePopupBtn2 {
     color: #DF00B1;
     transform: translateY(-20px); /* ขยับขึ้นไป 40px */
     width: 350px;
+    text-align: center;
 }
 
 .hero-info2 h3 {
