@@ -147,6 +147,7 @@ nav {
     align-items: center;
     text-align: left;
     padding-left: 190px;
+
 }
 
 .background-video {
@@ -160,7 +161,10 @@ nav {
 }
 
 .hero02-con {
+  text-align: left;
   display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* จัดให้อยู่ตรงกลาง */
 
 }
 
@@ -196,16 +200,6 @@ nav {
   text-decoration: none;
 }
 
-.hero2-btn-wrapper {
-  text-align: center; /* จัดปุ่มให้อยู่ตรงกลาง */
-  margin-top: 20px; /* เพิ่มระยะห่างระหว่างคอนเทนต์และปุ่ม */
-  position: absolute;
-  bottom: 160px;
-  left: 20%;
-  transform: translateX(-50%);
-  
-}
-
 .hero-btn {
   display: inline-block;
   background-color: #DF00B1;
@@ -213,6 +207,20 @@ nav {
   padding: 0.5rem 1rem;
   border-radius: 18px;
   text-decoration: none;
+}
+
+.hero2-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* จัดให้อยู่ตรงกลาง */
+  text-align: center;
+}
+
+.hero2-btn-wrapper {
+  margin-top: 0px; /* ระยะห่างระหว่างเนื้อหาและปุ่ม */
+  position: relative; /* ใช้ relative เพื่อให้คงตำแหน่ง */
+  text-align: center;
+  padding-left: 22px;
 }
 
 
@@ -253,7 +261,7 @@ nav {
   font-weight: 300 !important;
   /* ปรับน้ำหนักให้บาง */
   color: #ffffff;
-  width: 300px;
+  width: 500px;
 }
 
 .hero-info2 .hero02-btn {
@@ -554,7 +562,7 @@ button#closePopupBtn2 {
   color: #fff;
 }
 
-.page2-text h2 {
+.page2-text h3 {
   font-size: 28px;
   color: #fff;
   margin-bottom: 15px;
@@ -564,7 +572,8 @@ button#closePopupBtn2 {
   font-size: 16px;
   line-height: 1.5;
   margin-bottom: 20px;
-  text-align: justify;
+  text-align: left;
+  width: 380px;
 }
 
 .page2-button {
@@ -631,7 +640,7 @@ button#closePopupBtn2 {
   font-size: 16px;
   line-height: 1.5;
   margin-bottom: 20px;
-  text-align: justify;
+  text-align: left;
 }
 
 
@@ -687,7 +696,7 @@ button#closePopupBtn2 {
   font-size: 16px;
   line-height: 1.5;
   margin-bottom: 20px;
-  text-align: justify;
+  text-align: left;
 }
 
 
@@ -746,7 +755,7 @@ button#closePopupBtn2 {
   font-size: 16px;
   line-height: 1.5;
   margin-bottom: 20px;
-  text-align: justify;
+  text-align: left;
 }
 
 
@@ -803,7 +812,7 @@ button#closePopupBtn2 {
   font-size: 16px;
   line-height: 1.5;
   margin-bottom: 20px;
-  text-align: justify;
+  text-align: left;
 }
 
 
@@ -871,7 +880,7 @@ button#closePopupBtn2 {
   font-size: 16px;
   line-height: 1.5;
   margin-bottom: 20px;
-  text-align: justify;
+  text-align: left;
 }
 
 
@@ -938,7 +947,7 @@ button#closePopupBtn2 {
   font-size: 16px;
   line-height: 1.5;
   margin-bottom: 20px;
-  text-align: justify;
+  text-align: left;
 }
 
 
@@ -1001,7 +1010,7 @@ button#closePopupBtn2 {
   font-size: 16px;
   line-height: 1.5;
   margin-bottom: 20px;
-  text-align: justify;
+  text-align: left;
 }
 
 /** footer */
@@ -1076,7 +1085,7 @@ button#closePopupBtn2 {
 }
 
 .footer-column1 p {
-  text-align: justify;
+  text-align: left;
 }
 .footer-column1 ul {
   margin-bottom: 20px;

@@ -459,7 +459,7 @@ button#closePopupBtn2 {
     font-size: 16px;
     line-height: 1.5;
     margin-bottom: 20px;
-    text-align: justify;
+    text-align: left;
   }
   
   .cta-link {
@@ -601,7 +601,7 @@ button#closePopupBtn2 {
 }
 
 .footer-column1 p {
-  text-align: justify;
+  text-align: left;
 }
 .footer-column1 ul {
   margin-bottom: 20px;

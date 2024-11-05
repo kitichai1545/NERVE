@@ -204,7 +204,7 @@ nav {
     font-weight: 300 !important;
     /* ปรับน้ำหนักให้บาง */
     color: #ffffff;
-    text-align: justify;
+    text-align: left;
 }
 
 
@@ -245,7 +245,7 @@ nav {
     font-weight: 300 !important;
     /* ปรับน้ำหนักให้บาง */
     color: #ffffff;
-    text-align: justify;
+    text-align: left;
 }
 
 
@@ -318,7 +318,7 @@ nav {
     font-weight: 300 !important;
     /* ปรับน้ำหนักให้บาง */
     color: #ffffff;
-    text-align: justify;
+    text-align: left;
 }
 
 .hero-info2 .hero-btn {
@@ -359,6 +359,17 @@ nav {
     object-fit: cover; /* หรือคุณสามารถลองใช้ contain หากไม่ต้องการครอบตัด */
     z-index: 0;
     filter: brightness(50%); /* ลดความสว่างลง */
+}
+
+.background-video4 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* หรือคุณสามารถลองใช้ contain หากไม่ต้องการครอบตัด */
+    z-index: 0;
+    
 }
 
 
@@ -432,12 +443,18 @@ nav {
     /* ปิดการแสดง scroll bar */
 }
 
+.popup-content h2 {
+    font-weight:400; /* หรือ 700 ขึ้นไป */
+}
+
 .service-label {
     display: block;
-    font-weight: bold;
+    font-weight: regular;
     margin-bottom: 10px; /* เพิ่มช่องว่างระหว่าง label กับ checkbox */
     font-size: 18px;
     color: #fff; /* หรือสีอื่นที่คุณต้องการ */
+    padding-left: 10px;
+    padding-bottom: 10px;
 }
 
 .form-group {
@@ -455,9 +472,21 @@ nav {
 .form-group label {
     display: block;
     margin-bottom: 5px;
-    font-weight: bold;
+    font-weight: regular;
+    font-family: 'Kanit', sans-serif;
+    font-size: 14px;
+    color: #8E8B8B;
+}
+
+.form-group2 label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: regular;
     color: #fff;
     font-family: 'Kanit', sans-serif;
+    font-size: 14px;
+    text-align: left; 
+    line-height: 1.5;
 }
 
 .form-group input,
@@ -761,15 +790,6 @@ button#closePopupBtn2 {
 .blog4 {
     position: relative;
     height: 100vh;
-    /* ให้ความสูงเต็มหน้าจอ */
-    background-image: url('abstract-uv-ultraviolet-light-composition.jpg');
-    /* ใส่รูปภาพที่ต้องการ */
-    background-size: cover;
-    /* ทำให้รูปครอบคลุมเต็มพื้นที่ */
-    background-position: center;
-    /* จัดตำแหน่งรูปให้อยู่ตรงกลาง */
-    background-repeat: no-repeat;
-    /* ป้องกันการทำซ้ำรูป */
     overflow: hidden;
 }
 
@@ -1301,7 +1321,7 @@ button#closePopupBtn2 {
 }
 
 .footer-column1 p{
-    text-align: justify;
+    text-align: left;
 }
 .footer-column1 ul {
     margin-bottom: 20px;
@@ -1767,6 +1787,29 @@ button#closePopupBtn2 {
 }
 
 
+.hero4-info h1 {
+    font-family: 'Kanit', sans-serif;
+    font-size: 3rem !important;
+    /* ขนาดตัวอักษรใหญ่ขึ้น */
+    font-weight: 400 !important;
+    /* ปรับน้ำหนักให้บาง */
+    color: #DF00B1;
+    line-height: 1;
+    /* เพิ่มระยะห่างระหว่างบรรทัด */
+}
+
+.hero4-info h3 {
+    font-family: 'Kanit', sans-serif;
+    font-size: 1.8rem !important;
+    /* ขนาดตัวอักษรใหญ่ขึ้น */
+    font-weight: 500 !important;
+    /* ปรับน้ำหนักให้บาง */
+    color: #ffffff;
+    line-height: 1;
+    /* เพิ่มระยะห่างระหว่างบรรทัด */
+}
+
+
 
 
 
@@ -1787,11 +1830,8 @@ button#closePopupBtn2 {
   
   .header-container {
     display: flex;
+    flex-direction: column; /* จัดเรียงแบบแนวตั้ง */
     align-items: center;
-    width: 100%;
-    max-width: 1100px;
-    margin-bottom: 20px;
-    flex-direction: column;
   }
   
   .article-title {
