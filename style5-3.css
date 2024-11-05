@@ -1177,7 +1177,7 @@ button#closePopupBtn2 {
   gap: 20px;
   width: 100%;
   max-width: 100%;
-  padding: 0 15px; /* เพิ่ม padding เพื่อเว้นขอบ */
+  padding: 0 0px; /* เพิ่ม padding เพื่อเว้นขอบ */
 }
 
 .card {
@@ -1192,9 +1192,7 @@ button#closePopupBtn2 {
     box-shadow: none;
     text-decoration: none;
     position: relative;
-    width: 350px; /* ปรับให้เล็กลงตามต้องการ */
-    height: 300px; /* กำหนดความสูงของการ์ด */
-    min-height: 530px; /* เพิ่มความสูงขั้นต่ำเพื่อให้การ์ดยาวขึ้น */
+    
 }
 
 .card img {
@@ -1399,7 +1397,7 @@ button#closePopupBtn2 {
 }
 
 .footer-column1 p {
-  text-align: justify;
+  text-align: left;
 }
 .footer-column1 ul {
   margin-bottom: 20px;
