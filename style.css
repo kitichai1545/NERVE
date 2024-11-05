@@ -1568,7 +1568,7 @@ button#closePopupBtn2 {
     font-weight: 400 !important;
     /* ปรับน้ำหนักให้บาง */
     color: #DF00B1;
-    transform: translateY(-40px); /* ขยับขึ้นไป 40px */
+    transform: translateY(-10px); /* ขยับขึ้นไป 40px */
 }
 
 .hero-info h3 {
@@ -1580,18 +1580,18 @@ button#closePopupBtn2 {
     color: #ffffff;
     line-height: 1.2;
     /* เพิ่มระยะห่างระหว่างบรรทัด */
-    transform: translateY(-40px); /* ขยับขึ้นไป 20px */
+    transform: translateY(-10px); /* ขยับขึ้นไป 20px */
 }
 
 .hero-info p {
     font-family: 'Kanit', sans-serif;
-    font-size: 1rem !important;
+    font-size: 14px !important;
     /* ขนาดตัวอักษรใหญ่ขึ้น */
     font-weight: 300 !important;
     /* ปรับน้ำหนักให้บาง */
     color: #ffffff;
     text-align: center;
-    transform: translateY(-40px); /* ขยับขึ้นไป 20px */
+    transform: translateY(-10px); /* ขยับขึ้นไป 20px */
 }
 
 
@@ -1614,8 +1614,6 @@ button#closePopupBtn2 {
     /* ปรับน้ำหนักให้บาง */
     color: #DF00B1;
     transform: translateY(-20px); /* ขยับขึ้นไป 40px */
-    width: 350px;
-    text-align: center;
 }
 
 .hero-info2 h3 {
@@ -1632,7 +1630,7 @@ button#closePopupBtn2 {
 
 .hero-info2 p {
     font-family: 'Kanit', sans-serif;
-    font-size: 1rem !important;
+    font-size: 14px !important;
     /* ขนาดตัวอักษรใหญ่ขึ้น */
     font-weight: 300 !important;
     /* ปรับน้ำหนักให้บาง */
@@ -1656,17 +1654,18 @@ button#closePopupBtn2 {
     height: auto;
     object-fit: cover;
     border-radius: 10px;
+    margin-top: 45px;
 }
 
 .hero-btn-wrapper {
     display: flex;
     justify-content: center; /* จัดปุ่มให้อยู่ทางซ้าย */
     align-items: center;
-    margin-top: 10px;
+    margin-top: 5px;
     width: 100%; /* ให้ container กินพื้นที่เต็ม */
     position: relative; /* ไม่ใช้ absolute เพื่อให้ตำแหน่งยืดหยุ่น */
     padding: 1rem;
-    transform: translateY(-60px); /* ขยับขึ้นไป 20px */
+    transform: translateY(-30px); /* ขยับขึ้นไป 20px */
 
 }
 
