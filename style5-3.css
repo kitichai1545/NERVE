@@ -127,16 +127,52 @@ body {
 .article-content {
     text-align: left;
     margin: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .article-content p {
     font-weight: 400;
 }
 
+
+
 .article-content h1 {
-    font-size: 2.5rem;
-    margin-bottom: 10px;
-    color: #fff;
+  font-size: 2.5rem !important;
+  margin: 0;
+  color: #fff;
+  white-space: nowrap; /* ป้องกันไม่ให้ h1 ขึ้นบรรทัดใหม่ */
+  flex: 1; /* ให้ h1 ขยายเพื่อดัน .share-icon ไปชิดขวา */
+}
+
+.share-icon {
+  position: relative;
+}
+
+.main-share-icon {
+  cursor: pointer;
+}
+
+.share-icons-hidden {
+  display: none; /* ซ่อนโดยค่าเริ่มต้น */
+  position: absolute;
+  top: 100%; /* วางไอคอนย่อยให้ลงมาใต้ไอคอนหลัก */
+  left: 0;
+  background: #333;
+  padding: 5px;
+  border-radius: 8px;
+}
+
+.share-icons-hidden a {
+  display: inline-block;
+  margin: 5px;
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
 }
 
 .article-body {
@@ -1060,12 +1096,16 @@ button#closePopupBtn2 {
 
 .article-content p {
     font-weight: 400;
+    font-size: 0.9rem !important; /* ขนาดตัวอักษรเล็กลงสำหรับมือถือ */
+    line-height: 1.4 !important;
 }
 
 .article-content h1 {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
+    font-size: 1.5rem !important;
+    margin-bottom: 8px !important;
     color: #fff;
+    white-space: normal; /* อนุญาตให้ตัดขึ้นบรรทัดใหม่ */
+    word-wrap: break-word; /* ตัดคำถ้ายาวเกิน */
 }
 
 .article-body {
@@ -1073,6 +1113,22 @@ button#closePopupBtn2 {
     font-size: 1rem;
     line-height: 1.5;
     margin-top: 20px;
+}
+
+.share-icons-hidden {
+  display: none; /* ซ่อนโดยค่าเริ่มต้น */
+  position: absolute;
+  top: 100%; /* วางไอคอนย่อยให้ลงมาใต้ไอคอนหลัก */
+  left: -20px; /* ขยับให้ห่างจากขอบขวา */
+  background: #333;
+  padding: 5px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* เพิ่มเงาเพื่อความสวยงาม */
+}
+
+.share-icons-hidden a {
+  display: inline-block;
+  margin: 5px;
 }
 
 /*****************************************การ์ด*******************************************/

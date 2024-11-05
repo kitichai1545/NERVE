@@ -217,6 +217,11 @@ nav {
   text-align: center;
 }
 
+.popup-content h2 {
+  font-weight:400; /* หรือ 400 ขึ้นไป */
+}
+
+
 .popup-content button {
   background-color: #DF00B1;
   color: #fff;
@@ -256,10 +261,12 @@ nav {
 
 .service-label {
   display: block;
-  font-weight: bold;
+  font-weight: regular;
   margin-bottom: 10px; /* เพิ่มช่องว่างระหว่าง label กับ checkbox */
   font-size: 18px;
   color: #fff; /* หรือสีอื่นที่คุณต้องการ */
+  padding-left: 10px;
+  padding-bottom: 10px;
 }
 
 .form-group {
@@ -268,18 +275,24 @@ nav {
   align-items: flex-start; /* จัดข้อความและ checkbox ให้อยู่ซ้าย */
 }
 
-.form-group .form-field {
-  flex: 0 0 48%;
-  /* กำหนดให้แต่ละฟอร์มกินพื้นที่ 48% เพื่อให้มีระยะห่างระหว่างฟอร์ม */
-  margin-bottom: 15px;
-}
-
 .form-group label {
   display: block;
   margin-bottom: 5px;
-  font-weight: bold;
+  font-weight: regular;
+  font-family: 'Kanit', sans-serif;
+  font-size: 14px;
+  color: #8E8B8B;
+}
+
+.form-group2 label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: regular;
   color: #fff;
   font-family: 'Kanit', sans-serif;
+  font-size: 14px;
+  text-align: left; 
+  line-height: 1.5;
 }
 
 .form-group input,
