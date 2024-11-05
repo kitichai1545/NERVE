@@ -1444,7 +1444,6 @@ button#closePopupBtn2 {
         height: auto; /* ให้ปรับความสูงอัตโนมัติตามสัดส่วน */
         object-fit: cover; /* ทำให้ภาพครอบคลุมพื้นที่อย่างเหมาะสม */
         pointer-events: none; /* ไม่ให้สามารถคลิกได้ */
-        
     }
     
     nav {
@@ -1651,7 +1650,7 @@ button#closePopupBtn2 {
 }
 
 .background-video {
-    width: 100%;
+    width: 70%;
     height: auto;
     object-fit: cover;
     border-radius: 10px;
