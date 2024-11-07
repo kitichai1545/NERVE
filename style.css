@@ -1673,13 +1673,6 @@ button#closePopupBtn2 {
     text-decoration: none !important;
 }
 
-.background-video2 {
-    pointer-events: none; /* ไม่ให้สามารถคลิกได้ */
-}
-.background-video3 {
-    pointer-events: none; /* ไม่ให้สามารถคลิกได้ */
-}
-
 .img-container {
     display: flex;
     gap: 20px;
@@ -2152,6 +2145,7 @@ button#closePopupBtn2 {
     height: 100vh;
     min-height: 100vh;
     object-fit: cover;
+    pointer-events: none; /* ไม่ให้สามารถคลิกได้ */
 }
 .hero2-con, .hero3-con, .hero4-con {
     height: 100vh;
