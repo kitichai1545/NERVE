@@ -35,12 +35,4 @@ window.addEventListener("load", function () {
     setVideoSource("video04", "S3_COM.mp4", "S3_Mobile.mp4"); 
 });
 
-// เรียกฟังก์ชันเพื่อตั้งค่าแหล่งที่มาของวิดีโอเมื่อเปลี่ยนขนาดหน้าจอ
-window.addEventListener("resize", function () {
-    setVideoSource("video2", "S1_COM1.mp4", "S1_Mobile1.mp4");
-    setVideoSource("video3", "S2_COM.mp4", "S2_Mobile.mp4");
-    setVideoSource("video4", "S3_COM.mp4", "S3_Mobile.mp4");
-    setVideoSource("video02", "S1_COM2.mp4", "S1_Mobile2.mp4");
-    setVideoSource("video03", "S2_COM.mp4", "S2_Mobile.mp4");
-    setVideoSource("video04", "S3_COM.mp4", "S3_Mobile.mp4");
-});
+// เอา resize event ออกชั่วคราวเพื่อดูว่าปัญหามาจากการ resize หรือไม่
