@@ -1674,15 +1674,18 @@ button#closePopupBtn2 {
 }
 
 .background-video2, .background-video3, .background-video4 {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-        height: auto; /* ใช้ auto บนหน้าจอเล็กเพื่อลดความสูง */
-        max-height: 100vh; /* จำกัดไม่ให้สูงเกินหน้าจอ */
-        object-fit: cover;
+    height: 100vh; /* ครอบคลุมเต็มความสูงของหน้าจอโทรศัพท์ */
+    object-fit: cover; /* ทำให้วิดีโอครอบคลุมเต็มพื้นที่โดยรักษาอัตราส่วน */
+    z-index: -1; /* ทำให้วิดีโออยู่เบื้องหลังเนื้อหา */
 }
 
 .hero2-con, .hero3-con, .hero4-con {
     position: relative;
-    height: 100vh; /* ให้ container มีความสูงเต็มหน้าจอ */
+    min-height: 100vh; /* ให้ container ครอบคลุมเต็มความสูงของหน้าจอ */
     overflow: hidden; /* ซ่อนส่วนเกินของวิดีโอ */
 }
 
