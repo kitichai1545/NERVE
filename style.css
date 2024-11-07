@@ -2148,11 +2148,13 @@ button#closePopupBtn2 {
 
 
 .background-video2, .background-video3, .background-video4 {
-        width: 100%;
-        height: 100vh;
-        object-fit: cover;
-    }
-    .hero2-con, .hero3-con, .hero4-con {
-        height: 100vh;
-    }
+    width: 100%;
+    height: 100vh;
+    min-height: 100vh;
+    object-fit: cover;
+}
+.hero2-con, .hero3-con, .hero4-con {
+    height: 100vh;
+    min-height: 100vh;
+}
 }
