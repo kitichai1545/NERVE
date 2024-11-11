@@ -78,12 +78,11 @@
     </section>
 
 
-    <!-- Popup Structure แยกออกมา -->
     <div id="popupForm" class="popup">
         <div class="popup-content">
             <img src="Logo (2).png" alt="" style="width: 120px; height: auto;"><br>
             <h2>สร้างสรรค์ทุกโอกาสบนโลกดิจิตอล</h2>
-            <p>ให้เราเป็นส่วนหนึ่งในธุรกิจคุณ</p> <br>
+            <p>ให้เราเป็นส่วนหนึ่งในธุรกิจคุณ</p><br>
             <form>
                 <div class="form-row">
                     <div class="form-group">
@@ -95,7 +94,7 @@
                         <input type="email" id="email" name="email" placeholder="ระบุอีเมลของคุณ" required>
                     </div>
                 </div>
-
+    
                 <div class="form-row">
                     <div class="form-group">
                         <label for="url">URL Link*</label>
@@ -106,7 +105,7 @@
                         <input type="tel" id="phone" name="phone" placeholder="ระบุเบอร์โทรศัพท์" required>
                     </div>
                 </div>
-
+    
                 <div class="form-group">
                     <label for="Budget">เลือกบัทเจ็ทรายเดือน</label>
                     <select id="Budget" class="dropdown-with-arrow" name="Budget" required>
@@ -118,7 +117,7 @@
                         <option value="more than 1M">More than 1,000,000 Baht</option>
                     </select>
                 </div><br>
-
+    
                 <div class="form-group2">
                     <label class="service-label">บริการ</label>
                     <div class="checkbox-container">
@@ -158,9 +157,17 @@
                         </div>
                     </div>
                 </div>
-
-                <button type="submit" class="close-btn">ร่วมงานกับเรา</button>
+    
+                <!-- ปุ่มส่งข้อมูลแบบ type="button" -->
+                <button type="button" id="submitPopupBtn" class="close-btn">ร่วมงานกับเรา</button>
+                <!-- ปุ่มปิด popup -->
                 <button type="button" id="closePopupBtn2" class="close-btn">ปิด</button>
+    
+                <!-- ส่วนแสดงข้อความสำเร็จ -->
+                <div id="successMessage" style="display: none; color: green; margin-top: 10px;">
+                    กรอกข้อมูลสำเร็จ! ขอบคุณที่ร่วมงานกับเรา
+                </div>
+                
             </form>
         </div>
     </div>

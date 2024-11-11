@@ -493,10 +493,11 @@ button#closePopupBtn2 {
   width: 100%;
   overflow: hidden;
   background-color: #000;
+  padding: 80px 20px;
 }
 
 .blog5-text h3 {
-  font-size: 46px;
+  font-size: 40px;
   color: #fff;
   text-align: center;
   padding: 30px;
