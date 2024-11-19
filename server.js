@@ -2,10 +2,11 @@ const express = require('express');
 const path = require('path');
 const cors = require('cors');
 
+// Allow requests only from the deployed domain
 app.use(cors({
-    origin: 'https://nerve-qpl0.onrender.com',
-    methods: ['GET', 'POST'],
-    allowedHeaders: ['Content-Type', 'Authorization']
+    origin: 'https://nerve-qpl0.onrender.com', // เปลี่ยนเป็นโดเมนที่คุณใช้งานจริง
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
 }));
 const multer = require('multer');
 
@@ -51,16 +52,19 @@ app.post('/login', (req, res) => {
 // สร้าง array เก็บข้อมูล popup
 const popupData = [];
 
-app.post('/api/save-popup-data', (req, res) => {
+aapp.post('/api/save-popup-data', (req, res) => {
     const { name, email, url, phone, budget, serve } = req.body;
+
     if (!name || !email || !url || !phone || !budget || !serve) {
         return res.status(400).json({ message: 'Missing required fields' });
     }
-    const date = new Date().toLocaleDateString(); // เก็บวันที่
-    console.log("Received Data:", { name, email, url, phone, budget, serve, date }); // แสดงข้อมูลที่รับมา
+
+    const date = new Date().toLocaleDateString();
     popupData.push({ name, email, url, phone, budget, serve, date });
-    res.json({ message: 'Data saved successfully!' });
+
+    res.status(201).json({ message: 'Data saved successfully!' });
 });
+
 
 // Endpoint สำหรับดึงข้อมูล popup ทั้งหมดใน array
 app.get('/api/get-popup-data', (req, res) => {
@@ -104,4 +108,18 @@ app.get('/get-content', (req, res) => {
 const PORT = 3000;
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
+});
+
+function verifyToken(req, res, next) {
+    const authHeader = req.headers['authorization'];
+    const token = authHeader && authHeader.split(' ')[1];
+
+    if (!token || token !== 'sample-jwt-token') { // ตรวจสอบ token
+        return res.status(403).json({ message: 'Unauthorized access' });
+    }
+    next();
+}
+
+app.post('/upload-background-video', verifyToken, upload.single('video'), (req, res) => {
+    res.json({ message: 'Background video uploaded successfully!', file: req.file });
 });
