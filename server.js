@@ -17,22 +17,8 @@ app.get('/index1', (req, res) => {
     res.sendFile(path.join(__dirname, 'index.html'));
 });
 
-// Middleware สำหรับตรวจสอบ Token
-function verifyToken(req, res, next) {
-    const authHeader = req.headers['authorization'];
-    const token = authHeader && authHeader.split(' ')[1]; // แยกเอา token
-
-    if (token === 'sample-jwt-token') { // ตรวจสอบ token ว่าถูกต้องหรือไม่
-        next(); // ให้ผ่านไปยังฟังก์ชันถัดไป
-    } else {
-        res.status(403).json({ message: 'Unauthorized access' }); // หาก token ไม่ถูกต้อง
-    }
-}
-
-// Route สำหรับ backoffice (ต้องมี verifyToken)
-app.get('/api/get-popup-data', (req, res) => {
-    console.log('Fetching popup data:', popupData); // ตรวจสอบข้อมูลใน Array popupData
-    res.json(popupData);
+app.get('/backoffice.html', (req, res) => {
+    res.sendFile(path.join(__dirname, 'backoffice.html'));
 });
 
 // Endpoint สำหรับการ Login
@@ -54,19 +40,13 @@ const popupData = [];
 
 app.post('/api/save-popup-data', (req, res) => {
     const { name, email, url, phone, budget, serve } = req.body;
+    const date = new Date().toLocaleDateString(); // เก็บวันที่
+    console.log("Received Data:", { name, email, url, phone, budget, serve, date }); // แสดงข้อมูลที่รับมา
 
-    console.log('Received Data:', req.body); // ตรวจสอบข้อมูลที่ได้รับ
-
-    if (!name || !email || !url || !phone || !budget || !serve) {
-        return res.status(400).json({ message: 'Missing required fields' });
-    }
-
-    const date = new Date().toLocaleDateString();
+    // ส่งข้อมูลพร้อมวันที่ไปยัง popupData
     popupData.push({ name, email, url, phone, budget, serve, date });
 
-    console.log('Updated popupData:', popupData); // ตรวจสอบข้อมูลที่บันทึก
-
-    res.status(201).json({ message: 'Data saved successfully!' });
+    res.json({ message: 'Data saved successfully!' });
 });
 
 
