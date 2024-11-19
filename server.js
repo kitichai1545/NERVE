@@ -38,12 +38,14 @@ app.post('/login', (req, res) => {
 // สร้าง array เก็บข้อมูล popup
 const popupData = [];
 
-// Endpoint สำหรับรับข้อมูลจาก Popup และบันทึกใน array
 app.post('/api/save-popup-data', (req, res) => {
     const { name, email, url, phone, budget, serve } = req.body;
-    console.log("Received Data:", { name, email, url, phone, budget, serve }); // แสดงผลข้อมูลที่รับมา
+    const date = new Date().toLocaleDateString(); // เก็บวันที่
+    console.log("Received Data:", { name, email, url, phone, budget, serve, date }); // แสดงข้อมูลที่รับมา
 
-    popupData.push({ name, email, url, phone, budget, serve, date: new Date().toISOString() });
+    // ส่งข้อมูลพร้อมวันที่ไปยัง popupData
+    popupData.push({ name, email, url, phone, budget, serve, date });
+
     res.json({ message: 'Data saved successfully!' });
 });
 

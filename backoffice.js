@@ -108,6 +108,7 @@ function loadPopupData() {
     fetch('http://localhost:3000/api/get-popup-data')
         .then(response => response.json())
         .then(data => {
+            console.log('Received data:', data); // ดูข้อมูลที่ได้จาก API
             const tableBody = document.querySelector('.popup-data-table tbody');
             tableBody.innerHTML = ''; // ล้างข้อมูลเก่า
 
@@ -120,7 +121,7 @@ function loadPopupData() {
                     <td>${entry.phone || 'N/A'}</td>
                     <td>${entry.budget || 'N/A'}</td>
                     <td>${entry.serve || 'N/A'}</td>
-                    <td>${entry.date ? formatDate(entry.date) : 'N/A'}</td>
+                    <td>${entry.date || 'N/A'}</td> <!-- แสดงวันที่ -->
                 `;
                 tableBody.appendChild(row);
             });
@@ -169,7 +170,8 @@ function submitPopupForm() {
 }
 
 function formatDate(dateString) {
-    if (!dateString) return 'N/A';
+    if (!dateString) return 'N/A'; // หากไม่มีก็แสดง 'N/A'
+    console.log('Formatted date:', new Date(dateString)); // เช็คการแปลงวันที่
     const options = { year: 'numeric', month: '2-digit', day: '2-digit' };
     return new Date(dateString).toLocaleDateString(undefined, options);
 }
