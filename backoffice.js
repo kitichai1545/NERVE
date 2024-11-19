@@ -84,33 +84,22 @@ function saveContent() {
 
 function loadContent() {
     const token = localStorage.getItem('authToken');
-    
-    if (!token) {
-        console.error("Token is missing. Please log in.");
-        return;  // ป้องกันไม่ให้ทำงานหากไม่มี token
-    }
-    
+    // ปรับ URL ให้ตรงกับ API ที่ใช้
     fetch('https://nerve-qpl0.onrender.com/get-content', {
         method: 'GET',
-        headers: { 'Authorization': `Bearer ${token}` }
+        headers: {
+            'Authorization': `Bearer ${token}`
+        }
     })
-        .then(response => {
-            if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`);
-            }
-            return response.json();
-        })
-        .then(data => {
-            if (data && data.content) {
-                document.getElementById('content-editor').value = data.content;
-            } else {
-                console.error("Content not found in the response");
-            }
-        })
-        .catch(error => {
-            console.error("Error loading content:", error);
-            alert("ไม่สามารถโหลดข้อมูลได้ กรุณาลองใหม่อีกครั้ง");
-        });
+    .then(response => response.json())
+    .then(data => {
+        if (data && data.content) {
+            document.getElementById('content-editor').value = data.content;
+        } else {
+            console.error("No content found.");
+        }
+    })
+    .catch(error => console.error("Error loading content:", error));
 }
 
 
@@ -123,13 +112,19 @@ function loadContent() {
 
 
 function loadPopupData() {
-    fetch('https://nerve-qpl0.onrender.com/api/get-popup-data')
-        .then(response => response.json())
-        .then(data => {
-            console.log('Data loaded:', data);  // เพิ่ม log เพื่อตรวจสอบข้อมูลที่โหลดมา
-            const tableBody = document.querySelector('.popup-data-table tbody');
-            tableBody.innerHTML = '';  // ล้างข้อมูลเก่า
-    
+    fetch('https://nerve-qpl0.onrender.com/api/get-popup-data', {
+        method: 'GET', 
+        headers: { 
+            'Authorization': `Bearer ${localStorage.getItem('authToken')}` 
+        }
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log('Received data:', data); // ดูข้อมูลที่ได้จาก API
+        const tableBody = document.querySelector('.popup-data-table tbody');
+        tableBody.innerHTML = ''; // ล้างข้อมูลเก่า
+
+        if (data && Array.isArray(data)) {
             data.forEach(entry => {
                 const row = document.createElement('tr');
                 row.innerHTML = `
@@ -143,11 +138,14 @@ function loadPopupData() {
                 `;
                 tableBody.appendChild(row);
             });
-        })
-        .catch(error => {
-            console.error('Error loading popup data:', error);
-            alert('ไม่สามารถโหลดข้อมูลได้ กรุณาลองใหม่อีกครั้ง');
-        });
+        } else {
+            console.error('No valid data found');
+        }
+    })
+    .catch(error => {
+        console.error('Error loading popup data:', error);
+        alert('ไม่สามารถโหลดข้อมูลได้ กรุณาลองใหม่อีกครั้ง');
+    });
 }
 
 function submitPopupForm() {
