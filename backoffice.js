@@ -7,7 +7,7 @@ function uploadBackgroundVideo() {
         const formData = new FormData();
         formData.append('video', videoFile);
 
-        fetch('https://nerve-backoffice.onrender.com/upload-background-video', {
+        fetch('https://nerve-qpl0.onrender.com/upload-background-video', {
             method: 'POST',
             headers: { 'Authorization': `Bearer ${token}` },
             body: formData
@@ -35,7 +35,7 @@ function uploadBackgroundImage() {
         const formData = new FormData();
         formData.append('image', imageFile);
 
-        fetch('https://nerve-backoffice.onrender.com/upload-background-image', {
+        fetch('https://nerve-qpl0.onrender.com/upload-background-image', {
             method: 'POST',
             headers: { 'Authorization': `Bearer ${token}` },
             body: formData
@@ -68,7 +68,7 @@ function saveContent() {
     const content = document.getElementById('content-editor').value;
 
     if (content && token) {
-        fetch('https://nerve-backoffice.onrender.com/save-content', {
+        fetch('https://nerve-qpl0.onrender.com/save-content', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -84,7 +84,7 @@ function saveContent() {
 
 function loadContent() {
     const token = localStorage.getItem('authToken');
-    fetch('https://nerve-backoffice.onrender.com/get-content', {
+    fetch('https://nerve-qpl0.onrender.com/get-content', {
         method: 'GET',
         headers: { 'Authorization': `Bearer ${token}` }
     })
@@ -105,10 +105,10 @@ function loadContent() {
 
 
 function loadPopupData() {
-    fetch('https://nerve-backoffice.onrender.com/api/get-popup-data')
+    fetch('https://nerve-qpl0.onrender.com/api/get-popup-data')
         .then(response => response.json())
         .then(data => {
-            console.log('Received Data:', data); // Log ข้อมูลที่ได้รับ
+            console.log('Received data:', data); // ดูข้อมูลที่ได้จาก API
             const tableBody = document.querySelector('.popup-data-table tbody');
             tableBody.innerHTML = ''; // ล้างข้อมูลเก่า
 
@@ -121,13 +121,13 @@ function loadPopupData() {
                     <td>${entry.phone || 'N/A'}</td>
                     <td>${entry.budget || 'N/A'}</td>
                     <td>${entry.serve || 'N/A'}</td>
-                    <td>${entry.date || 'N/A'}</td>
+                    <td>${entry.date || 'N/A'}</td> <!-- แสดงวันที่ -->
                 `;
                 tableBody.appendChild(row);
             });
         })
         .catch(error => {
-            console.error('Error loading popup data:', error); // Log Error
+            console.error('Error loading popup data:', error);
             alert('ไม่สามารถโหลดข้อมูลได้ กรุณาลองใหม่อีกครั้ง');
         });
 }
@@ -146,7 +146,7 @@ function submitPopupForm() {
         return;
     }
 
-    fetch('https://nerve-backoffice.onrender.com/api/save-popup-data', {
+    fetch('https://nerve-qpl0.onrender.com/api/save-popup-data', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -355,60 +355,3 @@ function addBlogToSection2() {
 document.getElementById("add-new-blog").onclick = function () {
     addBlogToSection2(); // เรียกฟังก์ชันเมื่อกดปุ่มเพิ่ม Blog
 };
-
-
-async function submitPopupForm() {
-    const name = document.getElementById('name').value.trim();
-    const email = document.getElementById('email').value.trim();
-    const url = document.getElementById('url').value.trim();
-    const phone = document.getElementById('phone').value.trim();
-    const budget = document.getElementById('Budget').value;
-    const services = Array.from(document.querySelectorAll('input[name="service"]:checked'))
-        .map(checkbox => checkbox.value);
-
-    if (!name || !email || !url || !phone || !budget || services.length === 0) {
-        alert("กรุณากรอกข้อมูลให้ครบทุกช่อง");
-        return;
-    }
-
-    console.log("Sending Data:", { name, email, url, phone, budget, services });
-
-    try {
-        const response = await fetch('https://nerve-backoffice.onrender.com/api/save-popup-data', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-                name,
-                email,
-                url,
-                phone,
-                budget,
-                serve: services.join(', ')
-            }),
-        });
-
-        if (response.ok) {
-            const data = await response.json();
-            console.log('Success:', data); // Log ความสำเร็จ
-            alert("บันทึกข้อมูลเรียบร้อย");
-            loadPopupData(); // โหลดข้อมูลใหม่
-        } else {
-            console.error('Error Response:', response.status); // Log Status Code
-            alert("เกิดข้อผิดพลาดในการส่งข้อมูล กรุณาลองใหม่อีกครั้ง");
-        }
-    } catch (error) {
-        console.error('Error:', error); // Log การเชื่อมต่อ
-        alert("ไม่สามารถเชื่อมต่อเซิร์ฟเวอร์ได้ กรุณาลองใหม่อีกครั้ง");
-    }
-}
-
-function verifyToken(req, res, next) {
-    const authHeader = req.headers['authorization'];
-    const token = authHeader && authHeader.split(' ')[1];
-
-    if (token === 'sample-jwt-token') {
-        next(); // หาก Token ถูกต้อง
-    } else {
-        res.status(403).json({ message: 'Unauthorized access' });
-    }
-}

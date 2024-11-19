@@ -4,7 +4,7 @@ async function login() {
     const password = document.getElementById("password").value;
 
     try {
-        const response = await fetch('https://nerve-backoffice.onrender.com/api/login', {
+        const response = await fetch('https://nerve-qpl0.onrender.com/api/login', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

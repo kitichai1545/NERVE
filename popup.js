@@ -46,7 +46,7 @@ async function submitPopupForm() {
 
     try {
         // ส่งข้อมูลไปยัง API ของ Backend
-        const response = await fetch('https://nerve-backoffice.onrender.com/api/save-popup-data', {
+        const response = await fetch('https://nerve-qpl0.onrender.com/api/save-popup-data', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
