@@ -7,11 +7,25 @@ const multer = require('multer');
 app.use(express.json());
 // ใช้ CORS ให้รองรับทั้ง localhost และ production
 app.use(cors({
-    origin: '*', // เพื่ออนุญาตทุกโดเมน
+    origin: 'https://nerve-qpl0.onrender.com', // ระบุโดเมนที่อนุญาต
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     allowedHeaders: ['Content-Type', 'Authorization'],
 }));
 app.use(express.static(path.join(__dirname)));
+
+const allowedOrigins = ['https://nerve-qpl0.onrender.com', 'https://your-other-domain.com'];
+
+app.use(cors({
+    origin: function (origin, callback) {
+        if (allowedOrigins.indexOf(origin) !== -1) {
+            callback(null, true); // อนุญาต
+        } else {
+            callback(new Error('Not allowed by CORS')); // ปฏิเสธ
+        }
+    },
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
+}));
 
 // Route สำหรับส่งไฟล์ HTML
 app.get('/Login.html', (req, res) => {
