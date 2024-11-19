@@ -194,12 +194,10 @@ function showDefaultSection() {
     document.getElementById('nerve-section').style.display = 'block';
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-    const token = localStorage.getItem('authToken');
-    if (!token) {
-        alert('กรุณาเข้าสู่ระบบก่อน!');
-        window.location.href = '/Login.html'; // กลับไปหน้า Login
-    }
+document.addEventListener("DOMContentLoaded", function () {
+    loadContent();
+    showDefaultSection();
+    loadPopupData();
 });
 
 document.getElementById("logo").addEventListener("click", () => {
@@ -357,16 +355,3 @@ function addBlogToSection2() {
 document.getElementById("add-new-blog").onclick = function () {
     addBlogToSection2(); // เรียกฟังก์ชันเมื่อกดปุ่มเพิ่ม Blog
 };
-
-
-const token = localStorage.getItem('authToken');
-console.log('Token:', token); // ตรวจสอบว่า Token มีค่าหรือไม่
-
-fetch('https://nerve-qpl0.onrender.com/upload-background-video', {
-    method: 'POST',
-    headers: { 'Authorization': `Bearer ${token}` },
-    body: formData
-})
-    .then(response => response.json())
-    .then(data => console.log('Response:', data)) // ตรวจสอบ Response
-    .catch(error => console.error('Error:', error)); // แสดงข้อผิดพลาด

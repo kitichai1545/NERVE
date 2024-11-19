@@ -14,9 +14,8 @@ async function login() {
 
         if (response.ok) {
             const data = await response.json();
-            const token = data.token; // รับ Token จาก API
-            localStorage.setItem('authToken', token); // เก็บ Token ใน Local Storage
-            console.log('Token stored:', token); // ตรวจสอบว่า Token ถูกเก็บสำเร็จหรือไม่
+            const token = data.token; // Assuming API returns token as { "token": "your_token" }
+            localStorage.setItem('authToken', token);
             document.getElementById("message").innerText = "Login successful!";
             // Redirect to dashboard or other page
             window.location.href = "/dashboard";

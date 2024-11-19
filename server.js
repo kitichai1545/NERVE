@@ -5,11 +5,7 @@ const cors = require('cors');
 const multer = require('multer');
 
 app.use(express.json());
-app.use(cors({
-    origin: '*', // อนุญาตทุก Origin
-    methods: ['GET', 'POST'], // อนุญาตเฉพาะ Method ที่จำเป็น
-    allowedHeaders: ['Content-Type', 'Authorization'] // อนุญาตเฉพาะ Header ที่จำเป็น
-}));
+app.use(cors());
 app.use(express.static(path.join(__dirname)));
 
 // Route สำหรับส่งไฟล์ HTML
@@ -21,8 +17,7 @@ app.get('/index1', (req, res) => {
     res.sendFile(path.join(__dirname, 'index.html'));
 });
 
-app.get('/backoffice.html', verifyToken, (req, res) => {
-    console.log('Authorization Header:', req.headers['authorization']); // ดูว่ามี Token ส่งมาหรือไม่
+app.get('/backoffice.html', (req, res) => {
     res.sendFile(path.join(__dirname, 'backoffice.html'));
 });
 
