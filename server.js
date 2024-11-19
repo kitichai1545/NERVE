@@ -11,10 +11,9 @@ app.use(cors({
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     allowedHeaders: ['Content-Type', 'Authorization'],
 }));
-app.use(express.static(path.join(__dirname)));
 
+// ค่าตัวอย่างของ CORS สำหรับหลายโดเมน
 const allowedOrigins = ['https://nerve-qpl0.onrender.com', 'https://your-other-domain.com'];
-
 app.use(cors({
     origin: function (origin, callback) {
         if (allowedOrigins.indexOf(origin) !== -1) {
@@ -26,6 +25,8 @@ app.use(cors({
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     allowedHeaders: ['Content-Type', 'Authorization'],
 }));
+
+app.use(express.static(path.join(__dirname)));
 
 // Route สำหรับส่งไฟล์ HTML
 app.get('/Login.html', (req, res) => {
@@ -67,7 +68,6 @@ app.post('/api/save-popup-data', (req, res) => {
 
     res.json({ message: 'Data saved successfully!' });
 });
-
 
 // Endpoint สำหรับดึงข้อมูล popup ทั้งหมดใน array
 app.get('/api/get-popup-data', (req, res) => {

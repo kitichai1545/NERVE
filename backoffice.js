@@ -54,15 +54,6 @@ function uploadBackgroundImage() {
     }
 }
 
-
-
-
-
-
-
-
-
-
 function saveContent() {
     const token = localStorage.getItem('authToken');
     const content = document.getElementById('content-editor').value;
@@ -84,7 +75,6 @@ function saveContent() {
 
 function loadContent() {
     const token = localStorage.getItem('authToken');
-    // ปรับ URL ให้ตรงกับ API ที่ใช้
     fetch('https://nerve-qpl0.onrender.com/get-content', {
         method: 'GET',
         headers: {
@@ -102,25 +92,16 @@ function loadContent() {
     .catch(error => console.error("Error loading content:", error));
 }
 
-
-
-
-
-
-
-
-
-
 function loadPopupData() {
     fetch('https://nerve-qpl0.onrender.com/api/get-popup-data', {
-        method: 'GET', 
+        method: 'GET',
         headers: { 
-            'Authorization': `Bearer ${localStorage.getItem('authToken')}` 
+            'Authorization': `Bearer ${localStorage.getItem('authToken')}`
         }
     })
     .then(response => response.json())
     .then(data => {
-        console.log('Received data:', data); // ดูข้อมูลที่ได้จาก API
+        console.log('Received data:', data);
         const tableBody = document.querySelector('.popup-data-table tbody');
         tableBody.innerHTML = ''; // ล้างข้อมูลเก่า
 
@@ -134,7 +115,7 @@ function loadPopupData() {
                     <td>${entry.phone || 'N/A'}</td>
                     <td>${entry.budget || 'N/A'}</td>
                     <td>${entry.serve || 'N/A'}</td>
-                    <td>${entry.date || 'N/A'}</td> <!-- แสดงวันที่ -->
+                    <td>${entry.date || 'N/A'}</td>
                 `;
                 tableBody.appendChild(row);
             });
@@ -162,13 +143,13 @@ function submitPopupForm() {
         return;
     }
 
-    const token = localStorage.getItem('authToken');  // ดึง token ที่เก็บไว้ใน localStorage
+    const token = localStorage.getItem('authToken');
 
     fetch('https://nerve-qpl0.onrender.com/api/save-popup-data', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
-            'Authorization': `Bearer ${token}`  // ส่ง token ใน headers
+            'Authorization': `Bearer ${token}`
         },
         body: JSON.stringify({
             name,
@@ -188,242 +169,4 @@ function submitPopupForm() {
         console.error('Error submitting popup data:', error);
         alert("เกิดข้อผิดพลาดในการส่งข้อมูล กรุณาลองใหม่อีกครั้ง");
     });
-}
-
-function formatDate(dateString) {
-    if (!dateString) return 'N/A'; // หากไม่มีก็แสดง 'N/A'
-    console.log('Formatted date:', new Date(dateString)); // เช็คการแปลงวันที่
-    const options = { year: 'numeric', month: '2-digit', day: '2-digit' };
-    return new Date(dateString).toLocaleDateString(undefined, options);
-}
-
-
-
-
-
-
-
-
-
-
-
-
-function showDefaultSection() {
-    document.querySelectorAll('.content-section, .content-section2, .content-section3').forEach(section => {
-        section.style.display = 'none';
-    });
-    document.getElementById('nerve-section').style.display = 'block';
-}
-
-document.addEventListener("DOMContentLoaded", function () {
-    loadContent();
-    showDefaultSection();
-    loadPopupData();
-});
-
-document.getElementById("logo").addEventListener("click", () => {
-    showDefaultSection();
-    document.querySelectorAll('.menu-item').forEach(item => item.classList.remove('active'));
-});
-
-document.querySelectorAll('.menu-item').forEach(item => {
-    item.addEventListener('click', function (event) {
-        event.preventDefault();
-        const targetId = this.getAttribute('href').substring(1);
-        document.querySelectorAll('.content-section, .content-section2, .content-section3').forEach(section => {
-            section.style.display = 'none';
-        });
-        document.getElementById(targetId).style.display = 'block';
-        document.querySelectorAll('.menu-item').forEach(menu => menu.classList.remove('active'));
-        this.classList.add('active');
-    });
-});
-
-
-
-
-
-
-
-
-// ฟังก์ชันแสดงตัวอย่างวิดีโอ
-function previewVideo(section) {
-    // อ้างอิงองค์ประกอบของ video input และ preview โดยใช้ section name
-    const videoInput1 = document.getElementById(`${section}-background-video`);
-    const videoInput2 = document.getElementById(`${section}-background-video1`);
-    const videoPreview1 = document.getElementById(`${section}-video-preview`);
-    const videoPreview2 = document.getElementById(`${section}-video-preview1`);
-
-    if (videoInput1 && videoInput1.files && videoInput1.files[0]) {
-        const fileURL = URL.createObjectURL(videoInput1.files[0]);
-        videoPreview1.src = fileURL;
-        videoPreview1.style.display = 'block';
-    } else {
-        videoPreview1.style.display = 'none';
-    }
-
-    if (videoInput2 && videoInput2.files && videoInput2.files[0]) {
-        const fileURL = URL.createObjectURL(videoInput2.files[0]);
-        videoPreview2.src = fileURL;
-        videoPreview2.style.display = 'block';
-    } else {
-        videoPreview2.style.display = 'none';
-    }
-}
-
-// ฟังก์ชันแสดงตัวอย่างรูปภาพ
-function previewImage(section) {
-    const imageInput1 = document.getElementById(`${section}-background-image`);
-    const imageInput2 = document.getElementById(`${section}-background-image1`);
-    const imagePreview1 = document.getElementById(`${section}-image-preview`);
-    const imagePreview2 = document.getElementById(`${section}-image-preview1`);
-
-    if (imageInput1 && imageInput1.files && imageInput1.files[0]) {
-        const fileURL = URL.createObjectURL(imageInput1.files[0]);
-        imagePreview1.src = fileURL;
-        imagePreview1.style.display = 'block';
-    } else {
-        imagePreview1.style.display = 'none';
-    }
-
-    if (imageInput2 && imageInput2.files && imageInput2.files[0]) {
-        const fileURL = URL.createObjectURL(imageInput2.files[0]);
-        imagePreview2.src = fileURL;
-        imagePreview2.style.display = 'block';
-    } else {
-        imagePreview2.style.display = 'none';
-    }
-}
-
-
-
-
-
-
-
-
-
-
-
-function addBlogToSection1() {
-    const blogListSection = document.getElementById("blog-list1");
-    const blogCount = blogListSection.children.length + 1; // นับจำนวน Blog ที่มีอยู่
-    const blogId = `blog-section1-${blogCount}`; // ใช้สำหรับ ID ไม่ต้องแสดงบน UI
-
-    const blogItem = document.createElement("div");
-    blogItem.classList.add("blog-item");
-    blogItem.id = blogId;
-
-    blogItem.innerHTML = `
-        <h3>Blog Section ${blogCount}</h3> <!-- เปลี่ยนหัวข้อเป็นตัวเลขเท่านั้น -->
-        <label>Blog Name (for Admin use):</label>
-        <input type="text" id="${blogId}-label" placeholder="Enter blog name here for admin use">
-
-        <label>Blog Image:</label>
-        <input type="file" id="${blogId}-background-image" accept="image/*" onchange="previewImage('${blogId}')">
-        <img id="${blogId}-image-preview" style="display: none; width: 100%; max-width: 500px; margin-top: 10px;" alt="Image Preview">
-
-        <label>Blog Title:</label>
-        <input type="text" id="${blogId}-title" placeholder="Enter blog title here...">
-
-        <label>Content:</label>
-        <textarea id="${blogId}-content" rows="5" cols="50" placeholder="Edit content here..."></textarea>
-
-        <button onclick="saveBlog('${blogId}')">Save</button>
-        <button onclick="deleteBlog('${blogId}')">Delete</button>
-    `;
-
-    blogListSection.appendChild(blogItem);
-}
-
-document.getElementById("add-new-blog1").onclick = function () {
-    addBlogToSection1(); // เรียกฟังก์ชันเมื่อกดปุ่มเพิ่ม Blog
-};
-
-
-
-function addBlogToSection2() {
-    const blogListSection = document.getElementById("blog-list");
-    const blogCount = blogListSection.children.length + 1; // นับจำนวน Blog ที่มีอยู่
-    const blogId = `blog-section2-${blogCount}`; // ใช้สำหรับ ID
-
-    const blogItem = document.createElement("div");
-    blogItem.classList.add("blog-item");
-    blogItem.id = blogId;
-
-    blogItem.innerHTML = `
-        <h3>Blog Section ${blogCount}</h3> <!-- เปลี่ยนหัวข้อเป็นตัวเลขต่อเนื่อง -->
-        <label>Blog Name (for Admin use):</label>
-        <input type="text" id="${blogId}-label" placeholder="Enter blog name here for admin use">
-
-        <label>Blog Image:</label>
-        <input type="file" id="${blogId}-background-image" accept="image/*" onchange="previewImage('${blogId}')">
-        <img id="${blogId}-image-preview" style="display: none; width: 100%; max-width: 500px; margin-top: 10px;" alt="Image Preview">
-
-        <label>Blog Title:</label>
-        <input type="text" id="${blogId}-title" placeholder="Enter blog title here...">
-
-        <label>Content:</label>
-        <textarea id="${blogId}-content" rows="5" cols="50" placeholder="Edit content here..."></textarea>
-
-        <button onclick="saveBlog('${blogId}')">Save</button>
-        <button onclick="deleteBlog('${blogId}')">Delete</button>
-    `;
-
-    blogListSection.appendChild(blogItem);
-}
-
-document.getElementById("add-new-blog").onclick = function () {
-    addBlogToSection2(); // เรียกฟังก์ชันเมื่อกดปุ่มเพิ่ม Blog
-};
-
-// ใน backoffice.js
-async function submitPopupForm() {
-    // รับค่าจากฟอร์มใน popup
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const url = document.getElementById('url').value;
-    const phone = document.getElementById('phone').value;
-    const budget = document.getElementById('Budget').value;
-    const services = Array.from(document.querySelectorAll('input[name="service"]:checked'))
-                        .map(checkbox => checkbox.value);
-
-    // ตรวจสอบว่าฟิลด์ทั้งหมดถูกกรอกครบถ้วน
-    if (!name || !email || !url || !phone || !budget || services.length === 0) {
-        alert("กรุณากรอกข้อมูลให้ครบทุกช่อง");
-        return;
-    }
-
-    try {
-        // ส่งข้อมูลไปยัง API ของ Backend
-        const response = await fetch('https://nerve-qpl0.onrender.com/api/save-popup-data', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${localStorage.getItem('authToken')}`
-            },
-            body: JSON.stringify({
-                name,
-                email,
-                url,
-                phone,
-                budget,
-                serve: services.join(', '),
-            }),
-        });
-
-        if (response.ok) {
-            const data = await response.json();
-            console.log('Success:', data);
-            // แสดงข้อความสำเร็จ
-            const successMessage = document.getElementById("successMessage");
-            successMessage.style.display = "block"; // แสดงข้อความสำเร็จ
-            document.getElementById("submitPopupBtn").style.display = "none"; // ซ่อนปุ่มส่ง
-        } else {
-            alert("เกิดข้อผิดพลาดในการส่งข้อมูล กรุณาลองใหม่อีกครั้ง");
-        }
-    } catch (error) {
-        console.error('Error:', error);
-        alert("ไม่สามารถเชื่อมต่อเซิร์ฟเวอร์ได้ กรุณาลองใหม่อีกครั้ง");
-    }
 }
