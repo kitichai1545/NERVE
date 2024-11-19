@@ -46,9 +46,11 @@ async function submitPopupForm() {
 
     try {
         // ส่งข้อมูลไปยัง API ของ Backend
-        fetch('https://nerve-qpl0.onrender.com/api/save-popup-data', {
+        const response = await fetch('https://nerve-qpl0.onrender.com/api/save-popup-data', {
             method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
+            headers: {
+                'Content-Type': 'application/json',
+            },
             body: JSON.stringify({
                 name,
                 email,
@@ -61,14 +63,14 @@ async function submitPopupForm() {
 
         if (response.ok) {
             const data = await response.json();
-            if (data.message) {
-                alert("บันทึกข้อมูลเรียบร้อย");
-                document.getElementById("successMessage").style.display = "block";
-            } else {
-                alert("Unexpected response from server.");
-            }
+            console.log('Success:', data);
+
+            // แสดงข้อความสำเร็จ
+            const successMessage = document.getElementById("successMessage");
+            successMessage.style.display = "block"; // แสดงข้อความสำเร็จ
+            document.getElementById("submitPopupBtn").style.display = "none"; // ซ่อนปุ่มส่ง
         } else {
-            alert(`Error: ${response.status} ${response.statusText}`);
+            alert("เกิดข้อผิดพลาดในการส่งข้อมูล กรุณาลองใหม่อีกครั้ง");
         }
     } catch (error) {
         console.error('Error:', error);

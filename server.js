@@ -1,25 +1,11 @@
 const express = require('express');
 const path = require('path');
+const app = express();
 const cors = require('cors');
-
-// Allow requests only from the deployed domain
-app.use(cors({
-    origin: 'https://nerve-qpl0.onrender.com', // เปลี่ยนเป็นโดเมนที่คุณใช้งานจริง
-    methods: ['GET', 'POST', 'PUT', 'DELETE'],
-    allowedHeaders: ['Content-Type', 'Authorization'],
-}));
 const multer = require('multer');
 
-const app = express();
-
-// ใช้ CORS และตั้งค่าตามที่ต้องการ
-app.use(cors({
-    origin: 'https://nerve-qpl0.onrender.com',
-    methods: ['GET', 'POST', 'PUT', 'DELETE'],
-    allowedHeaders: ['Content-Type', 'Authorization']
-}));
-
 app.use(express.json());
+app.use(cors());
 app.use(express.static(path.join(__dirname)));
 
 // Route สำหรับส่งไฟล์ HTML
@@ -52,17 +38,15 @@ app.post('/login', (req, res) => {
 // สร้าง array เก็บข้อมูล popup
 const popupData = [];
 
-aapp.post('/api/save-popup-data', (req, res) => {
+app.post('/api/save-popup-data', (req, res) => {
     const { name, email, url, phone, budget, serve } = req.body;
+    const date = new Date().toLocaleDateString(); // เก็บวันที่
+    console.log("Received Data:", { name, email, url, phone, budget, serve, date }); // แสดงข้อมูลที่รับมา
 
-    if (!name || !email || !url || !phone || !budget || !serve) {
-        return res.status(400).json({ message: 'Missing required fields' });
-    }
-
-    const date = new Date().toLocaleDateString();
+    // ส่งข้อมูลพร้อมวันที่ไปยัง popupData
     popupData.push({ name, email, url, phone, budget, serve, date });
 
-    res.status(201).json({ message: 'Data saved successfully!' });
+    res.json({ message: 'Data saved successfully!' });
 });
 
 
@@ -76,25 +60,16 @@ const upload = multer({ dest: 'uploads/' });
 
 // Endpoint สำหรับอัปโหลดวิดีโอพื้นหลัง
 app.post('/upload-background-video', upload.single('video'), (req, res) => {
-    if (!req.file) {
-        return res.status(400).json({ message: 'No video file uploaded' });
-    }
     res.json({ message: 'Background video uploaded successfully!', file: req.file });
 });
 
 // Endpoint สำหรับอัปโหลดภาพพื้นหลัง
 app.post('/upload-background-image', upload.single('image'), (req, res) => {
-    if (!req.file) {
-        return res.status(400).json({ message: 'No image file uploaded' });
-    }
     res.json({ message: 'Background image uploaded successfully!', file: req.file });
 });
 
 // Endpoint สำหรับอัปโหลดเนื้อหาวิดีโอ
 app.post('/upload-content-video', upload.single('video'), (req, res) => {
-    if (!req.file) {
-        return res.status(400).json({ message: 'No video file uploaded' });
-    }
     res.json({ message: 'Content video uploaded successfully!', file: req.file });
 });
 
@@ -104,22 +79,7 @@ app.get('/get-content', (req, res) => {
     res.json({ content: existingContent });
 });
 
-// Start Server
 const PORT = 3000;
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
-});
-
-function verifyToken(req, res, next) {
-    const authHeader = req.headers['authorization'];
-    const token = authHeader && authHeader.split(' ')[1];
-
-    if (!token || token !== 'sample-jwt-token') { // ตรวจสอบ token
-        return res.status(403).json({ message: 'Unauthorized access' });
-    }
-    next();
-}
-
-app.post('/upload-background-video', verifyToken, upload.single('video'), (req, res) => {
-    res.json({ message: 'Background video uploaded successfully!', file: req.file });
 });

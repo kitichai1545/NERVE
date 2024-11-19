@@ -176,16 +176,6 @@ function formatDate(dateString) {
     return new Date(dateString).toLocaleDateString(undefined, options);
 }
 
-console.log('Sending data:', {
-    name,
-    email,
-    url,
-    phone,
-    budget,
-    serve: services.join(', '),
-});
-
-
 
 
 
