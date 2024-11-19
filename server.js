@@ -17,7 +17,7 @@ app.get('/index1', (req, res) => {
     res.sendFile(path.join(__dirname, 'index.html'));
 });
 
-app.get('/backoffice.html', (req, res) => {
+app.get('/backoffice.html', verifyToken, (req, res) => {
     res.sendFile(path.join(__dirname, 'backoffice.html'));
 });
 
@@ -40,11 +40,11 @@ const popupData = [];
 
 app.post('/api/save-popup-data', (req, res) => {
     const { name, email, url, phone, budget, serve } = req.body;
-    const date = new Date().toLocaleDateString(); // เก็บวันที่
-    console.log("Received Data:", { name, email, url, phone, budget, serve, date }); // แสดงข้อมูลที่รับมา
+    const date = new Date().toLocaleString(); // เพิ่มวันที่และเวลาปัจจุบัน
+    const dataEntry = { name, email, url, phone, budget, serve, date };
 
-    // ส่งข้อมูลพร้อมวันที่ไปยัง popupData
-    popupData.push({ name, email, url, phone, budget, serve, date });
+    console.log("Data Received from Form:", dataEntry); // Log ข้อมูลที่รับมา
+    popupData.push(dataEntry);
 
     res.json({ message: 'Data saved successfully!' });
 });
