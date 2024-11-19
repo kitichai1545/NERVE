@@ -84,15 +84,33 @@ function saveContent() {
 
 function loadContent() {
     const token = localStorage.getItem('authToken');
+    
+    if (!token) {
+        console.error("Token is missing. Please log in.");
+        return;  // ป้องกันไม่ให้ทำงานหากไม่มี token
+    }
+    
     fetch('https://nerve-qpl0.onrender.com/get-content', {
         method: 'GET',
         headers: { 'Authorization': `Bearer ${token}` }
     })
-        .then(response => response.json())
-        .then(data => {
-            document.getElementById('content-editor').value = data.content;
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            return response.json();
         })
-        .catch(error => console.error("Error loading content:", error));
+        .then(data => {
+            if (data && data.content) {
+                document.getElementById('content-editor').value = data.content;
+            } else {
+                console.error("Content not found in the response");
+            }
+        })
+        .catch(error => {
+            console.error("Error loading content:", error);
+            alert("ไม่สามารถโหลดข้อมูลได้ กรุณาลองใหม่อีกครั้ง");
+        });
 }
 
 
