@@ -30,8 +30,9 @@ function verifyToken(req, res, next) {
 }
 
 // Route สำหรับ backoffice (ต้องมี verifyToken)
-app.get('/backoffice.html', verifyToken, (req, res) => {
-    res.sendFile(path.join(__dirname, 'backoffice.html'));
+app.get('/api/get-popup-data', (req, res) => {
+    console.log('Fetching popup data:', popupData); // ตรวจสอบข้อมูลใน Array popupData
+    res.json(popupData);
 });
 
 // Endpoint สำหรับการ Login
@@ -53,13 +54,19 @@ const popupData = [];
 
 app.post('/api/save-popup-data', (req, res) => {
     const { name, email, url, phone, budget, serve } = req.body;
-    const date = new Date().toLocaleString(); // เพิ่มวันที่และเวลาปัจจุบัน
-    const dataEntry = { name, email, url, phone, budget, serve, date };
 
-    console.log("Data Received from Form:", dataEntry); // Log ข้อมูลที่รับมา
-    popupData.push(dataEntry);
+    console.log('Received Data:', req.body); // ตรวจสอบข้อมูลที่ได้รับ
 
-    res.json({ message: 'Data saved successfully!' });
+    if (!name || !email || !url || !phone || !budget || !serve) {
+        return res.status(400).json({ message: 'Missing required fields' });
+    }
+
+    const date = new Date().toLocaleDateString();
+    popupData.push({ name, email, url, phone, budget, serve, date });
+
+    console.log('Updated popupData:', popupData); // ตรวจสอบข้อมูลที่บันทึก
+
+    res.status(201).json({ message: 'Data saved successfully!' });
 });
 
 
