@@ -83,15 +83,3 @@ const PORT = 3000;
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
 });
-
-// Middleware สำหรับตรวจสอบ Token
-function verifyToken(req, res, next) {
-    const authHeader = req.headers['authorization']; // ดึง Authorization Header
-    const token = authHeader && authHeader.split(' ')[1]; // แยกเอาเฉพาะ Token ออกมา
-
-    if (token === 'sample-jwt-token') { // ตรวจสอบว่า Token ตรงกับที่ระบบกำหนด
-        next(); // ถ้า Token ถูกต้อง ให้ผ่านไปยัง Route ต่อไป
-    } else {
-        res.status(403).json({ message: 'Unauthorized access' }); // ถ้าไม่ถูกต้อง ให้ส่งสถานะ 403
-    }
-}
