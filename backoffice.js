@@ -105,31 +105,37 @@ function loadContent() {
 
 
 function loadPopupData() {
-    fetch('https://nerve-qpl0.onrender.com/api/get-popup-data')
-        .then(response => response.json())
-        .then(data => {
-            console.log('Received data:', data); // ดูข้อมูลที่ได้จาก API
-            const tableBody = document.querySelector('.popup-data-table tbody');
-            tableBody.innerHTML = ''; // ล้างข้อมูลเก่า
+    const token = localStorage.getItem('authToken');  // ต้องตรวจสอบว่า token มีอยู่
+    fetch('https://nerve-qpl0.onrender.com/api/get-popup-data', {
+        method: 'GET',
+        headers: {
+            'Authorization': `Bearer ${token}`  // ส่ง token ใน headers
+        }
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log('Received data:', data); // ตรวจสอบข้อมูลที่ได้รับจาก API
+        const tableBody = document.querySelector('.popup-data-table tbody');
+        tableBody.innerHTML = ''; // ล้างข้อมูลเก่าก่อนการอัปเดต
 
-            data.forEach(entry => {
-                const row = document.createElement('tr');
-                row.innerHTML = `
-                    <td>${entry.name || 'N/A'}</td>
-                    <td>${entry.email || 'N/A'}</td>
-                    <td>${entry.url || 'N/A'}</td>
-                    <td>${entry.phone || 'N/A'}</td>
-                    <td>${entry.budget || 'N/A'}</td>
-                    <td>${entry.serve || 'N/A'}</td>
-                    <td>${entry.date || 'N/A'}</td> <!-- แสดงวันที่ -->
-                `;
-                tableBody.appendChild(row);
-            });
-        })
-        .catch(error => {
-            console.error('Error loading popup data:', error);
-            alert('ไม่สามารถโหลดข้อมูลได้ กรุณาลองใหม่อีกครั้ง');
+        data.forEach(entry => {
+            const row = document.createElement('tr');
+            row.innerHTML = `
+                <td>${entry.name || 'N/A'}</td>
+                <td>${entry.email || 'N/A'}</td>
+                <td>${entry.url || 'N/A'}</td>
+                <td>${entry.phone || 'N/A'}</td>
+                <td>${entry.budget || 'N/A'}</td>
+                <td>${entry.serve || 'N/A'}</td>
+                <td>${entry.date || 'N/A'}</td> <!-- แสดงวันที่ -->
+            `;
+            tableBody.appendChild(row);
         });
+    })
+    .catch(error => {
+        console.error('Error loading popup data:', error);
+        alert('ไม่สามารถโหลดข้อมูลได้ กรุณาลองใหม่อีกครั้ง');
+    });
 }
 
 function submitPopupForm() {
@@ -139,16 +145,21 @@ function submitPopupForm() {
     const phone = document.getElementById('phone').value.trim();
     const budget = document.getElementById('Budget').value;
     const services = Array.from(document.querySelectorAll('input[name="service"]:checked'))
-        .map(checkbox => checkbox.value);
+                        .map(checkbox => checkbox.value);
 
     if (!name || !email || !url || !phone || !budget || services.length === 0) {
         alert("กรุณากรอกข้อมูลให้ครบทุกช่อง");
         return;
     }
 
+    const token = localStorage.getItem('authToken');  // ดึง token ที่เก็บไว้ใน localStorage
+
     fetch('https://nerve-qpl0.onrender.com/api/save-popup-data', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${token}`  // ส่ง token ใน headers
+        },
         body: JSON.stringify({
             name,
             email,
@@ -158,15 +169,15 @@ function submitPopupForm() {
             serve: services.join(', ')
         })
     })
-        .then(response => response.json())
-        .then(data => {
-            alert("บันทึกข้อมูลเรียบร้อย");
-            loadPopupData(); // โหลดข้อมูลใหม่
-        })
-        .catch(error => {
-            console.error('Error submitting popup data:', error);
-            alert("เกิดข้อผิดพลาดในการส่งข้อมูล กรุณาลองใหม่อีกครั้ง");
-        });
+    .then(response => response.json())
+    .then(data => {
+        alert("บันทึกข้อมูลเรียบร้อย");
+        loadPopupData();  // โหลดข้อมูลใหม่หลังจากบันทึกสำเร็จ
+    })
+    .catch(error => {
+        console.error('Error submitting popup data:', error);
+        alert("เกิดข้อผิดพลาดในการส่งข้อมูล กรุณาลองใหม่อีกครั้ง");
+    });
 }
 
 function formatDate(dateString) {
