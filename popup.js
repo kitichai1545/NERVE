@@ -30,11 +30,11 @@ if (closeBtn) {
 // ฟังก์ชันสำหรับส่งข้อมูลจาก popup ไปยัง API
 async function submitPopupForm() {
     // รับค่าจากฟอร์มใน popup
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const url = document.getElementById('url').value;
-    const phone = document.getElementById('phone').value;
-    const budget = document.getElementById('Budget').value;
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const url = document.getElementById('url').value.trim();
+    const phone = document.getElementById('phone').value.trim();
+    const budget = document.getElementById('Budget').value.trim();
     const services = Array.from(document.querySelectorAll('input[name="service"]:checked'))
                         .map(checkbox => checkbox.value);
 
@@ -70,7 +70,9 @@ async function submitPopupForm() {
             successMessage.style.display = "block"; // แสดงข้อความสำเร็จ
             document.getElementById("submitPopupBtn").style.display = "none"; // ซ่อนปุ่มส่ง
         } else {
-            alert("เกิดข้อผิดพลาดในการส่งข้อมูล กรุณาลองใหม่อีกครั้ง");
+            const errorData = await response.json();
+            console.error("Error response from server:", errorData);
+            alert(errorData.message || "เกิดข้อผิดพลาดในการส่งข้อมูล กรุณาลองใหม่อีกครั้ง");
         }
     } catch (error) {
         console.error('Error:', error);
