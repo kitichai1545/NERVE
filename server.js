@@ -17,6 +17,19 @@ app.get('/index1', (req, res) => {
     res.sendFile(path.join(__dirname, 'index.html'));
 });
 
+// Middleware สำหรับตรวจสอบ Token
+function verifyToken(req, res, next) {
+    const authHeader = req.headers['authorization'];
+    const token = authHeader && authHeader.split(' ')[1]; // แยกเอา token
+
+    if (token === 'sample-jwt-token') { // ตรวจสอบ token ว่าถูกต้องหรือไม่
+        next(); // ให้ผ่านไปยังฟังก์ชันถัดไป
+    } else {
+        res.status(403).json({ message: 'Unauthorized access' }); // หาก token ไม่ถูกต้อง
+    }
+}
+
+// Route สำหรับ backoffice (ต้องมี verifyToken)
 app.get('/backoffice.html', verifyToken, (req, res) => {
     res.sendFile(path.join(__dirname, 'backoffice.html'));
 });
