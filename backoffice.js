@@ -105,37 +105,31 @@ function loadContent() {
 
 
 function loadPopupData() {
-    const token = localStorage.getItem('authToken');  // ต้องตรวจสอบว่า token มีอยู่
-    fetch('https://nerve-qpl0.onrender.com/api/get-popup-data', {
-        method: 'GET',
-        headers: {
-            'Authorization': `Bearer ${token}`  // ส่ง token ใน headers
-        }
-    })
-    .then(response => response.json())
-    .then(data => {
-        console.log('Received data:', data); // ตรวจสอบข้อมูลที่ได้รับจาก API
-        const tableBody = document.querySelector('.popup-data-table tbody');
-        tableBody.innerHTML = ''; // ล้างข้อมูลเก่าก่อนการอัปเดต
-
-        data.forEach(entry => {
-            const row = document.createElement('tr');
-            row.innerHTML = `
-                <td>${entry.name || 'N/A'}</td>
-                <td>${entry.email || 'N/A'}</td>
-                <td>${entry.url || 'N/A'}</td>
-                <td>${entry.phone || 'N/A'}</td>
-                <td>${entry.budget || 'N/A'}</td>
-                <td>${entry.serve || 'N/A'}</td>
-                <td>${entry.date || 'N/A'}</td> <!-- แสดงวันที่ -->
-            `;
-            tableBody.appendChild(row);
+    fetch('https://nerve-qpl0.onrender.com/api/get-popup-data')
+        .then(response => response.json())
+        .then(data => {
+            console.log('Data loaded:', data);  // เพิ่ม log เพื่อตรวจสอบข้อมูลที่โหลดมา
+            const tableBody = document.querySelector('.popup-data-table tbody');
+            tableBody.innerHTML = '';  // ล้างข้อมูลเก่า
+    
+            data.forEach(entry => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${entry.name || 'N/A'}</td>
+                    <td>${entry.email || 'N/A'}</td>
+                    <td>${entry.url || 'N/A'}</td>
+                    <td>${entry.phone || 'N/A'}</td>
+                    <td>${entry.budget || 'N/A'}</td>
+                    <td>${entry.serve || 'N/A'}</td>
+                    <td>${entry.date || 'N/A'}</td> <!-- แสดงวันที่ -->
+                `;
+                tableBody.appendChild(row);
+            });
+        })
+        .catch(error => {
+            console.error('Error loading popup data:', error);
+            alert('ไม่สามารถโหลดข้อมูลได้ กรุณาลองใหม่อีกครั้ง');
         });
-    })
-    .catch(error => {
-        console.error('Error loading popup data:', error);
-        alert('ไม่สามารถโหลดข้อมูลได้ กรุณาลองใหม่อีกครั้ง');
-    });
 }
 
 function submitPopupForm() {
