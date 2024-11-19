@@ -7,7 +7,7 @@ const multer = require('multer');
 app.use(express.json());
 // ใช้ CORS ให้รองรับทั้ง localhost และ production
 app.use(cors({
-    origin: '*', // เพื่ออนุญาตทุกโดเมน
+    origin: ['http://localhost:3000', 'https://nerve-qpl0.onrender.com'],
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     allowedHeaders: ['Content-Type', 'Authorization'],
 }));
