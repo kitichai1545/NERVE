@@ -1,56 +1,45 @@
 // เปิด Popup เมื่อคลิกที่ปุ่มใน hero (index1)
-const btnHero = document.getElementById("openPopupBtn") || document.getElementById("openPopupBtn2");
-if (btnHero) {
-    btnHero.addEventListener("click", (event) => {
-        event.preventDefault(); // ป้องกันการรีเฟรชหน้า
-        document.getElementById("popupForm").style.display = "flex"; // แสดง popup แบบกึ่งกลาง
-    });
-}
-
-// เปิด Popup เมื่อคลิกที่ปุ่มใน footer
-const btnFooter = document.getElementById("openPopupBtnFooter");
-if (btnFooter) {
-    btnFooter.addEventListener("click", (event) => {
-        event.preventDefault(); // ป้องกันการรีเฟรชหน้า
-        document.getElementById("popupForm").style.display = "flex"; // แสดง popup แบบกึ่งกลาง
-    });
-}
+document.querySelectorAll("#openPopupBtn, #openPopupBtn2, #openPopupBtnFooter").forEach(btn => {
+    if (btn) {
+        btn.addEventListener("click", (event) => {
+            event.preventDefault();
+            document.getElementById("popupForm").style.display = "flex"; // แสดง popup
+        });
+    }
+});
 
 // ปิด Popup เมื่อคลิกที่ปุ่มปิด
 const closeBtn = document.getElementById("closePopupBtn2");
 if (closeBtn) {
     closeBtn.addEventListener("click", () => {
-        document.getElementById("popupForm").style.display = "none"; // ซ่อน popup
-        document.getElementById("successMessage").style.display = "none"; // ซ่อนข้อความสำเร็จ
-        document.getElementById("submitPopupBtn").style.display = "block"; // แสดงปุ่มส่งอีกครั้ง
-        document.querySelector('form').reset(); // ล้างข้อมูลฟอร์ม
+        document.getElementById("popupForm").style.display = "none";
+        document.getElementById("successMessage").style.display = "none";
+        document.getElementById("submitPopupBtn").style.display = "block";
+        document.querySelector('form').reset();
     });
 }
 
 // ฟังก์ชันสำหรับส่งข้อมูลจาก popup ไปยัง API
 async function submitPopupForm() {
-    // รับค่าจากฟอร์มใน popup
     const name = document.getElementById('name').value.trim();
     const email = document.getElementById('email').value.trim();
     const url = document.getElementById('url').value.trim();
     const phone = document.getElementById('phone').value.trim();
     const budget = document.getElementById('Budget').value.trim();
     const services = Array.from(document.querySelectorAll('input[name="service"]:checked'))
-                        .map(checkbox => checkbox.value);
+        .map(checkbox => checkbox.value);
 
-    // ตรวจสอบว่าฟิลด์ทั้งหมดถูกกรอกครบถ้วน
     if (!name || !email || !url || !phone || !budget || services.length === 0) {
         alert("กรุณากรอกข้อมูลให้ครบทุกช่อง");
         return;
     }
 
     try {
-        // ส่งข้อมูลไปยัง API ของ Backend
+        console.log("Sending data:", { name, email, url, phone, budget, serve: services.join(', ') });
+
         const response = await fetch('https://nerve-qpl0.onrender.com/api/save-popup-data', {
             method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
+            headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
                 name,
                 email,
@@ -61,17 +50,15 @@ async function submitPopupForm() {
             }),
         });
 
+        console.log("Response status:", response.status);
         if (response.ok) {
             const data = await response.json();
             console.log('Success:', data);
-
-            // แสดงข้อความสำเร็จ
-            const successMessage = document.getElementById("successMessage");
-            successMessage.style.display = "block"; // แสดงข้อความสำเร็จ
-            document.getElementById("submitPopupBtn").style.display = "none"; // ซ่อนปุ่มส่ง
+            document.getElementById("successMessage").style.display = "block";
+            document.getElementById("submitPopupBtn").style.display = "none";
         } else {
             const errorData = await response.json();
-            console.error("Error response from server:", errorData);
+            console.error("Error response:", errorData);
             alert(errorData.message || "เกิดข้อผิดพลาดในการส่งข้อมูล กรุณาลองใหม่อีกครั้ง");
         }
     } catch (error) {
@@ -84,7 +71,7 @@ async function submitPopupForm() {
 const submitBtn = document.getElementById("submitPopupBtn");
 if (submitBtn) {
     submitBtn.addEventListener("click", (event) => {
-        event.preventDefault(); // ป้องกันการรีเฟรชหน้า
-        submitPopupForm(); // เรียกฟังก์ชันส่งข้อมูล
+        event.preventDefault();
+        submitPopupForm();
     });
 }

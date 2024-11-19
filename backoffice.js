@@ -1,148 +1,76 @@
-function uploadBackgroundVideo() {
-    const token = localStorage.getItem('authToken');
-    const videoFileInput = document.getElementById('background-video');
-    const videoFile = videoFileInput ? videoFileInput.files[0] : null;
+const express = require('express');
+const path = require('path');
+const cors = require('cors');
+const multer = require('multer');
 
-    if (videoFile && token) {
-        const formData = new FormData();
-        formData.append('video', videoFile);
+const app = express();
+const PORT = 3000;
 
-        fetch('https://nerve-qpl0.onrender.com/upload-background-video', {
-            method: 'POST',
-            headers: {
-                'Authorization': `Bearer ${token}`,
-            },
-            body: formData,
-        })
-            .then((response) => {
-                if (!response.ok) {
-                    throw new Error('Failed to upload video');
-                }
-                return response.json();
-            })
-            .then((data) => {
-                alert(data.message || 'Upload successful!');
-            })
-            .catch((error) => {
-                console.error('Error uploading video:', error);
-                alert('เกิดข้อผิดพลาดในการอัปโหลดวิดีโอ');
-            });
+// CORS Configuration
+app.use(cors({
+    origin: 'https://nerve-qpl0.onrender.com',
+    methods: ['GET', 'POST'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
+}));
+
+// Middleware
+app.use(express.json());
+app.use(express.static(path.join(__dirname)));
+
+// Route สำหรับส่งไฟล์ HTML
+app.get('/Login.html', (req, res) => res.sendFile(path.join(__dirname, 'Login.html')));
+app.get('/index1', (req, res) => res.sendFile(path.join(__dirname, 'index.html')));
+app.get('/backoffice.html', (req, res) => res.sendFile(path.join(__dirname, 'backoffice.html')));
+
+// Authentication Example
+const VALID_USERNAME = 'admin';
+const VALID_PASSWORD = 'password';
+
+app.post('/login', (req, res) => {
+    const { username, password } = req.body;
+    if (username === VALID_USERNAME && password === VALID_PASSWORD) {
+        res.json({ token: 'sample-jwt-token' });
     } else {
-        alert('กรุณาเลือกไฟล์วิดีโอและตรวจสอบว่าได้เข้าสู่ระบบแล้ว');
+        res.status(401).json({ message: 'Invalid credentials' });
     }
-}
+});
 
-function uploadBackgroundImage() {
-    const token = localStorage.getItem('authToken');
-    const imageFileInput = document.getElementById('background-image');
-    const imageFile = imageFileInput ? imageFileInput.files[0] : null;
+// Array สำหรับเก็บข้อมูล popup
+const popupData = [];
+app.post('/api/save-popup-data', (req, res) => {
+    const { name, email, url, phone, budget, serve } = req.body;
 
-    if (imageFile && token) {
-        const formData = new FormData();
-        formData.append('image', imageFile);
-
-        fetch('https://nerve-qpl0.onrender.com/upload-background-image', {
-            method: 'POST',
-            headers: {
-                'Authorization': `Bearer ${token}`,
-            },
-            body: formData,
-        })
-            .then((response) => {
-                if (!response.ok) {
-                    throw new Error('Failed to upload image');
-                }
-                return response.json();
-            })
-            .then((data) => {
-                alert(data.message || 'Upload successful!');
-            })
-            .catch((error) => {
-                console.error('Error uploading image:', error);
-                alert('เกิดข้อผิดพลาดในการอัปโหลดรูปภาพ');
-            });
-    } else {
-        alert('กรุณาเลือกไฟล์รูปภาพและตรวจสอบว่าได้เข้าสู่ระบบแล้ว');
-    }
-}
-
-function submitPopupForm() {
-    const name = document.getElementById('name').value.trim();
-    const email = document.getElementById('email').value.trim();
-    const url = document.getElementById('url').value.trim();
-    const phone = document.getElementById('phone').value.trim();
-    const budget = document.getElementById('Budget').value.trim();
-    const services = Array.from(
-        document.querySelectorAll('input[name="service"]:checked')
-    ).map((checkbox) => checkbox.value);
-
-    if (!name || !email || !url || !phone || !budget || services.length === 0) {
-        alert('กรุณากรอกข้อมูลให้ครบทุกช่อง');
-        return;
+    if (!name || !email || !url || !phone || !budget || !serve) {
+        console.error("Missing required fields:", req.body);
+        return res.status(400).json({ message: 'Missing required fields' });
     }
 
-    fetch('https://nerve-qpl0.onrender.com/api/save-popup-data', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-            name,
-            email,
-            url,
-            phone,
-            budget,
-            serve: services.join(', '),
-        }),
-    })
-        .then((response) => {
-            if (!response.ok) {
-                throw new Error('Failed to submit popup data');
-            }
-            return response.json();
-        })
-        .then((data) => {
-            alert('บันทึกข้อมูลเรียบร้อย');
-            loadPopupData(); // โหลดข้อมูลใหม่
-        })
-        .catch((error) => {
-            console.error('Error submitting popup data:', error);
-            alert('เกิดข้อผิดพลาดในการส่งข้อมูล กรุณาลองใหม่อีกครั้ง');
-        });
-}
+    const date = new Date().toLocaleDateString();
+    popupData.push({ name, email, url, phone, budget, serve, date });
 
-function loadPopupData() {
-    fetch('https://nerve-qpl0.onrender.com/api/get-popup-data')
-        .then((response) => {
-            if (!response.ok) {
-                throw new Error('Failed to load popup data');
-            }
-            return response.json();
-        })
-        .then((data) => {
-            const tableBody = document.querySelector('.popup-data-table tbody');
-            tableBody.innerHTML = ''; // ล้างข้อมูลเก่า
+    console.log("Saved data:", { name, email, url, phone, budget, serve, date });
+    res.status(201).json({ message: 'Data saved successfully!' });
+});
 
-            data.forEach((entry) => {
-                const row = document.createElement('tr');
-                row.innerHTML = `
-                    <td>${entry.name || 'N/A'}</td>
-                    <td>${entry.email || 'N/A'}</td>
-                    <td>${entry.url || 'N/A'}</td>
-                    <td>${entry.phone || 'N/A'}</td>
-                    <td>${entry.budget || 'N/A'}</td>
-                    <td>${entry.serve || 'N/A'}</td>
-                    <td>${entry.date || 'N/A'}</td>
-                `;
-                tableBody.appendChild(row);
-            });
-        })
-        .catch((error) => {
-            console.error('Error loading popup data:', error);
-            alert('ไม่สามารถโหลดข้อมูลได้ กรุณาลองใหม่อีกครั้ง');
-        });
-}
+app.get('/api/get-popup-data', (req, res) => res.json(popupData));
 
-document.addEventListener('DOMContentLoaded', function () {
-    loadPopupData();
+// Upload Configuration
+const upload = multer({ dest: 'uploads/' });
+app.post('/upload-background-video', upload.single('video'), (req, res) => {
+    if (!req.file) return res.status(400).json({ message: 'No video file uploaded' });
+    res.json({ message: 'Background video uploaded successfully!', file: req.file });
+});
+
+app.post('/upload-background-image', upload.single('image'), (req, res) => {
+    if (!req.file) return res.status(400).json({ message: 'No image file uploaded' });
+    res.json({ message: 'Background image uploaded successfully!', file: req.file });
+});
+
+app.get('/get-content', (req, res) => {
+    res.json({ content: "นี่คือเนื้อหาที่มีอยู่ที่ต้องการแก้ไข" });
+});
+
+// Start Server
+app.listen(PORT, () => {
+    console.log(`Server is running on http://localhost:${PORT}`);
 });
