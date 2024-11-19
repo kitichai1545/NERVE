@@ -6,10 +6,10 @@ const multer = require('multer');
 const app = express();
 
 // ใช้ CORS และตั้งค่าตามที่ต้องการ
-app.use(cors({
-    origin: 'https://nerve-qpl0.onrender.com', // อนุญาตเฉพาะโดเมนที่คุณ Deploy
-    methods: ['GET', 'POST', 'PUT', 'DELETE'], // อนุญาต Method ที่ใช้งาน
-    allowedHeaders: ['Content-Type', 'Authorization'] // อนุญาต Headers ที่ใช้งาน
+aapp.use(cors({
+    origin: '*',
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    allowedHeaders: ['Content-Type', 'Authorization']
 }));
 
 app.use(express.json());
