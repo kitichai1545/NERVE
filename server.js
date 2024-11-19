@@ -1,13 +1,19 @@
 const express = require('express');
 const path = require('path');
-const cors = require('cors'); // เรียกใช้ CORS Middleware
+const cors = require('cors');
+
+app.use(cors({
+    origin: 'https://nerve-qpl0.onrender.com',
+    methods: ['GET', 'POST'],
+    allowedHeaders: ['Content-Type', 'Authorization']
+}));
 const multer = require('multer');
 
 const app = express();
 
 // ใช้ CORS และตั้งค่าตามที่ต้องการ
-aapp.use(cors({
-    origin: '*',
+app.use(cors({
+    origin: 'https://nerve-qpl0.onrender.com',
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     allowedHeaders: ['Content-Type', 'Authorization']
 }));
