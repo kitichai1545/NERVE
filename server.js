@@ -5,7 +5,11 @@ const cors = require('cors');
 const multer = require('multer');
 
 app.use(express.json());
-app.use(cors());
+app.use(cors({
+    origin: 'https://nerve-qpl0.onrender.com',
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
+}));
 app.use(express.static(path.join(__dirname)));
 
 // Route สำหรับส่งไฟล์ HTML
