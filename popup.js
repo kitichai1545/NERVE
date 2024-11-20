@@ -30,11 +30,11 @@ if (closeBtn) {
 // ฟังก์ชันสำหรับส่งข้อมูลจาก popup ไปยัง API
 async function submitPopupForm() {
     // รับค่าจากฟอร์มใน popup
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const url = document.getElementById('url').value;
-    const phone = document.getElementById('phone').value;
-    const budget = document.getElementById('Budget').value;
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const url = document.getElementById('url').value.trim();
+    const phone = document.getElementById('phone').value.trim();
+    const budget = document.getElementById('Budget').value.trim();
     const services = Array.from(document.querySelectorAll('input[name="service"]:checked'))
                         .map(checkbox => checkbox.value);
 
@@ -50,6 +50,7 @@ async function submitPopupForm() {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
+                'Authorization': `Bearer ${localStorage.getItem('authToken')}`
             },
             body: JSON.stringify({
                 name,

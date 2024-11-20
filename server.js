@@ -4,13 +4,13 @@ const app = express();
 const cors = require('cors');
 const multer = require('multer');
 
-const multer = require('multer');
+app.use(express.json());
 
-// ใช้ CORS ให้รองรับทั้ง localhost และ production
+// CORS Setup
 app.use(cors({
-    origin: ['http://localhost:3000', 'https://nerve-qpl0.onrender.com'], // เพิ่มโดเมนทั้งสอง
+    origin: 'https://nerve-qpl0.onrender.com', // ให้โดเมนที่ต้องการเชื่อมต่อ
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
-    allowedHeaders: ['Content-Type', 'Authorization'],
+    allowedHeaders: ['Content-Type', 'Authorization'] // อนุญาตการใช้ Authorization header
 }));
 
 app.use(express.static(path.join(__dirname)));
@@ -56,7 +56,6 @@ app.post('/api/save-popup-data', (req, res) => {
     res.json({ message: 'Data saved successfully!' });
 });
 
-
 // Endpoint สำหรับดึงข้อมูล popup ทั้งหมดใน array
 app.get('/api/get-popup-data', (req, res) => {
     res.json(popupData);
@@ -65,18 +64,29 @@ app.get('/api/get-popup-data', (req, res) => {
 // กำหนดการจัดเก็บไฟล์ที่อัปโหลด
 const upload = multer({ dest: 'uploads/' });
 
+// ฟังก์ชันตรวจสอบ Token
+function verifyToken(req, res, next) {
+    const authHeader = req.headers['authorization'];
+    const token = authHeader && authHeader.split(' ')[1];
+
+    if (!token || token !== 'sample-jwt-token') { // ตรวจสอบ token
+        return res.status(403).json({ message: 'Unauthorized access' });
+    }
+    next();
+}
+
 // Endpoint สำหรับอัปโหลดวิดีโอพื้นหลัง
-app.post('/upload-background-video', upload.single('video'), (req, res) => {
+app.post('/upload-background-video', verifyToken, upload.single('video'), (req, res) => {
     res.json({ message: 'Background video uploaded successfully!', file: req.file });
 });
 
 // Endpoint สำหรับอัปโหลดภาพพื้นหลัง
-app.post('/upload-background-image', upload.single('image'), (req, res) => {
+app.post('/upload-background-image', verifyToken, upload.single('image'), (req, res) => {
     res.json({ message: 'Background image uploaded successfully!', file: req.file });
 });
 
 // Endpoint สำหรับอัปโหลดเนื้อหาวิดีโอ
-app.post('/upload-content-video', upload.single('video'), (req, res) => {
+app.post('/upload-content-video', verifyToken, upload.single('video'), (req, res) => {
     res.json({ message: 'Content video uploaded successfully!', file: req.file });
 });
 
@@ -86,6 +96,7 @@ app.get('/get-content', (req, res) => {
     res.json({ content: existingContent });
 });
 
+// Start server
 const PORT = 3000;
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
