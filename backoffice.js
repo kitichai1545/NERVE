@@ -7,7 +7,7 @@ function uploadBackgroundVideo() {
         const formData = new FormData();
         formData.append('video', videoFile);
 
-        fetch('https://nerve-qpl0.onrender.com/upload-background-video', {
+        fetch('http://localhost:3000/upload-background-video', {
             method: 'POST',
             headers: { 'Authorization': `Bearer ${token}` },
             body: formData
@@ -35,7 +35,7 @@ function uploadBackgroundImage() {
         const formData = new FormData();
         formData.append('image', imageFile);
 
-        fetch('https://nerve-qpl0.onrender.com/upload-background-image', {
+        fetch('http://localhost:3000/upload-background-image', {
             method: 'POST',
             headers: { 'Authorization': `Bearer ${token}` },
             body: formData
@@ -68,7 +68,7 @@ function saveContent() {
     const content = document.getElementById('content-editor').value;
 
     if (content && token) {
-        fetch('https://nerve-qpl0.onrender.com/save-content', {
+        fetch('http://localhost:3000/save-content', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -84,7 +84,7 @@ function saveContent() {
 
 function loadContent() {
     const token = localStorage.getItem('authToken');
-    fetch('https://nerve-qpl0.onrender.com/get-content', {
+    fetch('http://localhost:3000/get-content', {
         method: 'GET',
         headers: { 'Authorization': `Bearer ${token}` }
     })
@@ -105,7 +105,7 @@ function loadContent() {
 
 
 function loadPopupData() {
-    fetch('https://nerve-qpl0.onrender.com/api/get-popup-data')
+    fetch('http://localhost:3000/api/get-popup-data')
         .then(response => response.json())
         .then(data => {
             console.log('Received data:', data); // ดูข้อมูลที่ได้จาก API
@@ -146,7 +146,7 @@ function submitPopupForm() {
         return;
     }
 
-    fetch('https://nerve-qpl0.onrender.com/api/save-popup-data', {
+    fetch('http://localhost:3000/api/save-popup-data', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
