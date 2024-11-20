@@ -84,7 +84,7 @@ app.get('/get-content', (req, res) => {
     res.json({ content: existingContent });
 });
 
-const PORT = 3000;
-app.listen(PORT, () => {
-    console.log(`Server is running on http://localhost:${PORT}`);
+const port = process.env.PORT || 3000;
+app.listen(port, () => {
+    console.log(`Server is running on port ${port}`);
 });
