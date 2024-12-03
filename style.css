@@ -6,7 +6,7 @@
 
 body {
     font-family: 'Kanit', sans-serif;
-    overflow-x: hidden; /* ป้องกันการเลื่อนในแนวนอน */
+    overflow-x: hidden; /* ป้องกันการเลื่อนแนวนอน */
 }
 
 
@@ -1433,7 +1433,7 @@ button#closePopupBtn2 {
 @media (max-width: 768px) {
 
     body {
-        overflow-x: hidden; /* ป้องกันการเลื่อนแนวนอน */
+    overflow-x: hidden; /* ป้องกันการเลื่อนแนวนอน */
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -2157,3 +2157,38 @@ button#closePopupBtn2 {
     text-decoration: underline;
 }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (min-width: 768px) and (max-width: 1366px) {
+    body {
+        overflow-x: hidden; /* ป้องกันการเลื่อนแนวนอน */
+    }
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
