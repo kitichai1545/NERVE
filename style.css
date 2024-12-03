@@ -2170,6 +2170,9 @@ button#closePopupBtn2 {
     .hamburger span {
         display: block; /* แสดงแถบแฮมเบอร์เกอร์ */
     }
+
+    .nav {
+        overflow-x: hidden; /* ป้องกันการเลื่อนในแนวนอน */
 }
 
 /* สำหรับ iPad Pro 11-inch และ 12.9-inch */
@@ -2184,47 +2187,17 @@ button#closePopupBtn2 {
         display: none; /* ซ่อนแถบแฮมเบอร์เกอร์สำหรับ iPad Pro */
     }
 
-      
-      nav {
-        padding: 1rem 2rem;
-        background-color: rgba(0, 0, 0, 0.6); /* สีดำที่มีความโปร่งใส 50% */
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        position: fixed;
-        top: 20px;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 90%;
-        border-radius: 80px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        z-index: 1000;
-      }
-      
-      .logo {
-        margin-right: 2rem; /* ลดระยะห่างโลโก้ */
-      }
-      
-      .menu {
-        display: flex;
-          justify-content: space-between;
-          align-items: center;
-          list-style: none;
-          padding: 0;
-          margin: 0;
-          gap: 30px; /* ระยะห่างระหว่างแต่ละเมนูและไอคอน */
-      }
-      
+    .nav {
+        overflow-x: hidden; /* ป้องกันการเลื่อนในแนวนอน */
+}
+
       .menu li a {
-        display: flex;
-          align-items: center;
-          color: white;
-          text-decoration: none;
           font-size: 15px;
       }
       
       .menu li a img {
-        width: 22px; /* ปรับขนาดไอคอนตามที่ต้องการ */
-        margin-right: 4px; /* ระยะห่างระหว่างไอคอนกับข้อความ */
+        width: 20px; /* ปรับขนาดไอคอนตามที่ต้องการ */
+        margin-right: 3px; /* ระยะห่างระหว่างไอคอนกับข้อความ */
       }
+}
 }
