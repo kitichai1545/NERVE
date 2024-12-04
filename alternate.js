@@ -3,9 +3,10 @@ const toggleLink = document.getElementById("toggle-link");
 
 // กำหนดค่าลิงก์ที่จะสลับ
 const links = {
-  english: "index-ENG.html",
-  thai: "index.html"
+  english: "NERVE-ENG.html",
+  thai: "NERVE.html"
 };
+
 
 // สถานะเริ่มต้นเป็นภาษาไทย
 let currentLink = "thai";
