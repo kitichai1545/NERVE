@@ -1430,7 +1430,7 @@ button#closePopupBtn2 {
 
 
 /* ซ่อนเมนูสำหรับหน้าจอเล็ก */
-@media (max-width: 768px) {
+@media (max-width: 767px) {
 
     body {
         overflow-x: hidden; /* ป้องกันการเลื่อนแนวนอน */
@@ -2169,9 +2169,14 @@ button#closePopupBtn2 {
 
 /* สำหรับ iPad Mini และ iPad ขนาดกลาง (iPad Air, iPad 9th Gen, 10th Gen) */
 @media (min-width: 768px) and (max-width: 1023px) {
-    body {
-        font-family: 'Kanit', sans-serif;
-        overflow-x: hidden; /* ป้องกันการเลื่อนในแนวนอน */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body, html {
+        overflow-x: hidden; /* ป้องกันการเกิด scroll bar แนวนอน */
     }
 
     .hamburger span {
@@ -2179,15 +2184,65 @@ button#closePopupBtn2 {
     }
 
     .nav {
-        overflow-x: hidden; /* ป้องกันการเลื่อนในแนวนอน */
+        overflow-x: hidden;
+        position: relative;
+        z-index: 3; /* เพิ่ม z-index เพื่อให้อยู่บนสุด */
+    }
+
+    .logo-container, .logo-container2 {
+        position: absolute;
+        top: 10%;
+        left: 50%;
+        transform: translateX(-50%);
+        opacity: 1; /* โลโก้แสดงผล */
+        pointer-events: auto; /* ทำให้สามารถคลิกได้ */
+        transition: opacity 1s ease-in-out;
+        width: 100%; /* โลโก้จะเต็มความกว้าง */
+        max-width: 280px;
+        max-height: 150px;
+        padding: 10px 0;
+        box-sizing: border-box;
+        z-index: 2; /* เพิ่ม z-index เพื่อไม่ให้ทับปุ่ม */
+    }
+
+    .logo-row {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+    }
+
+    .logo-container.active .logo-row,
+    .logo-container2.active .logo-row {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .logo-row img {
+        max-width: 45px;
+        height: auto;
+        max-height: 60px;
+        margin: 0 10px;
+    }
+
+    /* ปุ่มและข้อความ */
+    .menu, .nav, .menu li, .menu li a {
+        opacity: 1; /* ทำให้ปุ่มและข้อความแสดง */
+        pointer-events: auto; /* ทำให้สามารถคลิกได้ */
+        z-index: 3; /* เพิ่ม z-index ให้ปุ่มและข้อความ */
+    }
+
+    .works, .blog, .contact {
+        opacity: 1;
+        pointer-events: auto;
+        z-index: 3;
+    }
 }
 
 /* สำหรับ iPad Pro 11-inch และ 12.9-inch */
 @media (min-width: 1024px) and (max-width: 1366px) {
-
     body {
         font-family: 'Kanit', sans-serif;
-        overflow-x: hidden; /* ป้องกันการเลื่อนในแนวนอน */
+        overflow-x: hidden;
     }
 
     .hamburger span {
@@ -2195,16 +2250,84 @@ button#closePopupBtn2 {
     }
 
     .nav {
-        overflow-x: hidden; /* ป้องกันการเลื่อนในแนวนอน */
+        overflow-x: hidden;
+        z-index: 3;
+    }
+
+    .menu li a {
+        font-size: 15px;
+    }
+
+    .menu li a img {
+        width: 20px;
+        margin-right: 3px;
+    }
 }
 
-      .menu li a {
-          font-size: 15px;
-      }
-      
-      .menu li a img {
-        width: 20px; /* ปรับขนาดไอคอนตามที่ต้องการ */
-        margin-right: 3px; /* ระยะห่างระหว่างไอคอนกับข้อความ */
-      }
+/* สำหรับหน้าจอขนาดใหญ่ (เช่น 1024px ขึ้นไป) */
+@media (min-width: 1024px) {
+    .logo-container, .logo-container2 {
+        position: absolute;
+        top: 20%;
+        left: 50%;
+        transform: translateX(-50%);
+        opacity: 1; /* ทำให้โลโก้แสดงผล */
+        pointer-events: auto; /* ทำให้สามารถคลิกได้ */
+        transition: opacity 1s ease-in-out;
+        width: 80%;
+        max-width: 600px;
+    }
+
+    .logo-container.active, .logo-container2.active {
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    .logo-row {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+    }
+
+    .logo-container.active .logo-row,
+    .logo-container2.active .logo-row {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .logo-row img {
+        max-width: 60px;
+        height: auto;
+        max-height: 80px;
+        margin: 0 15px;
+    }
 }
+
+/* สำหรับการตั้งค่าแนวนอน */
+@media (min-width: 1024px) and (orientation: landscape) {
+    .logo-container, .logo-container2 {
+        top: 15%;
+        width: 60%; /* ขนาดโลโก้ในแนวนอน */
+    }
+
+    .logo-row img {
+        max-width: 50px;
+        height: auto;
+        max-height: 70px;
+        margin: 0 12px;
+    }
+
+    .nav {
+        padding-left: 10px;
+        z-index: 3;
+    }
+
+    .menu li a {
+        font-size: 16px;
+    }
+}
+
+/* ป้องกันการแสดงขอบขาว */
+body, html {
+    overflow-x: hidden;
 }
