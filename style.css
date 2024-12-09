@@ -2167,42 +2167,22 @@ button#closePopupBtn2 {
 
 
 
-/* สำหรับ iPad Mini และ iPad ขนาดกลาง (iPad Air, iPad 9th Gen, 10th Gen) */
+/* สำหรับ iPad ขนาดกลาง (768px ถึง 1023px) */
 @media (min-width: 768px) and (max-width: 1023px) {
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
-
-    body, html {
-        overflow-x: hidden; /* ป้องกันการเกิด scroll bar แนวนอน */
-    }
-
-    .hamburger span {
-        display: block; /* แสดงแถบแฮมเบอร์เกอร์ */
-    }
-
-    .nav {
-        overflow-x: hidden;
-        position: relative;
-        z-index: 3; /* เพิ่ม z-index เพื่อให้อยู่บนสุด */
-    }
-
     .logo-container, .logo-container2 {
         position: absolute;
-        top: 10%;
+        top: 70%; /* ปรับตำแหน่งโลโก้ลงมาจากด้านบน */
         left: 50%;
-        transform: translateX(-50%);
-        opacity: 1; /* โลโก้แสดงผล */
+        transform: translateX(-50%); /* จัดกลางแนวนอน */
+        opacity: 1; /* ทำให้โลโก้แสดง */
         pointer-events: auto; /* ทำให้สามารถคลิกได้ */
         transition: opacity 1s ease-in-out;
-        width: 100%; /* โลโก้จะเต็มความกว้าง */
+        width: 100%;
         max-width: 280px;
         max-height: 150px;
         padding: 10px 0;
         box-sizing: border-box;
-        z-index: 2; /* เพิ่ม z-index เพื่อไม่ให้ทับปุ่ม */
+        z-index: 2; /* เพิ่ม z-index เพื่อให้โลโก้อยู่บนสุด */
     }
 
     .logo-row {
@@ -2211,12 +2191,14 @@ button#closePopupBtn2 {
         transition: opacity 1s ease-in-out, transform 1s ease-in-out;
     }
 
+    /* เมื่อโลโก้แสดง จะค่อยๆ เลื่อนขึ้น */
     .logo-container.active .logo-row,
     .logo-container2.active .logo-row {
         opacity: 1;
         transform: translateY(0);
     }
 
+    /* ปรับขนาดของโลโก้ */
     .logo-row img {
         max-width: 45px;
         height: auto;
@@ -2224,60 +2206,72 @@ button#closePopupBtn2 {
         margin: 0 10px;
     }
 
-    /* ปุ่มและข้อความ */
+    /* เพิ่มระยะห่างจากโลโก้ */
     .menu, .nav, .menu li, .menu li a {
-        opacity: 1; /* ทำให้ปุ่มและข้อความแสดง */
-        pointer-events: auto; /* ทำให้สามารถคลิกได้ */
-        z-index: 3; /* เพิ่ม z-index ให้ปุ่มและข้อความ */
+        opacity: 1;
+        pointer-events: auto;
+        z-index: 3; /* เพิ่ม z-index ให้เมนูอยู่บนสุด */
     }
 
+    /* เพิ่มระยะห่างจากโลโก้ */
     .works, .blog, .contact {
         opacity: 1;
         pointer-events: auto;
         z-index: 3;
+        margin-top: 180px; /* เพิ่มระยะห่างจากโลโก้ */
     }
+
+    /* ป้องกันการแสดงขอบขาว */
+    body, html {
+        overflow-x: hidden; /* ป้องกันการเกิด scroll bar แนวนอน */
+    }
+
+    .blog7 {
+        position: relative;
+        background-color: #000;
+        padding: 20px 20px;  /* ลดค่าของ padding เพื่อลดพื้นที่ */
+        
+        /* ใช้ flexbox เพื่อจัดตำแหน่งเนื้อหาภายใน */
+        display: flex;
+        flex-direction: column;      /* แนวตั้ง */
+        justify-content: flex-start; /* จัดเนื้อหาให้เริ่มจากด้านบน */
+        align-items: center;         /* จัดเนื้อหาให้อยู่ตรงกลางในแนวนอน */
+        width: 100%; /* กว้างเต็มหน้าจอ */
+    }
+
+    .footer-container {
+        display: flex;
+        justify-content: flex-start;
+        /* กระจายคอลัมน์ให้ห่างกัน */
+        max-width: 1200px;
+        margin-top: 100px;
+        flex-wrap: wrap;
+        /* ทำให้ตอบสนองต่อหน้าจอขนาดเล็กได้ */
+    }
+    
 }
 
-/* สำหรับ iPad Pro 11-inch และ 12.9-inch */
-@media (min-width: 1024px) and (max-width: 1366px) {
-    body {
-        font-family: 'Kanit', sans-serif;
-        overflow-x: hidden;
-    }
 
-    .hamburger span {
-        display: none; /* ซ่อนแถบแฮมเบอร์เกอร์สำหรับ iPad Pro */
-    }
-
-    .nav {
-        overflow-x: hidden;
-        z-index: 3;
-    }
-
-    .menu li a {
-        font-size: 15px;
-    }
-
-    .menu li a img {
-        width: 20px;
-        margin-right: 3px;
-    }
-}
 
 /* สำหรับหน้าจอขนาดใหญ่ (เช่น 1024px ขึ้นไป) */
 @media (min-width: 1024px) {
     .logo-container, .logo-container2 {
         position: absolute;
-        top: 20%;
+        top: 70%; /* ปรับตำแหน่งโลโก้ลงมาจากด้านบน */
         left: 50%;
-        transform: translateX(-50%);
-        opacity: 1; /* ทำให้โลโก้แสดงผล */
+        transform: translateX(-50%); /* จัดกลางแนวนอน */
+        opacity: 1; /* ทำให้โลโก้แสดง */
         pointer-events: auto; /* ทำให้สามารถคลิกได้ */
         transition: opacity 1s ease-in-out;
-        width: 80%;
-        max-width: 600px;
+        width: 100%;
+        max-width: 280px;
+        max-height: 150px;
+        padding: 10px 0;
+        box-sizing: border-box;
+        z-index: 2; /* เพิ่ม z-index เพื่อให้โลโก้อยู่บนสุด */
     }
 
+    /* เมื่อ active จะทำให้แสดง */
     .logo-container.active, .logo-container2.active {
         opacity: 1;
         pointer-events: auto;
@@ -2289,45 +2283,63 @@ button#closePopupBtn2 {
         transition: opacity 1s ease-in-out, transform 1s ease-in-out;
     }
 
+    /* เมื่อโลโก้แสดง จะค่อยๆ เลื่อนขึ้น */
     .logo-container.active .logo-row,
     .logo-container2.active .logo-row {
         opacity: 1;
         transform: translateY(0);
     }
 
+    /* ปรับขนาดของโลโก้ */
     .logo-row img {
-        max-width: 60px;
+        max-width: 60px; /* ขนาดเล็กลงเมื่ออยู่ในแนวนอน */
         height: auto;
         max-height: 80px;
-        margin: 0 15px;
+        margin: 0 15px; /* ลดช่องว่างระหว่างโลโก้ */
     }
+
+    .footer-container {
+        display: flex;
+        justify-content: flex-start;
+        /* กระจายคอลัมน์ให้ห่างกัน */
+        max-width: 1200px;
+        margin-top: 100px;
+        flex-wrap: wrap;
+        /* ทำให้ตอบสนองต่อหน้าจอขนาดเล็กได้ */
+    }
+
 }
 
 /* สำหรับการตั้งค่าแนวนอน */
 @media (min-width: 1024px) and (orientation: landscape) {
     .logo-container, .logo-container2 {
-        top: 15%;
-        width: 60%; /* ขนาดโลโก้ในแนวนอน */
+        top: 70%; /* ปรับตำแหน่งให้สูงขึ้นเล็กน้อย */
+        width: 60%; /* กำหนดขนาดของโลโก้ในแนวนอน */
     }
 
+    /* ปรับขนาดโลโก้ให้เหมาะสมในแนวนอน */
     .logo-row img {
-        max-width: 50px;
+        max-width: 50px; /* ลดขนาดโลโก้ในแนวนอน */
         height: auto;
         max-height: 70px;
-        margin: 0 12px;
+        margin: 0 12px; /* ลดระยะห่างระหว่างโลโก้ */
     }
 
-    .nav {
-        padding-left: 10px;
-        z-index: 3;
+    .footer-container {
+        display: flex;
+        justify-content: flex-start;
+        /* กระจายคอลัมน์ให้ห่างกัน */
+        max-width: 1200px;
+        margin-top: 100px;
+        flex-wrap: wrap;
+        /* ทำให้ตอบสนองต่อหน้าจอขนาดเล็กได้ */
     }
-
-    .menu li a {
-        font-size: 16px;
-    }
+    
 }
 
 /* ป้องกันการแสดงขอบขาว */
 body, html {
     overflow-x: hidden;
 }
+
+
