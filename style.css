@@ -1438,6 +1438,13 @@ button#closePopupBtn2 {
     padding: 0;
     box-sizing: border-box;
     }
+
+    html, body {
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden; /* ซ่อนส่วนที่เกินออกทางด้านข้างบนหน้าจอโทรศัพท์ */
+      }
+      
     /* ปรับขนาดของวิดีโอหรือภาพให้พอดีกับหน้าจอมือถือ */
     .hero-img, .background-video {
         width: 100%; /* ปรับให้ภาพขยายเต็มความกว้างหน้าจอมือถือ */
