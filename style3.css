@@ -1151,7 +1151,7 @@ button#closePopupBtn2 {
 }
 
 /* สำหรับ iPad Mini และ iPad ขนาดกลาง (iPad Air, iPad 9th Gen, 10th Gen) */
-@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+@media (min-width: 768px) and (max-width: 1023px) {
   body {
       font-family: 'Kanit', sans-serif;
       overflow-x: hidden; /* ป้องกันการเลื่อนในแนวนอน */
@@ -1175,7 +1175,7 @@ button#closePopupBtn2 {
 
 
 /* สำหรับ iPad Pro 11-inch และ 12.9-inch */
-@media (min-width: 1025px) and (max-width: 1536px) and (orientation: landscape) {
+@media (min-width: 1024px) and (max-width: 1366px) {
 
   body {
       font-family: 'Kanit', sans-serif;

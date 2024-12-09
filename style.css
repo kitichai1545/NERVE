@@ -2168,31 +2168,35 @@ button#closePopupBtn2 {
 
 
 /* สำหรับ iPad Mini และ iPad ขนาดกลาง (iPad Air, iPad 9th Gen, 10th Gen) */
-@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
-
-    html, body {
-        margin: 0;
-        padding: 0;
-        overflow-x: hidden; /* ซ่อนส่วนที่เกินออกทางด้านข้างบนหน้าจอโทรศัพท์ */
-      }
+@media (min-width: 768px) and (max-width: 1023px) {
+    body {
+        font-family: 'Kanit', sans-serif;
+        overflow-x: hidden; /* ป้องกันการเลื่อนในแนวนอน */
+    }
 
     .hamburger span {
         display: block; /* แสดงแถบแฮมเบอร์เกอร์ */
     }
 
+    .nav {
+        overflow-x: hidden; /* ป้องกันการเลื่อนในแนวนอน */
+}
 
 /* สำหรับ iPad Pro 11-inch และ 12.9-inch */
-@media (min-width: 1025px) and (max-width: 1536px) and (orientation: landscape) {
+@media (min-width: 1024px) and (max-width: 1366px) {
 
-    html, body {
-        margin: 0;
-        padding: 0;
-        overflow-x: hidden; /* ซ่อนส่วนที่เกินออกทางด้านข้างบนหน้าจอโทรศัพท์ */
-      }
+    body {
+        font-family: 'Kanit', sans-serif;
+        overflow-x: hidden; /* ป้องกันการเลื่อนในแนวนอน */
+    }
 
     .hamburger span {
         display: none; /* ซ่อนแถบแฮมเบอร์เกอร์สำหรับ iPad Pro */
     }
+
+    .nav {
+        overflow-x: hidden; /* ป้องกันการเลื่อนในแนวนอน */
+}
 
       .menu li a {
           font-size: 15px;
@@ -2203,5 +2207,4 @@ button#closePopupBtn2 {
         margin-right: 3px; /* ระยะห่างระหว่างไอคอนกับข้อความ */
       }
 }
-
 }
