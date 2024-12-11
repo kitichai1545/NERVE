@@ -2,143 +2,140 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
-body {
+  }
+  
+  body {
     font-family: 'Kanit', sans-serif;
-    overflow-x: hidden; /* ป้องกันการเลื่อนในแนวนอน */
-}
-
-
-
-/* Fade-in effect */
-.fade-in {
+    overflow-x: hidden
+  }
+  
+  /* Fade-in effect */
+  .fade-in {
     opacity: 0;
     transform: translateY(20px);
     /* เริ่มจากตำแหน่งที่ต่ำกว่าปกติ */
     transition: opacity 1s ease-out, transform 1s ease-out;
     /* ปรับความเร็วของการเลื่อนและความโปร่งใส */
-}
-
-.fade-in.visible {
+  }
+  
+  .fade-in.visible {
     opacity: 1;
     transform: translateY(0);
     /* เลื่อนกลับมาตำแหน่งปกติ */
-}
-
-/* หน้าแรก: แอนิเมชันทำงานเมื่อโหลดหน้า */
-.fade-in-on-load {
+  }
+  
+  /* หน้าแรก: แอนิเมชันทำงานเมื่อโหลดหน้า */
+  .fade-in-on-load {
     opacity: 0;
     transform: translateY(20px);
     transition: opacity 1s ease-out, transform 1s ease-out;
-}
-
-.fade-in-on-load.visible {
+  }
+  
+  .fade-in-on-load.visible {
     opacity: 1;
     transform: translateY(0);
-}
-
-/* แอนิเมชันสำหรับคอนเทนต์แรก */
-.content1-fade-in {
+  }
+  
+  /* แอนิเมชันสำหรับคอนเทนต์แรก */
+  .content1-fade-in {
     opacity: 0;
     transform: translateX(-100px); /* เปลี่ยนจาก translateY เป็น translateX เพื่อเลื่อนจากทางซ้าย */
     transition: opacity 1.5s ease-out, transform 1.5s ease-out;
-}
-
-.content1-fade-in.visible {
+  }
+  
+  .content1-fade-in.visible {
     opacity: 1;
     transform: translateX(0); /* กลับมาตรงกลาง */
-}
-
-/* แอนิเมชันสำหรับคอนเทนต์ที่สอง */
-.content2-fade-in {
+  }
+  
+  /* แอนิเมชันสำหรับคอนเทนต์ที่สอง */
+  .content2-fade-in {
     opacity: 0;
     transform: translateX(-100px); /* เลื่อนจากทางซ้าย */
     transition: opacity 1.5s ease-out, transform 1.5s ease-out;
-}
-
-.content2-fade-in.visible {
+  }
+  
+  .content2-fade-in.visible {
     opacity: 1;
     transform: translateX(0); /* กลับมาตรงกลาง */
-}
-/* ปุ่มแยกออกมาอยู่นอกคอนเทนต์ พร้อมกับแอนิเมชัน */
-.fade-in1 {
+  }
+  
+  /* ปุ่มแยกออกมาอยู่นอกคอนเทนต์ พร้อมกับแอนิเมชัน */
+  .fade-in1 {
     opacity: 0;
     transform: translateX(-100px); /* เลื่อนเข้าจากทางซ้าย */
     transition: opacity 1.5s ease-out, transform 1.5s ease-out;
-}
-
-.fade-in1.visible {
+  }
+  
+  .fade-in1.visible {
     opacity: 1;
     transform: translateX(0); /* กลับมาตรงกลาง */
-}
-
-
-
-
-
-
-.container {
-  max-width: 1140px;
-  margin: 0 auto;
-  padding-top: 0.5rem; /* เพิ่ม padding เพื่อเว้นช่องสำหรับ nav */
-}
-
-nav {
-  padding: 1rem 2rem;
-  background-color: rgba(0, 0, 0, 0.6); /* สีดำที่มีความโปร่งใส 50% */
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: fixed;
-  top: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 70%;
-  border-radius: 80px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  z-index: 1000;
-}
-
-.nav-con {
-  display: flex;
-  align-items: center;
-  padding-right: 0px; /* ลดให้ไม่มี padding ซ้ายเลย */
-  margin-left: 0px; /* เพิ่ม margin-left แทนหากต้องการ */
-}
-
-
-.logo {
-  margin-right: 2rem; /* ลดระยะห่างโลโก้ */
-}
-
-.menu {
-  display: flex;
+  }
+  
+  
+  
+  
+  .container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding-top: 0.5rem; /* เพิ่ม padding เพื่อเว้นช่องสำหรับ nav */
+  }
+  
+  nav {
+    padding: 1rem 2rem;
+    background-color: rgba(0, 0, 0, 0.6); /* สีดำที่มีความโปร่งใส 50% */
+    display: flex;
     justify-content: space-between;
     align-items: center;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    gap: 30px; /* ระยะห่างระหว่างแต่ละเมนูและไอคอน */
-}
-
-.menu li {
-  display: flex;
-  align-items: center;
-}
-
-.menu li a {
-  display: flex;
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 75%;
+    border-radius: 80px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+  }
+  
+  .nav-con {
+    display: flex;
     align-items: center;
-    color: white;
-    text-decoration: none;
-    font-size: 16px;
-}
-
-.menu li a img {
-  width: 24px; /* ปรับขนาดไอคอนตามที่ต้องการ */
-  margin-right: 5px; /* ระยะห่างระหว่างไอคอนกับข้อความ */
-}
+    padding-right: 0px; /* ลดให้ไม่มี padding ซ้ายเลย */
+    margin-left: 0px; /* เพิ่ม margin-left แทนหากต้องการ */
+  }
+  
+  
+  .logo {
+    margin-right: 2rem; /* ลดระยะห่างโลโก้ */
+  }
+  
+  .menu {
+    display: flex;
+      justify-content: space-between;
+      align-items: center;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      gap: 30px; /* ระยะห่างระหว่างแต่ละเมนูและไอคอน */
+  }
+  
+  .menu li {
+    display: flex;
+    align-items: center;
+  }
+  
+  .menu li a {
+    display: flex;
+      align-items: center;
+      color: white;
+      text-decoration: none;
+      font-size: 16px;
+  }
+  
+  .menu li a img {
+    width: 24px; /* ปรับขนาดไอคอนตามที่ต้องการ */
+    margin-right: 5px; /* ระยะห่างระหว่างไอคอนกับข้อความ */
+  }
 
 
 
