@@ -21,6 +21,14 @@ body {
   transform: translateY(0); /* เลื่อนกลับมาตำแหน่งปกติ */
 }
 
+<<<<<<< HEAD
+=======
+#toggle-link img {
+  filter: brightness(0) invert(1); /* เปลี่ยนสีรูปภาพเป็นสีขาว */
+  transition: filter 0.3s ease; /* เพิ่มเอฟเฟกต์การเปลี่ยน */
+}
+
+>>>>>>> 4d3ccd9 (ไฟล์ล่าสุด เตรียม teken)
 
 .container {
   max-width: 1140px;
