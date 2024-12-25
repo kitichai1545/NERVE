@@ -405,9 +405,6 @@ async function submitPopupForm() {
         console.error('Error:', error);
         alert("ไม่สามารถเชื่อมต่อเซิร์ฟเวอร์ได้ กรุณาลองใหม่อีกครั้ง");
     }
-<<<<<<< HEAD
-}
-=======
 
 }
 
@@ -506,5 +503,3 @@ function logout() {
     window.location.href = 'Login.html'; // เปลี่ยนหน้าไป Login
 }
 
-
->>>>>>> 4d3ccd9 (ไฟล์ล่าสุด เตรียม teken)
